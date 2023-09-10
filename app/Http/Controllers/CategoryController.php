@@ -60,7 +60,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('backend.pages.Category.edit',['data' => $category]);
     }
 
     /**
@@ -68,7 +68,18 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name'          => 'required|string',
+            'description'   => 'required|string',
+        ]);
+        Category::find($category->id)->update([
+            'name'              => $request->name,
+            'description'       => $request->description,
+            'seo_title'         => $request->seo_title,
+            'seo_description'   => $request->seo_description,
+            'seo_tags'          => $request->seo_tags,
+        ]);
+        return redirect()->route('category.index');
     }
 
     /**
@@ -76,6 +87,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        Category::find($category->id)->delete();
+        return back();
     }
 }

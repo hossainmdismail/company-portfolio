@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Photo;
 
 class BlogController extends Controller
 {
@@ -20,7 +22,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.Blog.create');
+        $category = Category::select('id','name')->where('status',1)->get();
+        return view('backend.pages.Blog.create',['category' => $category]);
     }
 
     /**
@@ -28,7 +31,15 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        // $request->validate([
+        //     'category'  => 'required|integer',
+        //     'title'     => 'required|string',
+        //     'thumbnail' => 'required',
+        //     'content'   => 'required',
+        // ]);
+        Photo::upload($request->thumbnail ,'uploads/blog','BLOG');
+        dd(Photo::$name);
     }
 
     /**

@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('title');
             $table->string('thumbnail');
             $table->string('content');
-            $table->string('seo_title');
-            $table->string('seo_description');
-            $table->string('seo_tags');
-            $table->integer('views');
+            $table->string('seo_title')->nullable();
+            $table->string('seo_description')->nullable();
+            $table->string('seo_tags')->nullable();
+            $table->integer('views')->default(0);
             $table->integer('status')->default(1);
             $table->timestamps();
         });

@@ -24,6 +24,7 @@
 	
 	<!-- Dashboard 1 -->
 	<script src="{{ asset('asset/Backend/js/dashboard/dashboard-1.js') }}"></script>
+	<script src="{{ asset('asset/Backend/vendor/sweetalert2/dist/sweetalert2.min.js') }}" aria-hidden="true"></script>
 	<script>
 		function carouselReview(){
 			/*  testimonial one function by = owl.carousel.js */
