@@ -93,14 +93,12 @@
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-notepad"></i>
-                    <span class="nav-text">Forms</span>
+                    <span class="nav-text">Blogs</span>
                 </a>
                 <ul aria-expanded="false" class="mm-collapse">
-                    <li><a href="{{ asset('asset/Backend/form-element.html') }}">Form Elements</a></li>
-                    <li><a href="{{ asset('asset/Backend/form-wizard.html') }}">Wizard</a></li>
-                    <li><a href="{{ asset('asset/Backend/form-editor-summernote.html') }}">Summernote</a></li>
-                    <li><a href="form-pickers.html">Pickers</a></li>
-                    <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
+                    <li><a href="{{ route('blog.index') }}">Blogs</a></li>
+                    <li><a href="{{ route('blog.create') }}">Create</a></li>
+                    <li><a href="{{ route('category.index') }}">Category</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

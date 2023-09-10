@@ -16,10 +16,10 @@ return new class extends Migration
             $table->integer('user_id');
             $table->string('name');
             $table->string('description');
-            $table->string('seo_title');
-            $table->string('seo_description');
-            $table->string('seo_tags');
-            $table->integer('status');
+            $table->string('seo_title')->nullable();
+            $table->string('seo_description')->nullable();
+            $table->string('seo_tags')->nullable();
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

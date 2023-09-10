@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('profile');
             $table->string('name');
             $table->string('career_title');
-            $table->integer('status');
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }
