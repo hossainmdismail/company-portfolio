@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('seo_description');
             $table->string('seo_tags');
             $table->integer('views');
-            $table->integer('status');
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

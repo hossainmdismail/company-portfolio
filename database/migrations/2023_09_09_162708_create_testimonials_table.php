@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('field');
             $table->string('comment');
-            $table->integer('status');
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }
