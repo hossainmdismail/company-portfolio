@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SociallinkController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\WebinfoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +24,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
