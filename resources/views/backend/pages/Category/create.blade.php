@@ -11,9 +11,9 @@
 <div class="row">
     <div class="col-12 col-xl-6 h-100">
         <div class="card">
-            <div class="card-header">
+            {{-- <div class="card-header">
                 <h4 class="card-title">Category</h4>
-            </div>
+            </div> --}}
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-responsive-md">
@@ -56,9 +56,9 @@
     </div>
     <div class="col-12 col-xl-6">
         <div class="card">
-            <div class="card-header">
+            {{-- <div class="card-header">
                 <h4 class="card-title">Add Category</h4>
-            </div>
+            </div> --}}
             <div class="card-body">
                 <div class="basic-form">
                     <form action="{{ route('category.store') }}" method="POST">
