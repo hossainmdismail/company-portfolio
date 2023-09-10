@@ -6,6 +6,16 @@
 	<script src="{{ asset('asset/Backend/js/deznav-init.js') }}"></script>
 	<script src="{{ asset('asset/Backend/vendor/owl-carousel/owl.carousel.js') }}"></script>
 	
+
+    <script src="{{ asset('asset/Backend/vendor/jquery-steps/build/jquery.steps.min.js') }}"></script>
+    <script src="{{ asset('asset/Backend/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
+    <!-- Form validate init -->
+    <script src="{{ asset('asset/Backend/js/plugins-init/jquery.validate-init.js') }}"></script>
+    <!-- Form Steps -->
+    <script src="{{ asset('asset/Backend/vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js') }}"></script>
+
+
+	
 	<!-- Chart piety plugin files -->
     <script src="{{ asset('asset/Backend/vendor/peity/jquery.peity.min.js') }}"></script>
 	

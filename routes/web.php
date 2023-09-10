@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +22,26 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+//============== Front End ==============//
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+
+//========= BackEnd Controllers =========//
+
+// Route::group(['middleware' => 'auth'], function () {
+//     Route::get('/dashboard', [HomeController::class, 'index'])->name('index');
+
+    //Code Will Be Execute
+
+// });
+
+Route::resources([
+    'category'      => CategoryController::class,
+    'blog'          => BlogController::class,
+
+]);

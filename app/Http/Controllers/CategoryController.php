@@ -12,7 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data = Category::all();
+        return view('backend.pages.Category.create',['data' => $data]);
     }
 
     /**
@@ -28,7 +29,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $request->validate([
+            'name'          => 'required|string',
+            'description'   => 'required|string',
+        ]);
+
+        Category::insert([
+            'user_id'           => 1, //User ID Will be added
+            'name'              => $request->name,
+            'description'       => $request->description,
+            'seo_title'         => $request->seo_title,
+            'seo_description'   => $request->seo_description,
+            'seo_tags'          => $request->seo_tags,
+        ]);
+
+        return back();
     }
 
     /**

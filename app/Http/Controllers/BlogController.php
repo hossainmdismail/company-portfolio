@@ -12,7 +12,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.pages.Blog.list');
     }
 
     /**
@@ -20,7 +20,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages.Blog.create');
     }
 
     /**
