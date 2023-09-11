@@ -1,5 +1,111 @@
 @extends('backend.layouts.app')
 
 @section('content')
-    Edit
+<div class="page-titles d-flex justify-content-between">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{route('blog.index')}}">Blog</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:void(0)">{{ $blog->title }}</a></li>
+    </ol>
+    <ol>
+        <a href="{{ route('blog.index') }}" class="btn btn-info btn-xs"><span class="mr-2"><</span> Back</a>
+    </ol>
+</div>
+
+<form action="{{ route('blog.update',$blog->id) }}" method="post" enctype="multipart/form-data">
+    @csrf
+    @method('PUT')
+    <div class="row">
+        <div class="col-12 col-xl-6">
+            <div class="card">
+                {{-- <div class="card-header">
+                    <h4 class="card-title">Add Category</h4>
+                </div> --}}
+                <div class="card-body">
+                    <div class="basic-form">
+                        <div class="form-group">
+                            <select name="category"  class="form-control @error('category') is-invalid @enderror" id="">
+                                    <option value="">Select Category</option>
+                                @foreach ($category as $cat)
+                                    <option value="{{ $cat->id }}" {{ $blog->category_id == $cat->id?'selected':'' }}>{{ $cat->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control @error('title') is-invalid @enderror " name="title" type="text" value="{{ $blog->title }}" placeholder="Title">
+                        </div>
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" name="thumbnail" class="custom-file-input @error('thumbnail') is-invalid @enderror">
+                                        <label class="custom-file-label">Thumbnail</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <img class="w-100" src="{{ asset('uploads/blog/'.$blog->thumbnail) }}" alt="">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-xl-6">
+            <div class="card">
+                {{-- <div class="card-header">
+                    <h4 class="card-title">Add Category</h4>
+                </div> --}}
+                <div class="card-body">
+                    <div class="basic-form">
+                        <div class="form-group">
+                            <input class="form-control" name="seo_title" type="text" value="{{ $blog->seo_title }}" placeholder="Seo title">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" name="seo_description" type="text" value="{{ $blog->seo_description }}" placeholder="Seo description">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" name="seo_tags" type="text" value="{{ $blog->seo_tags }}" placeholder="Seo tags,">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-12">
+            <div class="card">
+                {{-- <div class="card-header">
+                    <h4 class="card-title">Add Category</h4>
+                </div> --}}
+                <div class="card-body">
+                    <textarea class="summernote @error('content') is-invalid @enderror" name="content">
+                        {!! $blog->content !!}
+                    </textarea>
+                    <div id="summernote"></div>
+                    <button type="submit" class="btn btn-rounded btn-info mt-4"><span class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>
+                    </span>Post</button>
+                </div>
+    
+                
+            </div>
+        </div>
+    </div>
+</form>
+@endsection
+
+@section('script')
+    <!-- Summernote -->
+    <script src="{{ asset('asset/Backend/vendor/summernote/js/summernote.min.js') }}"></script>
+    <!-- Summernote init -->
+    <script src="{{ asset('asset/Backend/js/plugins-init/summernote-init.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.summernote').summernote();
+        });
+    </script>
 @endsection

@@ -1,4 +1,4 @@
-    <!-- Required vendors -->
+ <!-- Required vendors -->
     <script src="{{ asset('asset/Backend/vendor/global/global.min.js') }}"></script>
 	<script src="{{ asset('asset/Backend/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
 	<script src="{{ asset('asset/Backend/vendor/chart.js/Chart.bundle.min.js') }}"></script>
@@ -25,6 +25,7 @@
 	<!-- Dashboard 1 -->
 	<script src="{{ asset('asset/Backend/js/dashboard/dashboard-1.js') }}"></script>
 	<script src="{{ asset('asset/Backend/vendor/sweetalert2/dist/sweetalert2.min.js') }}" aria-hidden="true"></script>
+    <script src="{{ asset('asset/Backend/js/plugins-init/sweetalert.init.js') }}"></script>
 	<script>
 		function carouselReview(){
 			/*  testimonial one function by = owl.carousel.js */
@@ -65,3 +66,43 @@
 			}, 1000); 
 		});
 	</script>
+ 	  @if (session('succ'))
+	   <script>
+		   const Toast = Swal.mixin({
+		   toast: true,
+		   position: 'top-end',
+		   showConfirmButton: false,
+		   timer: 3000,
+		   timerProgressBar: true,
+		   didOpen: (toast) => {
+			   toast.addEventListener('mouseenter', Swal.stopTimer)
+			   toast.addEventListener('mouseleave', Swal.resumeTimer)
+		   }
+		   })
+ 
+		   Toast.fire({
+		   icon: 'success',
+		   title: '{{ session('succ') }}'
+		   })
+	   </script>
+	   @endif
+	   @if (session('err'))
+		   <script>
+			   const Toast = Swal.mixin({
+			   toast: true,
+			   position: 'top-end',
+			   showConfirmButton: false,
+			   timer: 3000,
+			   timerProgressBar: true,
+			   didOpen: (toast) => {
+				   toast.addEventListener('mouseenter', Swal.stopTimer)
+				   toast.addEventListener('mouseleave', Swal.resumeTimer)
+			   }
+			   })
+ 
+			   Toast.fire({
+			   icon: 'warning',
+			   title: '{{ session('err') }}'
+			   })
+		   </script>
+	   @endif

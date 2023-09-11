@@ -1,11 +1,14 @@
 @extends('backend.layouts.app')
 
 @section('content')
-<div class="page-titles">
+<div class="page-titles d-flex justify-content-between">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{route('blog.index')}}">Blog</a></li>
         <li class="breadcrumb-item active"><a href="javascript:void(0)">Create</a></li>
+    </ol>
+    <ol>
+        <a href="{{ route('blog.index') }}" class="btn btn-info btn-xs">Manage</a>
     </ol>
 </div>
 

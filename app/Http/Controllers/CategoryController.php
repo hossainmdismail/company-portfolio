@@ -44,7 +44,7 @@ class CategoryController extends Controller
             'seo_tags'          => $request->seo_tags,
         ]);
 
-        return back();
+        return back()->with('succ','Create category');
     }
 
     /**
@@ -79,7 +79,7 @@ class CategoryController extends Controller
             'seo_description'   => $request->seo_description,
             'seo_tags'          => $request->seo_tags,
         ]);
-        return redirect()->route('category.index');
+        return redirect()->route('category.index')->with('succ','Update successfully');
     }
 
     /**
@@ -88,6 +88,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         Category::find($category->id)->delete();
-        return back();
+        return back()->with('succ','Remove successfully');
     }
 }
