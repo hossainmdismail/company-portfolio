@@ -47,7 +47,8 @@
                             <option value="2">Deactive</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="submit" class="btn btn-rounded btn-info"><span class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>
+                    </span>Add</button>
                 </form>
             </div>
         </div>

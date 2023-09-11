@@ -13,7 +13,7 @@ class ServiceController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('backend.Service.create', [
+        return view('backend.pages.Service.create', [
             'users'=>$users,
         ]);
     }

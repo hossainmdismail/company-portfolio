@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Social_links;
 use Illuminate\Http\Request;
 
-class SociallinkController extends Controller
+class SocialLinkController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('backend.Sociallink.create');
+        return view('backend.pages.Sociallink.create');
     }
 
     /**
@@ -33,7 +34,7 @@ class SociallinkController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Social_links $social_links)
     {
         //
     }
@@ -41,7 +42,7 @@ class SociallinkController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Social_links $social_links)
     {
         //
     }
@@ -49,7 +50,7 @@ class SociallinkController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Social_links $social_links)
     {
         //
     }
@@ -57,7 +58,7 @@ class SociallinkController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Social_links $social_links)
     {
         //
     }

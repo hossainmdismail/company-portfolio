@@ -8,9 +8,9 @@
                 <table class="table table-striped">
                     <tr>
                         <th>User id</th>
-                        <th>Title</td>
-                        <th>Thumbnail</th>
-                        <th>Description</th>
+                        <th>Profile</td>
+                        <th>Name</th>
+                        <th>Career Title</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -29,7 +29,7 @@
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('service.create') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('team.create') }}" method="POST">
                     @csrf
                     <div class="my-3">
                         <select name="user_id" id="" class="form-control">
@@ -40,13 +40,13 @@
                         </select>
                     </div>
                     <div class="my-3">
-                        <input type="text" class="form-control" name="title" placeholder="Title">
+                        <input type="text" class="form-control" name="profile" placeholder="Profile">
                     </div>
                     <div class="my-3">
-                        <input type="file" class="form-control" name="thumbnail" placeholder="Thumbnail">
+                        <input type="text" class="form-control" name="name" placeholder="Name">
                     </div>
                     <div class="my-3">
-                        <textarea name="description" class="form-control" id="" cols="30" rows="10" placeholder="Description"></textarea>
+                        <input type="text" class="form-control" name="career_title" placeholder="Career Title">
                     </div>
                     <div class="my-3">
                         <select name="status" id="" class="form-control">
@@ -54,7 +54,8 @@
                             <option value="2">Deactive</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="submit" class="btn btn-rounded btn-info"><span class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>
+                    </span>Add</button>
                 </form>
             </div>
         </div>

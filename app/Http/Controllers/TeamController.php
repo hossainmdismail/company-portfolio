@@ -14,7 +14,7 @@ class TeamController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('backend.Team.create', [
+        return view('backend.pages.Team.create', [
             'users'=>$users,
         ]);
         //

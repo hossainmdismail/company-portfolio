@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Web_info;
 use Illuminate\Http\Request;
 
-class WebinfoController extends Controller
+class WebInfoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('backend.WebInfo.create');
+        return view('backend.pages.WebInfo.create');
     }
 
     /**
@@ -33,7 +34,7 @@ class WebinfoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Web_info $web_info)
     {
         //
     }
@@ -41,7 +42,7 @@ class WebinfoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Web_info $web_info)
     {
         //
     }
@@ -49,7 +50,7 @@ class WebinfoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Web_info $web_info)
     {
         //
     }
@@ -57,7 +58,7 @@ class WebinfoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Web_info $web_info)
     {
         //
     }
