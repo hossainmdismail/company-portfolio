@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,5 +44,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resources([
     'category'      => CategoryController::class,
     'blog'          => BlogController::class,
+    'product'       => ProductController::class,
+    'project'       => ProjectController::class,
 
 ]);

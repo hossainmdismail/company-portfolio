@@ -3,63 +3,62 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $product = Product::all();
+        return view('backend.pages.Product.create',['data' => $product]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return 'create';
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'service' => 'required|string',
+        ]);
+
+        Product::insert([
+            'user_id'       => 1, //user id will be added
+            'service'       => $request->service,
+            'created_at'    => Carbon::now(),
+        ]);
+        return back()->with('succ', 'Product added');
+        
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Product $product)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Product $product)
     {
-        //
+        return view('backend.pages.Product.edit',['data' => $product]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Product $product)
     {
-        //
+        $request->validate([
+            'service' => 'required|string',
+        ]);
+        Product::find($product->id)->update([
+            'service'       => $request->service,
+            'updated_at'    => Carbon::now(),
+        ]);
+        return redirect()->route('product.index')->with('succ',  'Product updated');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Product $product)
     {
-        //
+        Product::find($product->id)->delete();
+        return back()->with('succ', 'Remove product');
     }
 }

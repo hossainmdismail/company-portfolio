@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('slugs')->unique();
             $table->string('title');
             $table->string('thumbnail');
-            $table->string('content');
+            $table->longText('content');
             $table->string('seo_title')->nullable();
             $table->string('seo_description')->nullable();
             $table->string('seo_tags')->nullable();

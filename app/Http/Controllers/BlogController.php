@@ -71,9 +71,6 @@ class BlogController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Blog $blog)
     {
         $category = Category::select('id','name')->where('status',1)->get();
@@ -83,9 +80,6 @@ class BlogController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Blog $blog)
     {
         //dd($request->all());
@@ -116,9 +110,6 @@ class BlogController extends Controller
         return back()->with('succ','Update successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Blog $blog)
     {
         Photo::delete('uploads/blog',$blog->thumbnail);
