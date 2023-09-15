@@ -10,32 +10,25 @@
                     <li><a href="{{ route('user.index') }}">User</a></li>
                 </ul>
             </li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li><a class="has-arrow ai-icon" href="{{ route('team.index') }}">
                     <i class="flaticon-381-television"></i>
-                    <span class="nav-text">Apps</span>
+                    <span class="nav-text">Team</span>
                 </a>
-                <ul aria-expanded="false" class="mm-collapse">
-                    <li><a href="{{ asset('asset/Backend/app-profile.html') }}">Profile</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                        <ul aria-expanded="false" class="mm-collapse">
-                            <li><a href="{{ asset('asset/Backend/email-compose.html') }}">Compose</a></li>
-                            <li><a href="{{ asset('asset/Backend/email-inbox.html') }}">Inbox</a></li>
-                            <li><a href="{{ asset('asset/Backend/email-read.html') }}">Read</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{{ asset('asset/Backend/app-calender.html') }}">Calendar</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
-                        <ul aria-expanded="false" class="mm-collapse">
-                            <li><a href="{{ asset('asset/Backend/ecom-product-grid.html') }}">Product Grid</a></li>
-                            <li><a href="{{ asset('asset/Backend/ecom-product-list.html') }}">Product List</a></li>
-                            <li><a href="{{ asset('asset/Backend/ecom-product-detail.html') }}">Product Details</a></li>
-                            <li><a href="{{ asset('asset/Backend/ecom-product-order.html') }}">Order</a></li>
-                            <li><a href="{{ asset('asset/Backend/ecom-checkout.html') }}">Checkout</a></li>
-                            <li><a href="{{ asset('asset/Backend/ecom-invoice.html') }}">Invoice</a></li>
-                            <li><a href="{{ asset('asset/Backend/ecom-customers.html') }}">Customers</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            </li>
+            <li><a class="has-arrow ai-icon" href="{{ route('service.index') }}">
+                    <i class="flaticon-381-television"></i>
+                    <span class="nav-text">Service</span>
+                </a>
+            </li>
+            <li><a class="has-arrow ai-icon" href="{{ route('sociallink.index') }}">
+                    <i class="flaticon-381-television"></i>
+                    <span class="nav-text">Social Link</span>
+                </a>
+            </li>
+            <li><a class="has-arrow ai-icon" href="{{ route('webinfo.index') }}">
+                    <i class="flaticon-381-television"></i>
+                    <span class="nav-text">Web Info</span>
+                </a>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-controls-3"></i>

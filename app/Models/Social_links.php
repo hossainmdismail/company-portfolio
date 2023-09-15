@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Social_links extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
 }

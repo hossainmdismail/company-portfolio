@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Team;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -12,6 +14,12 @@ class TeamController extends Controller
      */
     public function index()
     {
+        $users = User::all();
+        $teams  = Team::all();
+        return view('backend.pages.Team.create', [
+            'users' =>  $users,
+            'teams'  =>  $teams,
+        ]);
         //
     }
 
@@ -28,13 +36,24 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            '*'=>'required',
+        ]);
+
+        Team::insert([
+            'user_id'        =>  1, //User ID Will be added
+            'profile'        =>  $request->profile,
+            'name'           =>  $request->name,
+            'career_title'   =>  $request->career_title,
+            'created_at'     =>  Carbon::now(),
+        ]);
+        return back();
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Team $team)
+    public function show(string $id)
     {
         //
     }
@@ -44,22 +63,34 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        //
+        $users = User::all();
+        return view('backend.pages.Team.edit', [
+            'team'  =>$team,
+            'users' =>$users,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Team $team)
+    public function update(Request $request, string $id)
     {
-        //
+        Team::find($id)->update([
+            'user_id'        =>  1, //User ID Will be added
+            'profile'        =>  $request->profile,
+            'name'           =>  $request->name,
+            'career_title'   =>  $request->career_title,
+            'status'         =>  $request->status,
+        ]);
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Team $team)
+    public function destroy(string $id)
     {
-        //
+        Team::find($id)->delete();
+        return back();
     }
 }
