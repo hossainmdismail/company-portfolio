@@ -4,16 +4,16 @@
 <div class="page-titles d-flex justify-content-between">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item active"><a href="{{route('blog.index')}}">Blog</a></li>
+        <li class="breadcrumb-item active"><a href="{{route('project.index')}}">Project</a></li>
     </ol>
     <ol>
-        <a href="{{ route('blog.create') }}" class="btn btn-info btn-xs">Create</a>
+        <a href="{{ route('project.create') }}" class="btn btn-info btn-xs">Create</a>
     </ol>
 </div>
 @php
     $catid =null;
-    if ( request()->has('category')) {
-        $catid = $_GET['category'];
+    if ( request()->has('product')) {
+        $catid = $_GET['product'];
     }
 @endphp
 <div class="row">
@@ -23,10 +23,10 @@
                 <div class="card-header d-flex justify-content-between align-item-center">
                     <div>{{ $catid }}</div>
                     <div class="d-flex">
-                        <select class="form-control form-control-sm default-select mr-4 h-100" name="category" id="">
+                        <select class="form-control form-control-sm default-select mr-4 h-100" name="product" id="">
                             <option value="">Category</option>
-                            @forelse ($category as $cates)
-                                <option value="{{ $cates->id }}" {{ $cates->id == $catid ? 'selected':'' }}>{{ $cates->name }}</option>
+                            @forelse ($product as $cates)
+                                <option value="{{ $cates->id }}" {{ $cates->id == $catid ? 'selected':'' }}>{{ $cates->service }}</option>
                             @empty
                                 
                             @endforelse
@@ -48,23 +48,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($data as $blogs)
+                            @forelse ($data as $project)
                                 <tr>
-                                    <td>{{ $blogs->title }}</td>
-                                    <td>{{ $blogs->created_at->diffForHumans() }}</td>
+                                    <td> <img class="mr-2" src="{{ asset('uploads/project/'.$project->thumbnail)}}" width="50"> {{ $project->title }}</td>
+                                    <td>{{ $project->created_at->diffForHumans() }}</td>
                                     <td>
-                                        <div class="d-flex align-items-center"><i class="fa fa-circle text-{{ empty($blogs->seo_title && $blogs->seo_description && $blogs->seo_tags)?'warning':'success' }} mr-1"></i>{{ empty($blogs->seo_title && $blogs->seo_description && $blogs->seo_tags)?'Edit Seo':'Completed' }}</div>
+                                        <div class="d-flex align-items-center"><i class="fa fa-circle text-{{ empty($project->seo_title && $project->seo_description && $project->seo_tags)?'warning':'success' }} mr-1"></i>{{ empty($project->seo_title && $project->seo_description && $project->seo_tags)?'Edit Seo':'Completed' }}</div>
                                     </td>
 
                                     <td>
-                                        <div class="d-flex align-items-center"><i class="fa fa-circle text-{{ $blogs->status != 0 ? 'success':'warning' }} mr-1"></i> {{ $blogs->status != 0 ? 'Active':'Deactive' }}</div>
+                                        <div class="d-flex align-items-center"><i class="fa fa-circle text-{{ $project->status != 0 ? 'success':'warning' }} mr-1"></i> {{ $project->status != 0 ? 'Active':'Deactive' }}</div>
                                     </td>
                                     
                                     <td>
                                         <div class="d-flex">
-                                            <a href="{{ route('blog.edit', $blogs->id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                            <a href="{{ route('project.edit', $project->id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                                             
-                                            <form action="{{ route('blog.destroy',$blogs->id) }}" method="POST">
+                                            <form action="{{ route('project.destroy',$project->id) }}" method="POST">
                                                 @csrf @method('DELETE')
                                                 <button class="btn btn-danger shadow btn-xs sharp btn sweet-success-cancel"><i class="fa fa-trash"></i></button>
                                             </form>

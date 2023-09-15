@@ -4,36 +4,51 @@
 <div class="page-titles d-flex justify-content-between">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{route('blog.index')}}">Blog</a></li>
-        <li class="breadcrumb-item active"><a href="javascript:void(0)">{{ $blog->title }}</a></li>
+        <li class="breadcrumb-item"><a href="{{route('project.index')}}">Project</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:void(0)">{{ $project->title }}</a></li>
     </ol>
     <ol>
-        <a href="{{ route('blog.index') }}" class="btn btn-info btn-xs"><span class="mr-2"><</span> Back</a>
+        <a href="{{ route('project.index') }}" class="btn btn-info btn-xs"><span class="mr-2"><</span> Back</a>
     </ol>
 </div>
 
-<form action="{{ route('blog.update',$blog->id) }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('project.update',$project->id) }}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="row">
         <div class="col-12 col-xl-6">
             <div class="card">
                 {{-- <div class="card-header">
-                    <h4 class="card-title">Add Category</h4>
+                    <h4 class="card-title">Add product</h4>
                 </div> --}}
                 <div class="card-body">
                     <div class="basic-form">
-                        <div class="form-group">
-                            <select name="category"  class="form-control @error('category') is-invalid @enderror" id="">
-                                    <option value="">Select Category</option>
-                                @foreach ($category as $cat)
-                                    <option value="{{ $cat->id }}" {{ $blog->category_id == $cat->id?'selected':'' }}>{{ $cat->name }}</option>
-                                @endforeach
-                            </select>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <select name="product"  class="form-control @error('product') is-invalid @enderror" id="">
+                                            <option value="">Select product</option>
+                                        @foreach ($product as $cat)
+                                            <option value="{{ $cat->id }}" {{ $project->product_id == $cat->id?'selected':'' }}>{{ $cat->service }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <input class="form-control @error('client') is-invalid @enderror " name="client" type="text" value="{{ $project->client }}" placeholder="Client name">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input class="form-control @error('title') is-invalid @enderror " name="title" type="text" value="{{ $blog->title }}" placeholder="Title">
+                        <div class="row">
+                            <div class="col-12 col-md-8">
+                                <div class="form-group">
+                                    <input class="form-control @error('title') is-invalid @enderror " name="title" type="text" value="{{ $project->title }}" placeholder="Title">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 mb-3">
+                                <input class="form-control @error('budget') is-invalid @enderror " name="budget" type="number" value="{{ $project->budget }}" placeholder="$">
+                            </div>
                         </div>
+                        
                         <div class="row">
                             <div class="col-9">
                                 <div class="input-group mb-3">
@@ -47,7 +62,7 @@
                                 </div>
                             </div>
                             <div class="col-3">
-                                <img class="w-100" src="{{ asset('uploads/blog/'.$blog->thumbnail) }}" alt="">
+                                <img class="w-100" src="{{ asset('uploads/project/'.$project->thumbnail) }}" alt="">
                             </div>
                         </div>
                         
@@ -59,18 +74,18 @@
         <div class="col-12 col-xl-6">
             <div class="card">
                 {{-- <div class="card-header">
-                    <h4 class="card-title">Add Category</h4>
+                    <h4 class="card-title">Add product</h4>
                 </div> --}}
                 <div class="card-body">
                     <div class="basic-form">
                         <div class="form-group">
-                            <input class="form-control" name="seo_title" type="text" value="{{ $blog->seo_title }}" placeholder="Seo title">
+                            <input class="form-control" name="seo_title" type="text" value="{{ $project->seo_title }}" placeholder="Seo title">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" name="seo_description" type="text" value="{{ $blog->seo_description }}" placeholder="Seo description">
+                            <input class="form-control" name="seo_description" type="text" value="{{ $project->seo_description }}" placeholder="Seo description">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" name="seo_tags" type="text" value="{{ $blog->seo_tags }}" placeholder="Seo tags,">
+                            <input class="form-control" name="seo_tags" type="text" value="{{ $project->seo_tags }}" placeholder="Seo tags,">
                         </div>
                     </div>
                 </div>
@@ -80,11 +95,11 @@
         <div class="col-12">
             <div class="card">
                 {{-- <div class="card-header">
-                    <h4 class="card-title">Add Category</h4>
+                    <h4 class="card-title">Add product</h4>
                 </div> --}}
                 <div class="card-body">
                     <textarea class="summernote @error('content') is-invalid @enderror" name="content">
-                        {!! $blog->content !!}
+                        {!! $project->content !!}
                     </textarea>
                     <div id="summernote"></div>
                     <button type="submit" class="btn btn-rounded btn-info mt-4"><span class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>

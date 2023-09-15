@@ -4,42 +4,56 @@
 <div class="page-titles d-flex justify-content-between">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{route('blog.index')}}">Blog</a></li>
+        <li class="breadcrumb-item"><a href="{{route('project.index')}}">Project</a></li>
         <li class="breadcrumb-item active"><a href="javascript:void(0)">Create</a></li>
     </ol>
     <ol>
-        <a href="{{ route('blog.index') }}" class="btn btn-info btn-xs">Manage</a>
+        <a href="{{ route('project.index') }}" class="btn btn-info btn-xs">Manage</a>
     </ol>
 </div>
 
-<form action="{{ route('blog.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('project.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-12 col-xl-6">
             <div class="card">
                 {{-- <div class="card-header">
-                    <h4 class="card-title">Add Category</h4>
+                    <h4 class="card-title">Add product</h4>
                 </div> --}}
                 <div class="card-body">
                     <div class="basic-form">
-                        <div class="form-group">
-                            <select name="category"  class="form-control @error('category') is-invalid @enderror" id="">
-                                    <option value="">Select Category</option>
-                                @foreach ($category as $cat)
-                                    <option value="{{ $cat->id }}" {{ old('category') == $cat->id?'selected':'' }}>{{ $cat->name }}</option>
-                                @endforeach
-                            </select>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <select name="product"  class="form-control @error('product') is-invalid @enderror" id="">
+                                            <option value="">Select product</option>
+                                        @foreach ($product as $pro)
+                                            <option value="{{ $pro->id }}" {{ old('product') == $pro->id?'selected':'' }}>{{ $pro->service }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <input class="form-control @error('client') is-invalid @enderror " name="client" type="text" value="{{ old('client') }}" placeholder="Client name">
+                            </div>
                         </div>
                         <div class="form-group">
                             <input class="form-control @error('title') is-invalid @enderror " name="title" type="text" value="{{ old('title') }}" placeholder="Title">
                         </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Upload</span>
+                        <div class="row">
+                            <div class="col-12 col-md-6 mb-3">
+                                <input class="form-control @error('budget') is-invalid @enderror " name="budget" type="number" value="{{ old('budget') }}" placeholder="$">
                             </div>
-                            <div class="custom-file">
-                                <input type="file" name="thumbnail" class="custom-file-input @error('thumbnail') is-invalid @enderror">
-                                <label class="custom-file-label">Thumbnail</label>
+                            <div class="col-12 col-md-6">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" name="thumbnail" class="custom-file-input @error('thumbnail') is-invalid @enderror">
+                                        <label class="custom-file-label">Thumbnail</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -50,7 +64,7 @@
         <div class="col-12 col-xl-6">
             <div class="card">
                 {{-- <div class="card-header">
-                    <h4 class="card-title">Add Category</h4>
+                    <h4 class="card-title">Add product</h4>
                 </div> --}}
                 <div class="card-body">
                     <div class="basic-form">
@@ -71,7 +85,7 @@
         <div class="col-12">
             <div class="card">
                 {{-- <div class="card-header">
-                    <h4 class="card-title">Add Category</h4>
+                    <h4 class="card-title">Add product</h4>
                 </div> --}}
                 <div class="card-body">
                     <textarea class="summernote @error('content') is-invalid @enderror" name="content"></textarea>

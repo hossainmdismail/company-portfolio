@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('category_id');
+            $table->string('slugs')->unique();
             $table->string('title');
             $table->string('thumbnail');
-            $table->string('content');
+            $table->longText('content');
             $table->string('seo_title')->nullable();
             $table->string('seo_description')->nullable();
             $table->string('seo_tags')->nullable();

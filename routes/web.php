@@ -6,7 +6,8 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\WebinfoController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,5 +50,6 @@ Route::resources([
     'service'       => ServiceController::class,
     'sociallink'    => SociallinkController::class,
     'webinfo'       => WebinfoController::class,
-
+    'product'       => ProductController::class,
+    'project'       => ProjectController::class,
 ]);
