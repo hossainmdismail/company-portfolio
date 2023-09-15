@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SociallinkController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\WebinfoController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
@@ -30,8 +34,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-
-
 //========= BackEnd Controllers =========//
 
 // Route::group(['middleware' => 'auth'], function () {
@@ -44,7 +46,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resources([
     'category'      => CategoryController::class,
     'blog'          => BlogController::class,
+    'team'          => TeamController::class,
+    'service'       => ServiceController::class,
+    'sociallink'    => SociallinkController::class,
+    'webinfo'       => WebinfoController::class,
     'product'       => ProductController::class,
     'project'       => ProjectController::class,
-
 ]);
