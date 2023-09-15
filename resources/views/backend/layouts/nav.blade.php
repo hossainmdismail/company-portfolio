@@ -1,18 +1,14 @@
 <div class="deznav">
     <div class="deznav-scroll mm-active ps ps--active-y">
         <ul class="metismenu mm-show" id="menu">
-            <li class="mm-active"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
-                {{-- <ul aria-expanded="false" class="mm-collapse mm-show">
-                    <li class="mm-active"><a href="index.html" class="mm-active">Dashboard</a></li>
-                    <li><a href="workout-statistic.html">Workout Statistic</a></li>
-                    <li><a href="workoutplan.html">Workout Plan</a></li>
-                    <li><a href="distance-map.html">Distance Map</a></li>
-                    <li><a href="food-menu.html">Diet Food Menu</a></li>
-                    <li><a href="personal-record.html">Personal Record</a></li>
-                </ul> --}}
+                <ul aria-expanded="false" class="mm-collapse">
+                    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ route('user.index') }}">User</a></li>
+                </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-television"></i>

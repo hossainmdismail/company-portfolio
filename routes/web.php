@@ -1,32 +1,22 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+//UI Routes
 Auth::routes();
 
 
 //============== Front End ==============//
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 
@@ -34,14 +24,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //========= BackEnd Controllers =========//
 
-// Route::group(['middleware' => 'auth'], function () {
-//     Route::get('/dashboard', [HomeController::class, 'index'])->name('index');
-
+Route::group(['middleware' => 'auth'], function () {
+    
     //Code Will Be Execute
+    
+});
 
-// });
-
+Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 Route::resources([
+    'user'          => UserController::class,
     'category'      => CategoryController::class,
     'blog'          => BlogController::class,
     'product'       => ProductController::class,
