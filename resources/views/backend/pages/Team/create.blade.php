@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-12 col-xl-7 h-100">
         <div class="card">
             <div class="card-body">
                 <table class="table table-striped">
@@ -14,22 +14,33 @@
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
+                    @foreach ($teams as $team)
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $team->user_id }}</td>
+                        <td>{{ $team->profile }}</td>
+                        <td>{{ $team->name }}</td>
+                        <td>{{ $team->career_title }}</td>
+                        <td class="d-flex align-items-center"><i class="fa fa-circle text-{{ $team->status != 2 ? 'success':'warning' }} mr-1"></i>{{ $team->status != 2 ? 'Active':'Deactive' }}</td>
+                        <td>
+                            <div class="d-flex">
+                                <a href="{{ route('team.edit', $team->id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+
+                                <form action="{{ route('team.destroy',$team->id) }}" method="POST">
+                                    @csrf @method('DELETE')
+                                    <button class="btn btn-danger shadow btn-xs sharp btn sweet-success-cancel"><i class="fa fa-trash"></i></button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
+                    @endforeach
                 </table>
             </div>
         </div>
     </div>
-    <div class="col-lg-6">
+    <div class="col-12 col-xl-5">
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('team.create') }}" method="POST">
+                <form action="{{ route('team.store') }}" method="POST">
                     @csrf
                     <div class="my-3">
                         <select name="user_id" id="" class="form-control">
@@ -48,12 +59,7 @@
                     <div class="my-3">
                         <input type="text" class="form-control" name="career_title" placeholder="Career Title">
                     </div>
-                    <div class="my-3">
-                        <select name="status" id="" class="form-control">
-                            <option value="1">Active</option>
-                            <option value="2">Deactive</option>
-                        </select>
-                    </div>
+
                     <button type="submit" class="btn btn-rounded btn-info"><span class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>
                     </span>Add</button>
                 </form>

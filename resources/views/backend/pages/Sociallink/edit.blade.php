@@ -5,32 +5,23 @@
     <div class="col-lg-10">
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('sociallink.update') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('sociallink.update', $social_links->id) }}" method="POST">
                     @csrf
+                    @method('PUT')
                     <div class="my-3">
-                        <select name="user_id" id="" class="form-control">
-                            <option value="">-- User Id --</option>
-                            @foreach ($users as $user)
-                                <option value="{{ $user->id }}">{{ $user->name }}</option>
-                            @endforeach
-                        </select>
+                        <input type="text" class="form-control" name="name" placeholder="Name" value="{{ $social_links->name }}">
                     </div>
                     <div class="my-3">
-                        <input type="text" class="form-control" name="title" placeholder="Title">
-                    </div>
-                    <div class="my-3">
-                        <input type="file" class="form-control" name="thumbnail" placeholder="Thumbnail">
-                    </div>
-                    <div class="my-3">
-                        <textarea name="description" class="form-control" id="" cols="30" rows="10" placeholder="Description"></textarea>
+                        <input type="text" class="form-control" name="title" placeholder="Title" value="{{ $social_links->title }}">
                     </div>
                     <div class="my-3">
                         <select name="status" id="" class="form-control">
-                            <option value="1">Active</option>
-                            <option value="2">Deactive</option>
+                            <option value="1"{{ $social_links->status == 1?'selected':'' }}>Active</option>
+                            <option value="2" {{ $social_links->status == 2?'selected':'' }}>Deactive</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="submit" class="btn btn-rounded btn-info"><span class="btn-icon-left text-info"><i class="fa fa-wrench"></i>
+                    </span>Update</button>
                 </form>
             </div>
         </div>
