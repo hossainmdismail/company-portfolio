@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SociallinkController;
@@ -16,10 +17,15 @@ use Illuminate\Support\Facades\Route;
 //UI Routes
 Auth::routes();
 
-
 //============== Front End ==============//
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::middleware(['guest'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/about',[AboutController::class, 'link'])->name('about');
+});
+
+
+
 
 
 

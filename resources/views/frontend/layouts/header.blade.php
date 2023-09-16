@@ -4,7 +4,7 @@
         <div class="container-fluid align-items-center">
             <div class="mob-nav-toggles d-flex align-items-center justify-content-between">
                 <a href="#" class="logo-brand">
-                    <img src="assets/img/logo_home1.png" alt="" class="lt_item">
+                    <img src="https://swak-html.themescamp.com/home_1/assets/img/logo_home1.png" alt="" class="lt_item">
                     <img src="assets/img/logo_home1_lt.png" alt="" class="dr_item">
                 </a>
                 <div class="logo-text fsz-14 ms-100">

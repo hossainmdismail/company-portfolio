@@ -19,3 +19,4 @@
     <!-- === home scripts === -->
     <script src="{{ asset('asset/Frontend/js/common_js.js') }}"></script>
     <script src="{{ asset('asset/Frontend/js/home_1_scripts.js') }}"></script>
+    <script src="{{ asset('asset/Frontend/js/inner_pages.js') }}"></script>

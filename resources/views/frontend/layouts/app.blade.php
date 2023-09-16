@@ -34,6 +34,10 @@
     <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/jquery.fancybox.css') }}">
     <!-- lity popup  -->
     <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/lity.css') }}">
+    
+    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/inner_pages.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/all.min.css') }}">
     <!-- swiper slider  -->
     <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/swiper8.min.css') }}">
     <!-- cursor  -->
@@ -44,6 +48,7 @@
 
     <!-- home style -->
     <link rel="stylesheet" href="{{ asset('asset/Frontend/css/home_1_style.css') }}">
+    @yield('style')
 </head>
     @yield('style')
 <body>
