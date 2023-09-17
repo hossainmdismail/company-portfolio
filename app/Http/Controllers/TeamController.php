@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Models\Team;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Photo;
 
 class TeamController extends Controller
 {
@@ -14,10 +16,8 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $users = User::all();
         $teams  = Team::all();
         return view('backend.pages.Team.create', [
-            'users' =>  $users,
             'teams'  =>  $teams,
         ]);
         //
@@ -39,10 +39,12 @@ class TeamController extends Controller
         $request->validate([
             '*'=>'required',
         ]);
-
+        
+        Photo::upload($request->profile ,'uploads/team','TEAM');
+        
         Team::insert([
-            'user_id'        =>  1, //User ID Will be added
-            'profile'        =>  $request->profile,
+            'user_id'        =>  Auth::user()->id,
+            'profile'        =>  Photo::$name,
             'name'           =>  $request->name,
             'career_title'   =>  $request->career_title,
             'created_at'     =>  Carbon::now(),

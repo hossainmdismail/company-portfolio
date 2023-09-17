@@ -441,24 +441,24 @@
   }
   .tc-portfolio-style1 .portfolio-card .img .icon {
     position: absolute;
-    right: 30px;
-    bottom: 30px;
+    right: 20px;
+    bottom: 20px;
     z-index: 10;
-    width: 50px;
-    height: 50px;
-    line-height: 58px;
+    width: 40px;
+    height: 40px;
+    line-height: 43px;
     text-align: center;
     border-radius: 50%;
-    font-size: 20px;
-    background-color: #fff;
+    font-size: 13px;
+    background-color: #ffffff9c;
     color: #000;
     -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-  }
+}
   .tc-portfolio-style1 .portfolio-card.lg-card .img {
     height: 840px;
   }

@@ -40,24 +40,22 @@
     <div class="col-12 col-xl-5">
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('team.store') }}" method="POST">
+                <form action="{{ route('team.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="my-3">
-                        <select name="user_id" id="" class="form-control">
-                            <option value="">-- User Id --</option>
-                            @foreach ($users as $user)
-                                <option value="{{ $user->id }}">{{ $user->name }}</option>
-                            @endforeach
-                        </select>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" name="profile" class="custom-file-input @error('thumbnail') is-invalid @enderror">
+                            <label class="custom-file-label">Thumbnail</label>
+                        </div>
                     </div>
                     <div class="my-3">
-                        <input type="text" class="form-control" name="profile" placeholder="Profile">
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Name">
                     </div>
                     <div class="my-3">
-                        <input type="text" class="form-control" name="name" placeholder="Name">
-                    </div>
-                    <div class="my-3">
-                        <input type="text" class="form-control" name="career_title" placeholder="Career Title">
+                        <input type="text" class="form-control @error('career_title') is-invalid @enderror" name="career_title" placeholder="Career Title">
                     </div>
 
                     <button type="submit" class="btn btn-rounded btn-info"><span class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>

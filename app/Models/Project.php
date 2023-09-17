@@ -10,7 +10,6 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable=[
-        'product_id',
         'title',
         'slugs',
         'budget',
@@ -21,4 +20,8 @@ class Project extends Model
         'thumbnail',
         'status',
     ];
+
+    function rel_to_product(){
+        return $this->belongsTo(Product::class, 'product_id');
+    }
 }

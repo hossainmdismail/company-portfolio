@@ -6,6 +6,11 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
+
+    protected $routeMiddleware = [
+        // ...
+        'check_users_exist' => \App\Http\Middleware\CheckIfUsersExist::class,
+    ];
     /**
      * The application's global HTTP middleware stack.
      *

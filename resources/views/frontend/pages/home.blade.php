@@ -1,7 +1,6 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-<main>
     <header class="tc-header-style1 pb-70" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
         <div class="container" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
             <div class="row gx-0 align-items-center">
@@ -33,6 +32,7 @@
             </div>
         </div>
     </header>
+    {{-- Portfolio  --}}
     <section class="tc-portfolio-style1">
         <div class="container">
             <div class="tc-section-title-style1 mb-15">
@@ -40,84 +40,23 @@
             </div>
             <div class="content">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <a href="../inner_pages/page_single_project.html" class="portfolio-card md-card">
-                            <div class="img img-cover">
-                                <img src="assets/img/projects/3.jpeg" alt="">
-                                <img src="assets/img/projects/1.jpg" alt="">
-                                <span class="icon"> <i class="ti-arrow-top-right"></i> </span>
-                            </div>
-                            <div class="info pt-40">
-                                <h3 class="fsz-30 mb-10"> Newz - eMagazine Website </h3>
-                                <p class="fsz-14 color-999"> Branding, Web Design, Photography  </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a href="../inner_pages/page_single_project.html" class="portfolio-card md-card">
-                            <div class="img img-cover ">
-                                <img src="assets/img/projects/1.jpg" alt="">
-                                <img src="assets/img/projects/2.jpg" alt="">
-                                <span class="icon"> <i class="ti-arrow-top-right"></i> </span>
-                            </div>
-                            <div class="info pt-40">
-                                <h3 class="fsz-30 mb-10"> Mails Manage Mobile App </h3>
-                                <p class="fsz-14 color-999"> Mobile App Design  </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-12">
-                        <a href="../inner_pages/page_single_project.html" class="portfolio-card lg-card">
-                            <div class="img img-cover ">
-                                <img src="assets/img/projects/4.jpg" alt="">
-                                <img src="assets/img/projects/3.jpeg" alt="">
-                                <span class="icon"> <i class="ti-arrow-top-right"></i> </span>
-                            </div>
-                            <div class="info pt-40">
-                                <h3 class="fsz-30 mb-10"> The Matter - Course Online Landing Page </h3>
-                                <p class="fsz-14 color-999"> Web Design, Illusatrion, Animation, Marketing  </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="../inner_pages/page_single_project.html" class="portfolio-card sm-card">
-                            <div class="img img-cover ">
-                                <img src="assets/img/projects/5.jpg" alt="">
-                                <img src="assets/img/projects/4.jpg" alt="">
-                                <span class="icon"> <i class="ti-arrow-top-right"></i> </span>
-                            </div>
-                            <div class="info pt-40">
-                                <h3 class="fsz-30 mb-10"> Unimo Rebranding </h3>
-                                <p class="fsz-14 color-999"> Branding,, Photography  </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="../inner_pages/page_single_project.html" class="portfolio-card sm-card">
-                            <div class="img img-cover ">
-                                <img src="assets/img/projects/6.jpg" alt="">
-                                <img src="assets/img/projects/5.jpg" alt="">
-                                <span class="icon"> <i class="ti-arrow-top-right"></i> </span>
-                            </div>
-                            <div class="info pt-40">
-                                <h3 class="fsz-30 mb-10"> Zumar Branding </h3>
-                                <p class="fsz-14 color-999"> Branding  </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="../inner_pages/page_single_project.html" class="portfolio-card sm-card">
-                            <div class="img img-cover ">
-                                <img src="assets/img/projects/5.jpg" alt="">
-                                <img src="assets/img/projects/6.jpg" alt="">
-                                <span class="icon"> <i class="ti-arrow-top-right"></i> </span>
-                            </div>
-                            <div class="info pt-40">
-                                <h3 class="fsz-30 mb-10"> Jamx - Jamstact Conf Site </h3>
-                                <p class="fsz-14 color-999"> Web Design, Illustration, Animation  </p>
-                            </div>
-                        </a>
-                    </div>
+                    @forelse ($projects as $key => $project)
+                        <div class="col-lg-{{ $key == 2?'12':'6' }}">
+                            <a href="../inner_pages/page_single_project.html" class="portfolio-card md-card">
+                                <div class="img img-cover">
+                                    <img src="{{ asset('uploads/project/'.$project->thumbnail)}}" alt="">
+                                    <img src="{{ asset('uploads/project/'.$project->thumbnail)}}" alt="">
+                                    <span class="icon"> <i class="fa-solid fa-arrow-right"></i> </span>
+                                </div>
+                                <div class="info pt-40">
+                                    <h3 class="fsz-30 mb-10">{{ $project->title }}</h3>
+                                    {{-- <p class="fsz-14 color-999"> Branding, Web Design, Photography  </p> --}}
+                                </div>
+                            </a>
+                        </div>
+                    @empty
+                        No data Found
+                    @endforelse
                 </div>
             </div>
             <div class="text-center">
@@ -130,6 +69,7 @@
             </div>
         </div>
     </section>
+    {{-- Service --}}
     <div class="tc-services-style1 main-box-style1 bg-white radius-9 mx-4 my-3">
         <div class="container">
             <div class="tc-section-title-style1 mb-40">
@@ -195,6 +135,7 @@
             </div>
         </div>
     </div>
+    {{-- Partner --}}
     <div class="main-box-style1 bg-white radius-9 mx-4 my-3">
         <!--  start partners  -->
         <section class="tc-partners-style1">
@@ -519,6 +460,7 @@
         </section>
         <!--  end testimonials  -->
     </div>
+    {{-- Our Team --}}
     <div class="tc-team-style1 main-box-style1 bg-dark1 radius-9 mx-4 my-3">
         <div class="container">
             <div class="tc-section-title-style1 mb-60 text-start">
@@ -526,21 +468,21 @@
             </div>
             <div class="content">
                 <div class="row">
-                    <div class="col-lg-2">
-                        <a href="#" class="team-img-card img-cover wow zoomIn" data-wow-delay="0.2s">
-                            <img src="assets/img/users/1.png" alt="">
-                            <div class="info">
-                                <h6> Chris Evan </h6>
-                            </div>
-                        </a>
-                        <a href="#" class="team-img-card img-cover wow zoomIn" data-wow-delay="0.2s">
-                            <img src="assets/img/users/2.png" alt="">
-                            <div class="info">
-                                <h6> John Deo </h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
+                    @forelse ($teams as $key => $team)
+                        <div class="col-lg-{{ $key == 1?'2':'2' }} {{ $key == 4?'ord-last':'' }}">
+                            <a href="#" class="team-img-card img-cover  wow zoomIn" data-wow-delay="0.2s">
+                                <img src="{{ asset('uploads/team/'.$team->profile) }}" alt="">
+                                <div class="info">
+                                    <h6> {{$team->name}} </h6>
+                                </div>
+                            </a>
+
+                        </div>
+                    @empty
+                        
+                    @endforelse
+                    
+                    {{-- <div class="col-lg-4">
                         <a href="#" class="team-img-card img-cover lg-card wow zoomIn">
                             <img src="assets/img/users/3.png" alt="">
                             <div class="info">
@@ -585,11 +527,12 @@
                                 <h6> John Deo </h6>
                             </div>
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
     </div>
+    {{-- Slider --}}
     <div class="slider-content float_box_container overflow-hidden pt-100 pb-100">
         <div class="tc-awards-slider1 swiper-initialized swiper-horizontal swiper-pointer-events">
             <div class="swiper-wrapper" id="swiper-wrapper-fe55dd622d2ce487" aria-live="off" style="transition-duration: 10000ms; transform: translate3d(-9266.39px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 5" style="margin-right: 80px;">
@@ -664,5 +607,4 @@
             <p> <i class="ti-arrow-top-right fsz-70"></i> </p>
         </div>
     </div>
-</main>
 @endsection

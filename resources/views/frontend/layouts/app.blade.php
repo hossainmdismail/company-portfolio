@@ -21,7 +21,7 @@
 
     <!-- font family -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/70b22ffbec.js" crossorigin="anonymous"></script>
     <!-- line-awesome icons  -->
     <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/line-awesome.css') }}">
     <!-- themify icons  -->
@@ -56,9 +56,7 @@
         <!--Contents-->
         <main>
         @include('frontend.layouts.header')
-        <div class="container">
-            @yield('content')
-        </div>
+        @yield('content')
         </main>
         @include('frontend.layouts.footer')
     </div>
