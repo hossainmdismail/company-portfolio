@@ -54,7 +54,7 @@
   .tc-inner-header-style1 {
     position: relative;
     z-index: 10;
-    margin-top: -50px;
+    margin-top: 0;
     border-radius: 50px 50px 0 0;
     padding: 200px 0 150px;
     color: #000;

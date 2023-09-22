@@ -37,11 +37,11 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            '*'=>'required',
+            '*' => 'required',
         ]);
-        
-        Photo::upload($request->profile ,'uploads/team','TEAM');
-        
+
+        Photo::upload($request->profile, 'uploads/team', 'TEAM',);
+
         Team::insert([
             'user_id'        =>  Auth::user()->id,
             'profile'        =>  Photo::$name,
@@ -67,8 +67,8 @@ class TeamController extends Controller
     {
         $users = User::all();
         return view('backend.pages.Team.edit', [
-            'team'  =>$team,
-            'users' =>$users,
+            'team'  => $team,
+            'users' => $users,
         ]);
     }
 

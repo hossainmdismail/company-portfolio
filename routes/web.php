@@ -8,6 +8,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\WebinfoController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FronProjectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
@@ -25,7 +26,7 @@ Route::middleware(['check_users_exist'])->group(function () {
 //========= BackEnd Controllers =========//
 
 Route::group(['middleware' => 'auth'], function () {
-    
+
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::resources([
         'user'          => UserController::class,
@@ -37,7 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
         'webinfo'       => WebinfoController::class,
         'product'       => ProductController::class,
         'project'       => ProjectController::class,
-    ]); 
+    ]);
 });
 
 
@@ -46,7 +47,5 @@ Route::group(['middleware' => 'auth'], function () {
 //============== Front End ==============//
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/about',[AboutController::class, 'link'])->name('about');
-
-
-
+Route::get('/about', [AboutController::class, 'link'])->name('about');
+Route::get('/portfolio/{slugs}', [FronProjectController::class, 'link'])->name('portfolio');

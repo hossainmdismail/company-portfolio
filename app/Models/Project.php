@@ -18,6 +18,7 @@ class Project extends Model
         'seo_description',
         'seo_tags',
         'thumbnail',
+        'content',
         'status',
     ];
 

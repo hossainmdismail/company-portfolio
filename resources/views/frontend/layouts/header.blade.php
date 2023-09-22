@@ -3,12 +3,12 @@
     <nav class="navbar navbar-expand-lg navbar-light style1">
         <div class="container-fluid align-items-center">
             <div class="mob-nav-toggles d-flex align-items-center justify-content-between">
-                <a href="#" class="logo-brand">
-                    <img src="https://swak-html.themescamp.com/home_1/assets/img/logo_home1.png" alt="" class="lt_item">
-                    <img src="assets/img/logo_home1_lt.png" alt="" class="dr_item">
+                <a href="{{ route('home') }}" class="logo-brand">
+                    <img src="{{ asset('default/default.png') }}" alt="" class="lt_item" style="max-width: 60%">
+                    <img src="" alt="" class="dr_item">
                 </a>
-                <div class="logo-text fsz-14 ms-100">
-                    Best WordPress Theme for <br> Creative Portfolio
+                <div class="logo-text color-999 fsz-1">
+                    Build - Create - Prolong
                 </div>
                 <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -20,17 +20,11 @@
                 <div class="button_su">
                     <span class="su_button_circle desplode-circle bg-dark"></span>
                     <a href="#" class="butn text-capitalize button_su_inner bg-black py-3 px-4">
-                        <span class="button_text_container fsz-14 text-white"> Start Project <i class="ti-arrow-top-right ms-1"></i></span>
-                    </a>
-                </div>
-                <div class="button_su ms-3">
-                    <span class="su_button_circle desplode-circle bg-black"></span>
-                    <a href="#" class="butn text-capitalize button_su_inner py-3 hover-white px-4">
-                        <span class="button_text_container fsz-14"> <i class="ti-world me-1"></i> Eng </span>
+                        <span class="button_text_container fsz-14 text-white"> Start Project</span>
                     </a>
                 </div>
                 <a class="canvas-btn-style1 ms-3 side_menu_btn">
-                    <i class="las la-grip-lines"></i>   
+                    <i class="fa-solid fa-bars-staggered"></i>
                 </a>
             </div>
         </div>
@@ -43,19 +37,19 @@
     <div class="content">
         <div class="logo">
             <a href="#" class="w-100">
-                <img src="assets/img/logo_home1.png" alt="" class="lt_item">
-                <img src="assets/img/logo_home1_lt.png" alt="" class="dr_item">
+                <img src="" alt="" class="lt_item">
+                <img src="" alt="" class="dr_item">
             </a>
         </div>
         <div class="pages_links">
             <ul>
                 <li><a href="#0" class="active">Home</a></li>
-                <li><a href="../inner_pages/page_about_us.html">about</a></li>
-                <li><a href="../inner_pages/page_services.html">services</a></li>
-                <li><a href="../inner_pages/page_portfolio_grid.html">portfolio</a></li>
-                <li><a href="../inner_pages/page_blog_list.html">blog</a></li>
-                <li><a href="../inner_pages/page_contact.html">contact</a></li>
-                <li><a href="../inner_pages/page_product_grid.html">shop</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">portfolio</a></li>
+                <li><a href="#">blog</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="#">shop</a></li>
             </ul>
         </div>
         <div class="side_foot">

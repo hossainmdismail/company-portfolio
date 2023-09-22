@@ -1,32 +1,41 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <header class="tc-header-style1 pb-70" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-        <div class="container" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+    <header class="tc-header-style1 pb-70"
+        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+        <div class="container"
+            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
             <div class="row gx-0 align-items-center">
                 <div class="col-lg-10">
-                    <h1 class=""> Design. Development. <span class="fst-italic color-999 fw-500 fm-playfair"> Mastership </span> </h1>
-                    <p class="fsz-22 mt-60"> We design and develop exceptional digital products and services, <br> eCommerce, and brand communication solutions. </p>
+                    <h1 class=""> Synex Digital <br> <span class="fst-italic color-999 fw-500 fm-playfair"> Mastership
+                        </span> </h1>
+                    <p class="fsz-22 mt-60">Elevate your digital presence with Synex Digital – your partner <br>In web
+                        development, app creation, SEO, and more! </p>
                     <div class="tags mt-90">
-                        <a href="#" class="butn main-hover-black fsz-24 me-3 mt-4 mt-lg-0"> <span> <i class="la la-crown me-2"></i> Branding </span> </a>
-                        <a href="#" class="butn main-hover-black fsz-24 me-3 mt-4 mt-lg-0"> <span> <i class="la la-bezier-curve me-2"></i> Interaction </span> </a>
-                        <a href="#" class="butn main-hover-black fsz-24 me-3 mt-4 mt-lg-0"> <span> <i class="la la-bullseye me-2"></i> Marketing </span> </a>
+                        <a href="#" class="butn main-hover-black fsz-24 me-3 mt-4 mt-lg-0"> <span> Schedule a Call
+                            </span> </a>
+                        {{-- <a href="#" class="butn main-hover-black fsz-24 me-3 mt-4 mt-lg-0"> <span> <i class="la la-bezier-curve me-2"></i> Interaction </span> </a>
+                        <a href="#" class="butn main-hover-black fsz-24 me-3 mt-4 mt-lg-0"> <span> <i class="la la-bullseye me-2"></i> Marketing </span> </a> --}}
                     </div>
                 </div>
                 <div class="col-lg-2">
-                    <div class="rotate-box" data-speed="1" data-lag="0.7" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); will-change: transform;">
-                        <a href="#" class="rotate-circle fsz-30 rotate-text d-inline-block text-uppercase">
+                    <div class="rotate-box" data-speed="1" data-lag="0.7"
+                        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); will-change: transform;">
+                        <a href="{{ route('about') }}"
+                            class="rotate-circle fsz-30 rotate-text d-inline-block text-uppercase">
                             <svg class="textcircle" viewBox="0 0 500 500">
                                 <defs>
                                     <path id="textcircle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z">
                                     </path>
                                 </defs>
                                 <text>
-                                    <textPath xlink:href="#textcircle" textLength="900"> . read more about us . Swak agency </textPath>
+                                    <textPath xlink:href="#textcircle" textLength="900"> . read more about us . Synex
+                                        Digital</textPath>
                                 </text>
                             </svg>
                         </a>
-                        <i class="ti-arrow-top-right icon fsz-45"></i>
+                        <img src="{{ asset('default/default.png') }}" class="icon fsz-45" width="40"
+                            alt="Synex Digital">
                     </div>
                 </div>
             </div>
@@ -40,12 +49,12 @@
             </div>
             <div class="content">
                 <div class="row">
-                    @forelse ($projects as $key => $project)
-                        <div class="col-lg-{{ $key == 2?'12':'6' }}">
-                            <a href="../inner_pages/page_single_project.html" class="portfolio-card md-card">
+                    @forelse ($projects->take(4) as $key => $project)
+                        <div class="col-lg-6">
+                            <a href="{{ route('portfolio', $project->slugs) }}" class="portfolio-card md-card">
                                 <div class="img img-cover">
-                                    <img src="{{ asset('uploads/project/'.$project->thumbnail)}}" alt="">
-                                    <img src="{{ asset('uploads/project/'.$project->thumbnail)}}" alt="">
+                                    <img src="{{ asset('uploads/project/' . $project->thumbnail) }}" alt="">
+                                    <img src="{{ asset('uploads/project/' . $project->thumbnail) }}" alt="">
                                     <span class="icon"> <i class="fa-solid fa-arrow-right"></i> </span>
                                 </div>
                                 <div class="info pt-40">
@@ -61,7 +70,8 @@
             </div>
             <div class="text-center">
                 <div class="button_su mt-90">
-                    <span class="su_button_circle bg-black desplode-circle" style="left: -31.0526px; top: -12.7551px;"></span>
+                    <span class="su_button_circle bg-black desplode-circle"
+                        style="left: -31.0526px; top: -12.7551px;"></span>
                     <a href="#" class="butn text-capitalize button_su_inner hover-white">
                         <span class="button_text_container"> See more work <i class="ti-arrow-top-right ms-2"></i> </span>
                     </a>
@@ -78,13 +88,14 @@
             <div class="content">
                 <div class="row justify-content-between">
                     <div class="col-lg-3">
-                        <a href="../inner_pages/page_services.html" class="service-card wow fadeInUp">
+                        <a href="" class="service-card wow fadeInUp">
                             <div class="icon mb-50">
-                                <img src="assets/img/services/branding.svg" alt="">
+                                <img src="" alt="">
                             </div>
                             <div class="info">
                                 <h5 class="fsz-20 mb-30 fw-bolder"> Brand Identity </h5>
-                                <p class="fsz-14 color-999 mb-20"> We bringing the history of your brand to the forefront gives an emotional dimension to your visual identity, </p>
+                                <p class="fsz-14 color-999 mb-20"> We bringing the history of your brand to the forefront
+                                    gives an emotional dimension to your visual identity, </p>
                                 <ul>
                                     <li> Brand Strategy </li>
                                     <li> Brand Consulting </li>
@@ -96,13 +107,14 @@
                         </a>
                     </div>
                     <div class="col-lg-3">
-                        <a href="../inner_pages/page_services.html" class="service-card wow fadeInUp" data-wow-delay="0.1s">
+                        <a href="" class="service-card wow fadeInUp" data-wow-delay="0.1s">
                             <div class="icon mb-50">
-                                <img src="assets/img/services/interaction.svg" alt="">
+                                <img src="" alt="">
                             </div>
                             <div class="info">
                                 <h5 class="fsz-20 mb-30 fw-bolder"> Interaction </h5>
-                                <p class="fsz-14 color-999 mb-20"> We design and development digital products to help increase highest conversion rate for your business </p>
+                                <p class="fsz-14 color-999 mb-20"> We design and development digital products to help
+                                    increase highest conversion rate for your business </p>
                                 <ul>
                                     <li> Website &amp; Mobile App Design </li>
                                     <li> UX &amp; Product Design </li>
@@ -115,13 +127,14 @@
                         </a>
                     </div>
                     <div class="col-lg-3">
-                        <a href="../inner_pages/page_services.html" class="service-card wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="" class="service-card wow fadeInUp" data-wow-delay="0.2s">
                             <div class="icon mb-50">
-                                <img src="assets/img/services/marketing.svg" alt="">
+                                <img src="" alt="">
                             </div>
                             <div class="info">
                                 <h5 class="fsz-20 mb-30 fw-bolder"> SEO &amp; Marketing </h5>
-                                <p class="fsz-14 color-999 mb-20"> Help increase the traffic into your business via marketing online &amp; offline. Improve the rank of your business on the world </p>
+                                <p class="fsz-14 color-999 mb-20"> Help increase the traffic into your business via
+                                    marketing online &amp; offline. Improve the rank of your business on the world </p>
                                 <ul>
                                     <li> Marketing Strategy &amp; Consulting </li>
                                     <li> SEO / PPC </li>
@@ -136,7 +149,7 @@
         </div>
     </div>
     {{-- Partner --}}
-    <div class="main-box-style1 bg-white radius-9 mx-4 my-3">
+    {{-- <div class="main-box-style1 bg-white radius-9 mx-4 my-3">
         <!--  start partners  -->
         <section class="tc-partners-style1">
             <div class="container">
@@ -148,8 +161,8 @@
                         <div class="col-lg-3">
                             <a href="#" class="partner-card wow fadeInUp">
                                 <div class="logo">
-                                    <img src="assets/img/patrners/1.png" alt="" class="main-img lt_item">
-                                    <img src="assets/img/patrners/1_lt.png" alt="" class="main-img dr_item">
+                                    <img src="" alt="" class="main-img lt_item">
+                                    <img src="" alt="" class="main-img dr_item">
                                 </div>
                                 <div class="foot-inf">
                                     <p> Okgo </p>
@@ -163,8 +176,8 @@
                         <div class="col-lg-3">
                             <a href="#" class="partner-card wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="logo">
-                                    <img src="assets/img/patrners/2.png" alt="" class="main-img lt_item">
-                                    <img src="assets/img/patrners/2_lt.png" alt="" class="main-img dr_item">
+                                    <img src="" alt="" class="main-img lt_item">
+                                    <img src="" alt="" class="main-img dr_item">
                                 </div>
                                 <div class="foot-inf">
                                     <p> noxes </p>
@@ -178,8 +191,8 @@
                         <div class="col-lg-3">
                             <a href="#" class="partner-card wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="logo">
-                                    <img src="assets/img/patrners/3.png" alt="" class="main-img lt_item">
-                                    <img src="assets/img/patrners/3_lt.png" alt="" class="main-img dr_item">
+                                    <img src="" alt="" class="main-img lt_item">
+                                    <img src="" alt="" class="main-img dr_item">
                                 </div>
                                 <div class="foot-inf">
                                     <p> Jamx </p>
@@ -193,8 +206,8 @@
                         <div class="col-lg-3">
                             <a href="#" class="partner-card wow fadeInUp" data-wow-delay="0.3s">
                                 <div class="logo">
-                                    <img src="assets/img/patrners/4.png" alt="" class="main-img lt_item">
-                                    <img src="assets/img/patrners/4_lt.png" alt="" class="main-img dr_item">
+                                    <img src="" alt="" class="main-img lt_item">
+                                    <img src="" alt="" class="main-img dr_item">
                                 </div>
                                 <div class="foot-inf">
                                     <p> Stripe </p>
@@ -208,8 +221,8 @@
                         <div class="col-lg-3">
                             <a href="#" class="partner-card wow fadeInUp">
                                 <div class="logo">
-                                    <img src="assets/img/patrners/5.png" alt="" class="main-img lt_item">
-                                    <img src="assets/img/patrners/5_lt.png" alt="" class="main-img dr_item">
+                                    <img src="" alt="" class="main-img lt_item">
+                                    <img src="" alt="" class="main-img dr_item">
                                 </div>
                                 <div class="foot-inf">
                                     <p> OAK </p>
@@ -223,8 +236,8 @@
                         <div class="col-lg-3">
                             <a href="#" class="partner-card wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="logo">
-                                    <img src="assets/img/patrners/6.png" alt="" class="main-img lt_item">
-                                    <img src="assets/img/patrners/6_lt.png" alt="" class="main-img dr_item">
+                                    <img src="" alt="" class="main-img lt_item">
+                                    <img src="" alt="" class="main-img dr_item">
                                 </div>
                                 <div class="foot-inf">
                                     <p> Tek React JS </p>
@@ -238,8 +251,8 @@
                         <div class="col-lg-3">
                             <a href="#" class="partner-card wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="logo">
-                                    <img src="assets/img/patrners/7.png" alt="" class="main-img lt_item">
-                                    <img src="assets/img/patrners/7_lt.png" alt="" class="main-img dr_item">
+                                    <img src="" alt="" class="main-img lt_item">
+                                    <img src="" alt="" class="main-img dr_item">
                                 </div>
                                 <div class="foot-inf">
                                     <p> Javast </p>
@@ -253,8 +266,8 @@
                         <div class="col-lg-3">
                             <a href="#" class="partner-card wow fadeInUp" data-wow-delay="0.3s">
                                 <div class="logo">
-                                    <img src="assets/img/patrners/8.png" alt="" class="main-img lt_item">
-                                    <img src="assets/img/patrners/8_lt.png" alt="" class="main-img dr_item">
+                                    <img src="" alt="" class="main-img lt_item">
+                                    <img src="" alt="" class="main-img dr_item">
                                 </div>
                                 <div class="foot-inf">
                                     <p> Snyk </p>
@@ -271,12 +284,12 @@
                             <h2> <span class="counter"> 10 </span> + </h2>
                             <p> Years of <br> Experience </p>
                         </div>
-    
+
                         <div class="numb-card">
                             <h2> <span class="counter"> 60 </span> </h2>
                             <p> awards winning <br> accquired </p>
                         </div>
-    
+
                         <div class="numb-card">
                             <h2> <span class="counter"> 45 </span> + </h2>
                             <p> multidisciplinary <br> designers and managers </p>
@@ -286,7 +299,7 @@
             </div>
         </section>
         <!--  end partners  -->
-    
+
         <!--  start testimonials  -->
         <section class="tc-testimonials-style1">
             <div class="container">
@@ -304,7 +317,7 @@
                                         <div class="col-lg-8">
                                             <div class="client-card d-flex align-items-center">
                                                 <div class="img icon-45 rounded-circle overflow-hidden img-cover me-3">
-                                                    <img src="assets/img/users/4.png" alt="">
+                                                    <img src="" alt="">
                                                 </div>
                                                 <div class="inf">
                                                     <h6 class="fsz-16 fw-bold mb-1"> Bradley Gordon </h6>
@@ -317,7 +330,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" role="group" aria-label="2 / 2" style="width: 635px; margin-right: 30px;" data-swiper-slide-index="1">
                             <div class="testi-card">
@@ -329,7 +342,7 @@
                                         <div class="col-lg-8">
                                             <div class="client-card d-flex align-items-center">
                                                 <div class="img icon-45 rounded-circle overflow-hidden img-cover me-3">
-                                                    <img src="assets/img/users/2.png" alt="">
+                                                    <img src="" alt="">
                                                 </div>
                                                 <div class="inf">
                                                     <h6 class="fsz-16 fw-bold mb-1"> Bradley Gordon </h6>
@@ -342,7 +355,7 @@
                                         </div> -->
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="swiper-slide swiper-slide-prev swiper-slide-duplicate-next" role="group" aria-label="1 / 2" style="width: 635px; margin-right: 30px;" data-swiper-slide-index="0">
@@ -355,7 +368,7 @@
                                         <div class="col-lg-8">
                                             <div class="client-card d-flex align-items-center">
                                                 <div class="img icon-45 rounded-circle overflow-hidden img-cover me-3">
-                                                    <img src="assets/img/users/4.png" alt="">
+                                                    <img src="" alt="">
                                                 </div>
                                                 <div class="inf">
                                                     <h6 class="fsz-16 fw-bold mb-1"> Bradley Gordon </h6>
@@ -368,7 +381,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="swiper-slide swiper-slide-active" role="group" aria-label="2 / 2" style="width: 635px; margin-right: 30px;" data-swiper-slide-index="1">
@@ -381,7 +394,7 @@
                                         <div class="col-lg-8">
                                             <div class="client-card d-flex align-items-center">
                                                 <div class="img icon-45 rounded-circle overflow-hidden img-cover me-3">
-                                                    <img src="assets/img/users/2.png" alt="">
+                                                    <img src="" alt="">
                                                 </div>
                                                 <div class="inf">
                                                     <h6 class="fsz-16 fw-bold mb-1"> Bradley Gordon </h6>
@@ -394,7 +407,7 @@
                                         </div> -->
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     <div class="swiper-slide swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev" role="group" aria-label="1 / 2" style="width: 635px; margin-right: 30px;" data-swiper-slide-index="0">
@@ -407,7 +420,7 @@
                                         <div class="col-lg-8">
                                             <div class="client-card d-flex align-items-center">
                                                 <div class="img icon-45 rounded-circle overflow-hidden img-cover me-3">
-                                                    <img src="assets/img/users/4.png" alt="">
+                                                    <img src="" alt="">
                                                 </div>
                                                 <div class="inf">
                                                     <h6 class="fsz-16 fw-bold mb-1"> Bradley Gordon </h6>
@@ -420,7 +433,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" role="group" aria-label="2 / 2" style="width: 635px; margin-right: 30px;" data-swiper-slide-index="1">
                             <div class="testi-card">
@@ -432,7 +445,7 @@
                                         <div class="col-lg-8">
                                             <div class="client-card d-flex align-items-center">
                                                 <div class="img icon-45 rounded-circle overflow-hidden img-cover me-3">
-                                                    <img src="assets/img/users/2.png" alt="">
+                                                    <img src="" alt="">
                                                 </div>
                                                 <div class="inf">
                                                     <h6 class="fsz-16 fw-bold mb-1"> Bradley Gordon </h6>
@@ -445,7 +458,7 @@
                                         </div> -->
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div></div>
                     <div class="text-center">
@@ -459,7 +472,7 @@
             </div>
         </section>
         <!--  end testimonials  -->
-    </div>
+    </div> --}}
     {{-- Our Team --}}
     <div class="tc-team-style1 main-box-style1 bg-dark1 radius-9 mx-4 my-3">
         <div class="container">
@@ -468,20 +481,20 @@
             </div>
             <div class="content">
                 <div class="row">
-                    @forelse ($teams as $key => $team)
-                        <div class="col-lg-{{ $key == 1?'2':'2' }} {{ $key == 4?'ord-last':'' }}">
-                            <a href="#" class="team-img-card img-cover  wow zoomIn" data-wow-delay="0.2s">
-                                <img src="{{ asset('uploads/team/'.$team->profile) }}" alt="">
+                    @forelse ($teams->take(5) as $key => $team)
+                        <div class="col-lg-{{ $key == 1 ? '4' : '2' }} {{ $key == 4 ? 'ord-last' : '' }}">
+                            <a href="#" class="team-img-card img-cover {{ $key == 1 ? 'lg-card' : '' }} wow zoomIn"
+                                data-wow-delay="0.2s">
+                                <img src="{{ asset('uploads/team/' . $team->profile) }}" alt="">
                                 <div class="info">
-                                    <h6> {{$team->name}} </h6>
+                                    <h6> {{ $team->name }} </h6>
                                 </div>
                             </a>
 
                         </div>
                     @empty
-                        
                     @endforelse
-                    
+
                     {{-- <div class="col-lg-4">
                         <a href="#" class="team-img-card img-cover lg-card wow zoomIn">
                             <img src="assets/img/users/3.png" alt="">
@@ -535,76 +548,100 @@
     {{-- Slider --}}
     <div class="slider-content float_box_container overflow-hidden pt-100 pb-100">
         <div class="tc-awards-slider1 swiper-initialized swiper-horizontal swiper-pointer-events">
-            <div class="swiper-wrapper" id="swiper-wrapper-fe55dd622d2ce487" aria-live="off" style="transition-duration: 10000ms; transform: translate3d(-9266.39px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group" aria-label="2 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style="margin-right: 80px;">
+            <div class="swiper-wrapper" id="swiper-wrapper-fe55dd622d2ce487" aria-live="off"
+                style="transition-duration: 10000ms; transform: translate3d(-9266.39px, 0px, 0px);">
+                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group"
+                    aria-label="1 / 5" style="margin-right: 80px;">
                     <div class="service-card">
                         <h2> <a href="#">Get Free Quote</a> </h2>
                     </div>
                 </div>
-                <div class="swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="0" role="group" aria-label="1 / 5" style="margin-right: 80px;">
+                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group"
+                    aria-label="2 / 5" style="margin-right: 80px;">
                     <div class="service-card">
                         <h2> <a href="#">Get Free Quote</a> </h2>
                     </div>
                 </div>
-                <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="1" role="group" aria-label="2 / 5" style="margin-right: 80px;">
+                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group"
+                    aria-label="3 / 5" style="margin-right: 80px;">
                     <div class="service-card">
                         <h2> <a href="#">Get Free Quote</a> </h2>
                     </div>
                 </div>
-                <div class="swiper-slide" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style="margin-right: 80px;">
+                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group"
+                    aria-label="4 / 5" style="margin-right: 80px;">
                     <div class="service-card">
                         <h2> <a href="#">Get Free Quote</a> </h2>
                     </div>
                 </div>
-                <div class="swiper-slide" data-swiper-slide-index="3" role="group" aria-label="4 / 5" style="margin-right: 80px;">
+                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="4"
+                    role="group" aria-label="5 / 5" style="margin-right: 80px;">
                     <div class="service-card">
                         <h2> <a href="#">Get Free Quote</a> </h2>
                     </div>
                 </div>
-                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style="margin-right: 80px;">
+                <div class="swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="0" role="group"
+                    aria-label="1 / 5" style="margin-right: 80px;">
                     <div class="service-card">
                         <h2> <a href="#">Get Free Quote</a> </h2>
                     </div>
                 </div>
-            <div class="swiper-slide swiper-slide-duplicate swiper-slide-active" data-swiper-slide-index="0" role="group" aria-label="1 / 5" style="margin-right: 80px;">
+                <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="1" role="group"
+                    aria-label="2 / 5" style="margin-right: 80px;">
                     <div class="service-card">
                         <h2> <a href="#">Get Free Quote</a> </h2>
                     </div>
-                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="1" role="group" aria-label="2 / 5" style="margin-right: 80px;">
+                </div>
+                <div class="swiper-slide" data-swiper-slide-index="2" role="group" aria-label="3 / 5"
+                    style="margin-right: 80px;">
                     <div class="service-card">
                         <h2> <a href="#">Get Free Quote</a> </h2>
                     </div>
-                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style="margin-right: 80px;">
+                </div>
+                <div class="swiper-slide" data-swiper-slide-index="3" role="group" aria-label="4 / 5"
+                    style="margin-right: 80px;">
                     <div class="service-card">
                         <h2> <a href="#">Get Free Quote</a> </h2>
                     </div>
-                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 5" style="margin-right: 80px;">
+                </div>
+                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="4" role="group"
+                    aria-label="5 / 5" style="margin-right: 80px;">
                     <div class="service-card">
                         <h2> <a href="#">Get Free Quote</a> </h2>
                     </div>
-                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style="margin-right: 80px;">
+                </div>
+                <div class="swiper-slide swiper-slide-duplicate swiper-slide-active" data-swiper-slide-index="0"
+                    role="group" aria-label="1 / 5" style="margin-right: 80px;">
                     <div class="service-card">
                         <h2> <a href="#">Get Free Quote</a> </h2>
                     </div>
-                </div></div>
-        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-        <div class="float_box" style="left: 1436px; top: 11.4408px;">
-            <p> <i class="ti-arrow-top-right fsz-70"></i> </p>
+                </div>
+                <div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="1"
+                    role="group" aria-label="2 / 5" style="margin-right: 80px;">
+                    <div class="service-card">
+                        <h2> <a href="#">Get Free Quote</a> </h2>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group"
+                    aria-label="3 / 5" style="margin-right: 80px;">
+                    <div class="service-card">
+                        <h2> <a href="#">Get Free Quote</a> </h2>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group"
+                    aria-label="4 / 5" style="margin-right: 80px;">
+                    <div class="service-card">
+                        <h2> <a href="#">Get Free Quote</a> </h2>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="4"
+                    role="group" aria-label="5 / 5" style="margin-right: 80px;">
+                    <div class="service-card">
+                        <h2> <a href="#">Get Free Quote</a> </h2>
+                    </div>
+                </div>
+            </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
         </div>
     </div>
 @endsection

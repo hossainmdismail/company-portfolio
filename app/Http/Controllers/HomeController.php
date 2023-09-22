@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $project = Project::select('id','product_id','title','thumbnail')->where('status',1)->get();
+        $project = Project::select('id','slugs','product_id','title','thumbnail')->where('status',1)->get();
         $team    = Team::where('status',1)->get();
         $social  = Social_links::where('status',1)->get();
 
