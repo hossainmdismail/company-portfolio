@@ -73,7 +73,7 @@
                     <span class="su_button_circle bg-black desplode-circle"
                         style="left: -31.0526px; top: -12.7551px;"></span>
                     <a href="#" class="butn text-capitalize button_su_inner hover-white">
-                        <span class="button_text_container"> See more work <i class="ti-arrow-top-right ms-2"></i> </span>
+                        <span class="button_text_container"> See more work <i class="fa-solid fa-arrow-right ms-2"></i> </span>
                     </a>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                                     <li> Photography </li>
                                     <li> 3D Design &amp; Illustration </li>
                                 </ul>
-                                <span class="arrow"> <i class="ti-arrow-top-right"></i> </span>
+                                <span class="arrow"> <i class="fa-solid fa-arrow-right"></i> </span>
                             </div>
                         </a>
                     </div>
@@ -122,7 +122,7 @@
                                     <li> CRM &amp; System Management </li>
                                     <li> TVC &amp; Motion Design </li>
                                 </ul>
-                                <span class="arrow"> <i class="ti-arrow-top-right"></i> </span>
+                                <span class="arrow"> <i class="fa-solid fa-arrow-right"></i> </span>
                             </div>
                         </a>
                     </div>
@@ -140,7 +140,7 @@
                                     <li> SEO / PPC </li>
                                     <li> Social Media Marketing </li>
                                 </ul>
-                                <span class="arrow"> <i class="ti-arrow-top-right"></i> </span>
+                                <span class="arrow"> <i class="fa-solid fa-arrow-right"></i> </span>
                             </div>
                         </a>
                     </div>

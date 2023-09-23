@@ -45,19 +45,19 @@
                 <form action="{{ route('service.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="my-3">
-                        <select name="user_id" id="" class="form-control">
-                            <option value="">-- User Id --</option>
-                            @foreach ($users as $user)
-                                <option value="{{ $user->id }}">{{ $user->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="my-3">
                         <input type="text" class="form-control" name="title" placeholder="Title">
                     </div>
-                    <div class="my-3">
-                        <input type="file" class="form-control" name="thumbnail" placeholder="Thumbnail">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" name="thumbnail" class="custom-file-input form-control">
+                            <label class="custom-file-label">Thumbnail</label>
+                        </div>
                     </div>
+                    
                     <div class="my-3">
                         <textarea name="description" class="form-control" id="" cols="30" rows="10" placeholder="Description"></textarea>
                     </div>

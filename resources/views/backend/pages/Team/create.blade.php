@@ -17,7 +17,7 @@
                     @foreach ($teams as $team)
                     <tr>
                         <td>{{ $team->user_id }}</td>
-                        <td>{{ $team->profile }}</td>
+                        <td><img width = "50" src="{{ asset('uploads/team') }}/{{ $team->profile }}"></td>
                         <td>{{ $team->name }}</td>
                         <td>{{ $team->career_title }}</td>
                         <td class="d-flex align-items-center"><i class="fa fa-circle text-{{ $team->status != 2 ? 'success':'warning' }} mr-1"></i>{{ $team->status != 2 ? 'Active':'Deactive' }}</td>
