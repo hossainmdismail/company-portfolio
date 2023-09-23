@@ -49,7 +49,7 @@ class ServiceController extends Controller
         Image::make($team_image)->save(public_path('uploads/service/'.$file_name));
 
         Service::insert([
-            'user_id'        =>  1, //User ID Will be added
+            'user_id'        =>  Auth::user()->id,
             'thumbnail'      =>  $file_name,
             // 'thumbnail'          =>  Photo::$name,
             'title'          =>  $request->title,
@@ -86,7 +86,7 @@ class ServiceController extends Controller
     {
         if($request->thumbnail == ''){
             Service::find($id)->update([
-                'user_id'           =>  1, //User ID Will be added
+                'user_id'           =>  Auth::user()->id,
                 'title'             =>  $request->title,
                 'description'       =>  $request->description,
                 'status'            =>  $request->status,
@@ -104,7 +104,7 @@ class ServiceController extends Controller
             Image::make($thumbnail)->save(public_path('uploads/service/'.$file_name));
 
             Service::find($id)->update([
-                'user_id'           =>  1, //User ID Will be added
+                'user_id'           =>  Auth::user()->id,
                 'thumbnail'         =>  $file_name,
                 'title'             =>  $request->title,
                 'description'       =>  $request->description,
