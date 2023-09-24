@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('title');
             $table->string('field');
-            $table->string('comment');
+            $table->string('comment')->nullable();
             $table->integer('status')->default(1);
             $table->timestamps();
         });

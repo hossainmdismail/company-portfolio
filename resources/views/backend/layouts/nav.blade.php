@@ -30,7 +30,12 @@
                     <span class="nav-text">Web Info</span>
                 </a>
             </li>
-           
+            <li><a class="has-arrow ai-icon" href="{{ route('testimonial.index') }}">
+                    <i class="fa fa-globe"></i>
+                    <span class="nav-text">Testimonial</span>
+                </a>
+            </li>
+
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-notepad"></i>
                     <span class="nav-text">Blogs</span>
@@ -59,7 +64,7 @@
                 </ul>
             </li>
         </ul>
-        
+
         <div class="copyright">
             <p><strong>Synex Digital's Admin Dashboard</strong> © 2023 All Rights Reserved</p>
             <p>Made by Synex Digital team</p>
