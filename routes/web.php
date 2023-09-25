@@ -12,7 +12,11 @@ use App\Http\Controllers\FronProjectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\TestimonialController;
+=======
+use App\Http\Controllers\TalkController;
+>>>>>>> Stashed changes
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -51,3 +55,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'link'])->name('about');
 Route::get('/portfolio/{slugs}', [FronProjectController::class, 'link'])->name('portfolio');
+Route::get('/grid/portfolio', [FronProjectController::class, 'portfolio'])->name('portfolio.grid');
+
+
+Route::get('/talk', [TalkController::class, 'index'])->name('talk');

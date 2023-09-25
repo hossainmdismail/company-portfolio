@@ -1,5 +1,9 @@
 @extends('frontend.layouts.app')
 
+@section('style')
+    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/service.css') }}">
+@endsection
+
 @section('content')
     <header class="tc-header-style1 pb-70"
         style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
@@ -73,7 +77,8 @@
                     <span class="su_button_circle bg-black desplode-circle"
                         style="left: -31.0526px; top: -12.7551px;"></span>
                     <a href="#" class="butn text-capitalize button_su_inner hover-white">
-                        <span class="button_text_container"> See more work <i class="fa-solid fa-arrow-right ms-2"></i> </span>
+                        <span class="button_text_container"> See more work <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </span>
                     </a>
                 </div>
             </div>
@@ -81,6 +86,181 @@
     </section>
     {{-- Service --}}
     <div class="tc-services-style1 main-box-style1 bg-white radius-9 mx-4 my-3">
+        <div class="container">
+            <div class="tc-section-title-style1 mb-40">
+                <h2> Our Main <span> Services </span> </h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card text-dark card-has-bg click-col"
+                            style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street"
+                                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                            <div class="card-img-overlay d-flex flex-column">
+                                <div class="card-body">
+                                    <small class="card-meta mb-2">Thought Leadership</small>
+                                    <h4 class="card-title mt-0 "><a class="text-dark" herf="https://creativemanner.com">Web
+                                            Developmet Lorem Ipsum Sit Amet Consectetur dipisi?</a></h4>
+                                    <small><i class="far fa-clock"></i> October 15, 2020</small>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="media">
+                                        <img class="mr-3 rounded-circle"
+                                            src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
+                                            alt="Generic placeholder image" style="max-width:50px">
+                                        <div class="media-body">
+                                            <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                            <small>Director of UI/UX</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card text-dark card-has-bg click-col"
+                            style="background-image:url('https://source.unsplash.com/600x900/?tree,nature');">
+                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tree,nature"
+                                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                            <div class="card-img-overlay d-flex flex-column">
+                                <div class="card-body">
+                                    <small class="card-meta mb-2">Thought Leadership</small>
+                                    <h4 class="card-title mt-0 "><a class="text-dark"
+                                            herf="https://creativemanner.com">Creative Manner Lorem Ipsum Sit Amet
+                                            Consectetur dipisi?</a></h4>
+                                    <small><i class="far fa-clock"></i> October 15, 2020</small>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="media">
+                                        <img class="mr-3 rounded-circle"
+                                            src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
+                                            alt="Generic placeholder image" style="max-width:50px">
+                                        <div class="media-body">
+                                            <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                            <small>Director of UI/UX</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card text-dark card-has-bg click-col"
+                            style="background-image:url('https://source.unsplash.com/600x900/?computer,design');">
+                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?computer,design"
+                                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                            <div class="card-img-overlay d-flex flex-column">
+                                <div class="card-body">
+                                    <small class="card-meta mb-2">Thought Leadership</small>
+                                    <h4 class="card-title mt-0 "><a class="text-dark"
+                                            herf="https://creativemanner.com">Design Studio Lorem Ipsum Sit Amet
+                                            Consectetur dipisi?</a></h4>
+                                    <small><i class="far fa-clock"></i> October 15, 2020</small>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="media">
+                                        <img class="mr-3 rounded-circle"
+                                            src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
+                                            alt="Generic placeholder image" style="max-width:50px">
+                                        <div class="media-body">
+                                            <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                            <small>Director of UI/UX</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card text-dark card-has-bg click-col"
+                            style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street"
+                                alt=" Lorem Ipsum Sit Amet Consectetur dipisi?">
+                            <div class="card-img-overlay d-flex flex-column">
+                                <div class="card-body">
+                                    <small class="card-meta mb-2">Thought Leadership</small>
+                                    <h4 class="card-title mt-0 "><a class="text-dark"
+                                            herf="https://creativemanner.com">UI/UX Design Lorem Ipsum Sit Amet Consectetur
+                                            dipisi?</a></h4>
+                                    <small><i class="far fa-clock"></i> October 15, 2020</small>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="media">
+                                        <img class="mr-3 rounded-circle"
+                                            src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
+                                            alt="Generic placeholder image" style="max-width:50px">
+                                        <div class="media-body">
+                                            <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                            <small>Director of UI/UX</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card text-dark card-has-bg click-col"
+                            style="background-image:url('https://source.unsplash.com/600x900/?tree,nature');">
+                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tree,nature"
+                                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                            <div class="card-img-overlay d-flex flex-column">
+                                <div class="card-body">
+                                    <small class="card-meta mb-2">Thought Leadership</small>
+                                    <h4 class="card-title mt-0 "><a class="text-dark"
+                                            herf="https://creativemanner.com">Creative Manner Design Lorem Ipsum Sit Amet
+                                            Consectetur dipisi?</a></h4>
+                                    <small><i class="far fa-clock"></i> October 15, 2020</small>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="media">
+                                        <img class="mr-3 rounded-circle"
+                                            src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
+                                            alt="Generic placeholder image" style="max-width:50px">
+                                        <div class="media-body">
+                                            <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                            <small>Director of UI/UX</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card text-dark card-has-bg click-col"
+                            style="background-image:url('https://source.unsplash.com/600x900/?computer,design');">
+                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?computer,design"
+                                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                            <div class="card-img-overlay d-flex flex-column">
+                                <div class="card-body">
+                                    <small class="card-meta mb-2">Thought Leadership</small>
+                                    <h4 class="card-title mt-0 "><a class="text-dark"
+                                            herf="https://creativemanner.com">Creative Manner Design Lorem Ipsum Sit Amet
+                                            Consectetur dipisi?</a></h4>
+                                    <small><i class="far fa-clock"></i> October 15, 2020</small>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="media">
+                                        <img class="mr-3 rounded-circle"
+                                            src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
+                                            alt="Generic placeholder image" style="max-width:50px">
+                                        <div class="media-body">
+                                            <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
+                                            <small>Director of UI/UX</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {{-- <div class="tc-services-style1 main-box-style1 bg-white radius-9 mx-4 my-3">
         <div class="container">
             <div class="tc-section-title-style1 mb-40">
                 <h2> Our Main <span> Services </span> </h2>
@@ -147,7 +327,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+
     {{-- Partner --}}
     {{-- <div class="main-box-style1 bg-white radius-9 mx-4 my-3">
         <!--  start partners  -->
