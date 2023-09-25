@@ -48,33 +48,22 @@
     @yield('style')
 </head>
 
-<body>
-    <div class="loader-wrap">
-        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
+<body class="home-style1 bg-light1"
+    style="height: 9175px; touch-action: pan-x; overscroll-behavior: none; scroll-behavior: auto;"
+    cz-shortcut-listen="true">
 
-        <div class="loader-wrap-heading">
-            <div class="load-text">
-                {{-- <span>S</span>
-                <span>Y</span>
-                <span>N</span>
-                <span>E</span>
-                <span>X</span>
-                <span>S</span> --}}
-                <span>SYNEX</span>
-                <span>DIGITAL</span>
-            </div>
-        </div>
-    </div>
     @include('frontend.layouts.sidenav')
-    <div class="smooth-scroll-content" id="scrollsmoother-container">
-        <!--Contents-->
-        <main>
-            @include('frontend.layouts.header')
-            @yield('content')
-        </main>
-        @include('frontend.layouts.footer')
+    <div class="ScrollSmoother-wrapper"
+        style="inset: 0px; width: 100%; height: 100%; position: fixed; overflow: hidden;">
+        <div class="smooth-scroll-content" id="scrollsmoother-container"
+            style="translate: none; rotate: none; scale: none; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); box-sizing: border-box; width: 100%; overflow: visible;">
+            <!--Contents-->
+            <main>
+                @include('frontend.layouts.header')
+                @yield('content')
+            </main>
+            @include('frontend.layouts.footer')
+        </div>
     </div>
     <a href="#" class="to_top show">
         <i class="fa-solid fa-chevron-up"></i>

@@ -19,7 +19,7 @@
             <div class="nav-side d-flex">
                 <div class="button_su">
                     <span class="su_button_circle desplode-circle bg-dark"></span>
-                    <a href="#" class="butn text-capitalize button_su_inner bg-black py-3 px-4">
+                    <a href="{{ route('talk') }}" class="butn text-capitalize button_su_inner bg-black py-3 px-4">
                         <span class="button_text_container fsz-14 text-white"> Start Project</span>
                     </a>
                 </div>

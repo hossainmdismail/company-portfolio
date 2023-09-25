@@ -7,26 +7,22 @@
         }
 
         .registration-form form {
-            background-color: #fff;
             max-width: 600px;
             margin: auto;
             padding: 50px 70px;
             border-top-left-radius: 30px;
             border-top-right-radius: 30px;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
         }
 
         .registration-form .form-icon {
             text-align: center;
-            background-color: #5891ff;
-            border-radius: 50%;
-            font-size: 40px;
-            color: white;
-            width: 100px;
-            height: 100px;
+            font-size: 55px;
+            color: rgb(0, 0, 0);
+            font-weight: 800;
             margin: auto;
             margin-bottom: 50px;
             line-height: 100px;
+            font-family: inherit;
         }
 
         .registration-form .item {
@@ -46,41 +42,30 @@
             margin-top: 20px;
         }
 
-        .registration-form .social-media {
-            max-width: 600px;
-            background-color: #fff;
-            margin: auto;
-            padding: 35px 0;
-            text-align: center;
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            color: #9fadca;
-            border-top: 1px solid #dee9ff;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
-        }
-
         .registration-form .social-icons {
             margin-top: 30px;
             margin-bottom: 16px;
         }
 
-        .registration-form .social-icons a {
-            font-size: 23px;
-            margin: 0 3px;
-            color: #5691ff;
-            border: 1px solid;
-            border-radius: 50%;
-            width: 45px;
-            display: inline-block;
-            height: 45px;
-            text-align: center;
-            background-color: #fff;
-            line-height: 45px;
-        }
-
         .registration-form .social-icons a:hover {
             text-decoration: none;
             opacity: 0.6;
+        }
+
+        .label {
+            margin: 0 1px 8px 4px;
+            font-size: 17px;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 18px;
+            border: 1px solid #999;
+            border-radius: 50px;
+            line-height: 1;
+            color: #29292b;
+            font-weight: 500;
+            width: 100%;
         }
 
         @media (max-width: 576px) {
@@ -98,40 +83,63 @@
     </style>
 @endsection
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <div class="registration-form">
-                    <form>
-                        <div class="form-icon">
-                            <span><i class="icon icon-user"></i></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control item" id="username" placeholder="Username">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control item" id="password" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control item" id="email" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control item" id="phone-number" placeholder="Phone Number">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control item" id="birth-date" placeholder="Birth Date">
-                        </div>
-                        <div class="form-group">
-                            <button type="button" class="btn btn-block create-account">Create Account</button>
-                        </div>
-                    </form>
-                    <div class="social-media">
-                        <h5>Sign up with social media</h5>
-                        <div class="social-icons">
-                            <a href="#"><i class="icon-social-facebook" title="Facebook"></i></a>
-                            <a href="#"><i class="icon-social-google" title="Google"></i></a>
-                            <a href="#"><i class="icon-social-twitter" title="Twitter"></i></a>
-                        </div>
+    <div class="main-box-style1 bg-white radius-9 mx-4 my-3 mt-4">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 col-lg-6">
+                    <div class="registration-form">
+                        <form>
+                            <div class="form-icon">
+                                Let's <span class="fst-italic color-999 fw-500 fm-playfair"> Talk </span>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6">
+                                    <input type="text" name="fname" class="form-control item" id="username"
+                                        placeholder="First name*">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <input type="text" name="lname" class="form-control item" id="username"
+                                        placeholder="Last name*">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6">
+                                    <input type="text" name="email" class="form-control item" id="username"
+                                        placeholder="Email*">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <input type="number" name="number" class="form-control item" id="username"
+                                        placeholder="Phone number*">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company" class="label">Company name</label>
+                                <input type="text" name="company" class="form-control item" id="company"
+                                    placeholder="Your company name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="product" class="label">You need help with<span
+                                        class="fst-italic color-999 fw-500 fm-playfair"> * </span></label>
+                                <select name="product" class="form-control item" id="product">
+                                    <option value="">Select services</option>
+                                </select>
+                                {{-- <input type="text" name="service" class="form-control item" id="service"> --}}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="details" class="label">Tell us more about your project <span
+                                        class="fst-italic color-999 fw-500 fm-playfair"> * </span></label>
+                                <textarea type="text" name="details" class="form-control item" id="details" placeholder="Your project details"
+                                    rows="6"></textarea>
+                            </div>
+                            <div class="form-group text-center">
+                                <button class="btn text-capitalize button_su_inner bg-black py-3 px-4" type="submit">
+                                    <span class="button_text_container fsz-14 text-white"> Start Project</span>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

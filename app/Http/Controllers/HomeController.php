@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Service;
 use App\Models\Social_links;
 use App\Models\Team;
+use App\Models\Testimonial;
 
 //use Illuminate\Http\Request;
 
@@ -12,15 +14,18 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $project = Project::select('id','slugs','product_id','title','thumbnail')->where('status',1)->get();
-        $team    = Team::where('status',1)->get();
-        $social  = Social_links::where('status',1)->get();
+        $project = Project::select('id', 'slugs', 'product_id', 'title', 'thumbnail')->where('status', 1)->get();
+        $team    = Team::where('status', 1)->get();
+        $social  = Social_links::where('status', 1)->get();
+        $service = Service::where('status', 1)->get()->take(8);
+        $testimonial = Testimonial::where('status', 1)->get();
 
-
-        return view('frontend.pages.home',[
-            'projects'  => $project,
-            'teams'     => $team,
-            'socials'   => $social,
+        return view('frontend.pages.home', [
+            'projects'      => $project,
+            'teams'         => $team,
+            'socials'       => $social,
+            'services'      => $service,
+            'testimonials'  => $testimonial,
         ]);
     }
 }

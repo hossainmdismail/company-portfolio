@@ -6,9 +6,8 @@ use App\Models\Service;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Photo;
-use Image;
-use Str;
 
 class ServiceController extends Controller
 {
@@ -39,19 +38,15 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            '*'=>'required',
+            '*' => 'required',
         ]);
 
-        // Photo::upload($request->thumbnail ,'uploads/service','TEAM');
-        $team_image = $request->thumbnail;
-        $extension = $team_image->getClientOriginalExtension();
-        $file_name = Str::random(5). rand(1000,999999).'.'.$extension;
-        Image::make($team_image)->save(public_path('uploads/service/'.$file_name));
+        Photo::upload($request->thumbnail, 'uploads/service', 'TEAM');
 
         Service::insert([
             'user_id'        =>  Auth::user()->id,
-            'thumbnail'      =>  $file_name,
-            // 'thumbnail'          =>  Photo::$name,
+            //'thumbnail'      =>  $file_name,
+            'thumbnail'          =>  Photo::$name,
             'title'          =>  $request->title,
             'description'    =>  $request->description,
             'created_at'     =>  Carbon::now(),
@@ -84,24 +79,23 @@ class ServiceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        if($request->thumbnail == ''){
+        if ($request->thumbnail == '') {
             Service::find($id)->update([
                 'user_id'           =>  Auth::user()->id,
                 'title'             =>  $request->title,
                 'description'       =>  $request->description,
                 'status'            =>  $request->status,
             ]);
-        }
-        else{
-            $image = Service::where('id',$id)->first()->thumbnail;
-            $image_delete = public_path('uploads/service/'.$image);
+        } else {
+            $image = Service::where('id', $id)->first()->thumbnail;
+            $image_delete = public_path('uploads/service/' . $image);
             unlink($image_delete);
 
 
             $thumbnail = $request->thumbnail;
             $extension = $thumbnail->getClientOriginalExtension();
-            $file_name = Str::random(5). rand(1000,999999).'.'.$extension;
-            Image::make($thumbnail)->save(public_path('uploads/service/'.$file_name));
+            $file_name = Str::random(5) . rand(1000, 999999) . '.' . $extension;
+            Image::make($thumbnail)->save(public_path('uploads/service/' . $file_name));
 
             Service::find($id)->update([
                 'user_id'           =>  Auth::user()->id,
@@ -119,8 +113,8 @@ class ServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        $image = Service::where('id',$id)->first()->thumbnail;
-        $image_delete = public_path('uploads/service/'.$image);
+        $image = Service::where('id', $id)->first()->thumbnail;
+        $image_delete = public_path('uploads/service/' . $image);
         unlink($image_delete);
 
         Service::find($id)->delete();

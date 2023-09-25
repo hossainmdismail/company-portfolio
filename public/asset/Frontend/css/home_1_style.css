@@ -291,7 +291,7 @@
 
 /* --------------- navbar style1 --------------- */
 .navbar.style1 {
-    padding: 10px;
+    padding: 20px;
 }
 
 .navbar.style1 .canvas-btn-style1 {
@@ -728,7 +728,7 @@
     transition: all 0.3s ease;
 }
 
-.tc-partners-style1 .numbs {
+.numbs {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -740,7 +740,7 @@
     margin-top: 100px;
 }
 
-.tc-partners-style1 .numbs .numb-card {
+.numbs .numb-card {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -751,13 +751,13 @@
     margin-inline-end: 90px;
 }
 
-.tc-partners-style1 .numbs .numb-card h2 {
+.numbs .numb-card h2 {
     font-size: 48px;
     -webkit-margin-end: 25px;
     margin-inline-end: 25px;
 }
 
-.tc-partners-style1 .numbs .numb-card p {
+.numbs .numb-card p {
     font-size: 16px;
     color: #666;
     text-transform: uppercase;
@@ -772,13 +772,13 @@
         padding-bottom: 50px;
     }
 
-    .tc-partners-style1 .numbs .numb-card {
+    .numbs .numb-card {
         -webkit-margin-end: 0;
         margin-inline-end: 0;
         margin-top: 30px;
     }
 
-    .tc-partners-style1 .numbs .numb-card h2 {
+    .numbs .numb-card h2 {
         font-size: 25px;
         -ms-flex-negative: 0;
         flex-shrink: 0;
@@ -1217,7 +1217,7 @@
 .home-style1.dark-theme .tc-section-title-style1 h2 span,
 .home-style1.dark-theme .table,
 .home-style1.dark-theme .tc-footer-style1 a,
-.home-style1.dark-theme .tc-partners-style1 .numbs .numb-card p,
+.home-style1.dark-theme .numbs .numb-card p,
 .home-style1.dark-theme .color-666,
 .home-style1.dark-theme .side_menu.style-1 .pages_links li a {
     color: #ccc !important;
