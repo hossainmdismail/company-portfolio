@@ -52,21 +52,11 @@
                 <div class="col-lg-2">
                     <h6 class="sub-title"> Social </h6>
                     <ul class="links">
+                        @foreach ($soicals as $soical)
                         <li>
-                            <a href="#"> Dribbble </a>
+                            <a href="{{ $soical->title }}"> {{ $soical->name }} </a>
                         </li>
-                        <li>
-                            <a href="#"> Behance </a>
-                        </li>
-                        <li>
-                            <a href="#"> Twitter </a>
-                        </li>
-                        <li>
-                            <a href="#"> Facebook </a>
-                        </li>
-                        <li>
-                            <a href="#"> Instagram </a>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

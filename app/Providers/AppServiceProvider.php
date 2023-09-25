@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Social_links;
 use Illuminate\Support\ServiceProvider;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        View::composer('frontend.layouts.footer', function ($view){
+            $view->with('soicals', Social_links::where('status', 1)->get());
+        });
     }
 }
