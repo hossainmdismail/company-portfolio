@@ -1,18 +1,6 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div class="loader-wrap">
-        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
-
-        <div class="loader-wrap-heading">
-            <div class="load-text">
-                <span>SYNEX</span>
-                <span>DIGITAL</span>
-            </div>
-        </div>
-    </div>
     <div class="main-box-style1 bg-white radius-9 mx-4 my-3 mt-4">
         <header class="tc-header-style1 pb-70"
             style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
@@ -107,7 +95,8 @@
                     <div class="row gx-3">
                         @forelse ($services as $service)
                             <div class="col-lg-3">
-                                <a href="#" class="partner-card wow fadeInUp" data-wow-delay="0.1s">
+                                <a href="{{ route('our.service', $service->slugs) }}" class="partner-card wow fadeInUp"
+                                    data-wow-delay="0.1s">
                                     <div class="logo">
                                         <img src="{{ asset('uploads/service/' . $service->thumbnail) }}" alt=""
                                             class="main-img lt_item">
@@ -129,18 +118,18 @@
                     </div>
                     <div class="numbs wow fadeInUp">
                         <div class="numb-card">
-                            <h2> <span class="counter"> 10 </span> + </h2>
+                            <h2> <span class="counter"> 4 </span> + </h2>
                             <p> Years of <br> Experience </p>
                         </div>
 
                         <div class="numb-card">
-                            <h2> <span class="counter"> 60 </span> </h2>
-                            <p> awards winning <br> accquired </p>
+                            <h2> <span class="counter"> 40 </span> + </h2>
+                            <p> Projects </p>
                         </div>
 
                         <div class="numb-card">
-                            <h2> <span class="counter"> 45 </span> + </h2>
-                            <p> multidisciplinary <br> designers and managers </p>
+                            <h2> <span class="counter"> 10 </span> + </h2>
+                            <p> Designers <br> and Developers </p>
                         </div>
                     </div>
                 </div>

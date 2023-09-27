@@ -1,77 +1,141 @@
 @extends('frontend.layouts.app')
 
 @section('style')
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <style>
+        .f1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #999999;
+        }
+
+        p.f3 {
+            font-size: 1rem;
+            padding: 1rem;
+        }
+
+        .tc-single-project-style1 {
+            padding: 120px 0;
+            color: #1b1b1e;
+        }
+
+        .main-info {
+            padding: 50px 0;
+            border-bottom: 1px solid rgba(12, 86, 237, 0.2666666667);
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        .item {
+            -webkit-margin-end: 60px;
+            margin-inline-end: 60px;
+        }
+
+        .tc-inner-footer-style1 {
+            background-color: #1b1b1e;
+            color: #fff;
+        }
+
+        .mind {
+            font-size: 2rem;
+            font-family: monospace;
+        }
+
+        @media screen and (max-width: 991px) {
+            .main-info {
+                display: block;
+            }
+        }
+
+        .mind {
+            font-size: 1.2rem;
+        }
+
+        section.tc-inner-footer-style1 {
+            margin: 0 24px 0 24px;
+            border-radius: 2rem;
+        }
+    </style>
 @endsection
 @section('content')
-<main>
-    <!--  Start contact  -->
-    <section class="tc-contact-map-style1">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.03615786845!2d-74.30934159824935!3d40.6975399481381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2seg!4v1683755825695!5m2!1sen!2seg" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-
-    <!--  Start faq  -->
-    <section class="tc-contact-form-style1">
+    <div class="tc-team-style1 main-box-style1 bg-white radius-9 mx-4 my-3">
         <div class="container">
+            <div class="row align-items-center" style="margin-bottom: 8rem">
+                <div class="col-12 col-md-6 text-center text-md-end" style="font-size: 3rem; font-weight: 800;">
+                    <span style="color: #737373;">WHO</span><br> WE <br> ARE
+                </div>
+                <div class="col-12 col-md-6" style="border-left: solid #737373 3px;">
+                    <p style="text-align: left;font-size: 16px">
+                        Synex Digital is a premier provider of web development and testing services. Having talented web
+                        engineers on board, we craft compelling web, desktop, and mobile applications for our clients.
+                        Since our inception, we have partnered with numerous companies and delivered operational gains to
+                        startup, emerging, and established organizations in the United States and Canada.
+                    </p>
+                </div>
+            </div>
+
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="contact-info">
-                        <div class="section-title">
-                            <p class="fsz-14 text-uppercase color-666 mb-20"> get a quote </p>
-                            <h2 class="fsz-50 mb-50"> Get a personal design consultation </h2>
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon"><i class="fal fa-clock"></i></span>
-                            <h5 class="fsz-26 fw-bold text-capitalize title"> Open Hours </h5>
-                            <div class="text"> 
-                                <p> Monday – Saturday: 8am – 6pm </p>    
-                                <p> Sunday: 11am — 4pm </p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon"><i class="fal fa-envelope-open"></i></span>
-                            <h5 class="fsz-26 fw-bold text-capitalize title"> Contact Info </h5>
-                            <div class="text"> 
-                                <p> Toll Free: 1-885-245-45677 </p>    
-                                <p> Email: info@Swak-design.com </p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon"><i class="fal fa-map-marked"></i></span>
-                            <h5 class="fsz-26 fw-bold text-capitalize title"> Location </h5>
-                            <div class="text"> 
-                                <p> 467 Davidson ave, Los Angeles CA 95716 </p>    
-                            </div>
-                        </div>
-                    </div>
+                <h3 style="margin-bottom: 4rem">BENEFITS OF WORKING WITH SYNEX DIGITAL</h3>
+
+                <div class="col-12 col-md-6 p-4">
+                    <i class="fa-solid fa-rocket f1"></i>
+                    <h4 class="f2">Quick Start</h4>
+                    <p class="f3">
+                        Our teams can be ramped up quickly and managed autonomously to implement and execute agreed plans.
+                    </p>
                 </div>
-                <div class="col-lg-5 offset-lg-1">
-                    <div class="form">
-                        <h3 class="fsz-30"> Make a request </h3>
-                        <p class="fsz-16 color-777 mb-40"> Please provide more information so I can better assist </p>
-                        <div class="form-group"> 
-                            <label class="fsz-12 text-uppercase mb-10" for=""> full Name <span class="color-blue1"> ** </span> </label>   
-                            <input type="text" class="form-control" placeholder="Enter here"> 
-                        </div>
-                        <div class="form-group"> 
-                            <label class="fsz-12 text-uppercase mb-10" for=""> email address <span class="color-blue1"> ** </span> </label>   
-                            <input type="text" class="form-control" placeholder="Enter here"> 
-                        </div>
-                        <div class="form-group"> 
-                            <label class="fsz-12 text-uppercase mb-10" for=""> message <span class="color-blue1"> ** </span> </label>   
-                            <textarea name="" id="" rows="5" placeholder="Project Details" class="form-control"></textarea>
-                        </div>
-                        <div class="button_su border-0 mt-10">
-                            <span class="su_button_circle bg-000 desplode-circle"></span>
-                            <a href="#" class="butn text-uppercase border-0 button_su_inner bg-blue1 py-3 px-5">
-                                <span class="button_text_container fsz-14 text-white"> send message </span>
-                            </a>
-                        </div>
-                    </div>
+                <div class="col-12 col-md-6 p-4">
+                    <i class="fa-solid fa-person-walking-arrow-loop-left f1"></i>
+                    <h4 class="f2">Top Quality Engineers</h4>
+                    <p class="f3">
+                        Our hiring process is constantly active to ensure your access to the best IT professionals in the
+                        market.
+                    </p>
                 </div>
+                <div class="col-12 col-md-6 p-4">
+                    <i class="fa-solid fa-road-circle-check f1"></i>
+                    <h4 class="f2">End to End Management</h4>
+                    <p class="f3">
+                        We are responsible for your project completion and team management from start to end, guaranteeing
+                        quality product output.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 p-4">
+                    <i class="fa-solid fa-sliders f1"></i>
+                    <h4 class="f2">Operational Efficiency</h4>
+                    <p class="f3">
+                        Our cost effective services help reduce your costs to remain competitive without compromising
+                        quality.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+
+                </div>
+                <div class="col-12 col-md-6"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <section class="tc-inner-footer-style1">
+        <div class="foot-content">
+            <div class="info text-center">
+                <p>
+                <div class="mind"> got a project in mind? </div>
+                </p>
+                <h2>
+                    <div><a href="{{ route('talk') }}"> let’s talk! </a> </div>
+                </h2>
+
             </div>
         </div>
     </section>
-    <!--  End faq  -->
-</main>
 @endsection

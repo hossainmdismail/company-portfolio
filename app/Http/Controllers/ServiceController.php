@@ -7,6 +7,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Photo;
 
 class ServiceController extends Controller
@@ -45,9 +46,9 @@ class ServiceController extends Controller
 
         Service::insert([
             'user_id'        =>  Auth::user()->id,
-            //'thumbnail'      =>  $file_name,
-            'thumbnail'          =>  Photo::$name,
+            'thumbnail'      =>  Photo::$name,
             'title'          =>  $request->title,
+            'slugs'          =>  Str::slug($request->title),
             'description'    =>  $request->description,
             'created_at'     =>  Carbon::now(),
         ]);
@@ -83,6 +84,7 @@ class ServiceController extends Controller
             Service::find($id)->update([
                 'user_id'           =>  Auth::user()->id,
                 'title'             =>  $request->title,
+                'slugs'             =>  Str::slug($request->title),
                 'description'       =>  $request->description,
                 'status'            =>  $request->status,
             ]);
@@ -101,6 +103,7 @@ class ServiceController extends Controller
                 'user_id'           =>  Auth::user()->id,
                 'thumbnail'         =>  $file_name,
                 'title'             =>  $request->title,
+                'slugs'             =>  Str::slug($request->title),
                 'description'       =>  $request->description,
                 'status'            =>  $request->status,
             ]);

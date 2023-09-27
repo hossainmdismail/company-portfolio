@@ -52,6 +52,25 @@
     style="height: 9175px; touch-action: pan-x; overscroll-behavior: none; scroll-behavior: auto;"
     cz-shortcut-listen="true">
 
+    @php
+        $path = request()->path();
+    @endphp
+
+    @if ($path === '/')
+        <div class="loader-wrap">
+            <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+            </svg>
+
+            <div class="loader-wrap-heading">
+                <div class="load-text">
+                    <span>SYNEX</span>
+                    <span>DIGITAL</span>
+                </div>
+            </div>
+        </div>
+    @endif
+
     @include('frontend.layouts.sidenav')
     <div class="ScrollSmoother-wrapper"
         style="inset: 0px; width: 100%; height: 100%; position: fixed; overflow: hidden;">

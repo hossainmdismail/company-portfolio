@@ -8,10 +8,14 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\WebinfoController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactCotroller;
 use App\Http\Controllers\FronProjectController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OurServiceController;
+use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TalkController;
 use App\Http\Controllers\UserController;
@@ -23,6 +27,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['check_users_exist'])->group(function () {
     Auth::routes(['register' => true]); // Enable registration
 });
+
+//Site map
+Route::get('/generate-sitemap', [SitemapController::class, 'index'])->name('sitemap');
 
 
 //========= BackEnd Controllers =========//
@@ -53,6 +60,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'link'])->name('about');
 Route::get('/portfolio/{slugs}', [FronProjectController::class, 'link'])->name('portfolio');
 Route::get('/grid/portfolio', [FronProjectController::class, 'portfolio'])->name('portfolio.grid');
+Route::get('/our-service/{slugs}', [OurServiceController::class, 'index'])->name('our.service');
+Route::get('/contact-us', [ContactCotroller::class, 'index'])->name('contact');
 
 
 Route::get('/talk', [TalkController::class, 'index'])->name('talk');
+Route::get('/terms-and-privacy-policy', [PrivacyController::class, 'index'])->name('privacy');
