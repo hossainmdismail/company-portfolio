@@ -88,7 +88,8 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-12 col-lg-6">
                     <div class="registration-form">
-                        <form>
+                        <form action="{{ route('talk.store') }}" method="POST">
+                            @csrf
                             <div class="form-icon">
                                 Let's <span class="fst-italic color-999 fw-500 fm-playfair"> Talk </span>
                             </div>

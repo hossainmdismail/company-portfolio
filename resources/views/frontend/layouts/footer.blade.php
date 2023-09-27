@@ -3,59 +3,31 @@
         <div class="content">
             <div class="row">
                 <div class="col-lg-4">
-                    <h6 class="sub-title"> Swak - Creative Portfolio & Agency WP Theme </h6>
+                    <h6 class="sub-title"> Synex Digital </h6>
                     <a href="#" class="fsz-22 text-decoration-underline color-000"> contact@synexdigital.com </a>
                     <a href="#" class="mt-30">Dhaka, Bangladesh</a> <br>
                     <a href="#" class="mt-20"> (+880) 1757647319 </a>
                     {{-- <a href="#" class="mt-20"> (+880) 1757647319 </a> --}}
                 </div>
-                <div class="col-lg-2 offset-lg-2">
+                <div class="col-lg-3 offset-lg-2">
                     <h6 class="sub-title"> Links </h6>
                     <ul class="links">
                         <li>
                             <a href="#"> About us </a>
                         </li>
                         <li>
-                            <a href="#"> Works </a>
-                        </li>
-                        <li>
-                            <a href="#"> Our Process </a>
-                        </li>
-                        <li>
-                            <a href="#"> Career </a>
-                        </li>
-                        <li>
-                            <a href="#"> News </a>
-                        </li>
-                        <li>
-                            <a href="#"> Contact us </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2">
-                    <h6 class="sub-title"> Resources </h6>
-                    <ul class="links">
-                        <li>
-                            <a href="#"> Presentation (PDF) </a>
-                        </li>
-                        <li>
-                            <a href="#"> FAQs </a>
-                        </li>
-                        <li>
-                            <a href="#"> Policy </a>
-                        </li>
-                        <li>
                             <a href="#"> Term & Condition </a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-2">
+
+                <div class="col-lg-3">
                     <h6 class="sub-title"> Social </h6>
                     <ul class="links">
                         @foreach ($soicals as $soical)
-                        <li>
-                            <a href="{{ $soical->title }}"> {{ $soical->name }} </a>
-                        </li>
+                            <li>
+                                <a href="{{ $soical->title }}"> {{ $soical->name }} </a>
+                            </li>
                         @endforeach
                     </ul>
                 </div>

@@ -4,7 +4,11 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}">
                 <img src="{{ asset('default/default.png') }}" alt="" class="lt_item" style="max-width: 50%">
+
             </a>
+            <div class="logo-text fsz-14">
+                Build | Create | Prolong
+            </div>
             <span class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                 style="border-color: transparent">
@@ -12,15 +16,19 @@
             </span>
             <div class="navbar-collapse mt-3 mt-lg-0 collapse" id="navbarSupportedContent" style="">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item" style="font-size: 1.3rem">
-                        <a class="nav-link active" aria-current="page" href="#">Services</a>
+                    <li class="nav-item" style="font-size: 1.3rem; padding-inline-end: 20px">
+                        <a class="nav-link active" href="{{ route('home') }}">Home</a>
                     </li>
-                    <li class="nav-item" style="font-size: 1.3rem">
-                        <a class="nav-link" href="{{ route('portfolio.grid') }}">Portfolio</a>
-                    </li>
-                    <li class="nav-item" style="font-size: 1.3rem">
+
+
+                    <li class="nav-item" style="font-size: 1.3rem; padding-inline-end: 20px">
                         <a class="nav-link" href="{{ route('about') }}">About</a>
                     </li>
+
+                    <li class="nav-item" style="font-size: 1.3rem; padding-inline-end: 20px">
+                        <a class="nav-link" href="{{ route('portfolio.grid') }}">Portfolio</a>
+                    </li>
+
                 </ul>
                 <div class="button_su">
                     <span class="su_button_circle desplode-circle bg-dark"></span>

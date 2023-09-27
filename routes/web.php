@@ -65,4 +65,5 @@ Route::get('/contact-us', [ContactCotroller::class, 'index'])->name('contact');
 
 
 Route::get('/talk', [TalkController::class, 'index'])->name('talk');
+Route::post('/talk/store', [TalkController::class, 'store'])->name('talk.store');
 Route::get('/terms-and-privacy-policy', [PrivacyController::class, 'index'])->name('privacy');

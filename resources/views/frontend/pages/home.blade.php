@@ -1,5 +1,9 @@
 @extends('frontend.layouts.app')
 
+@php
+    $service_slider = ['Web Customization', 'PHP-Laravel', 'SEO', 'Social Media Marketing', 'Google Ads', 'API'];
+@endphp
+
 @section('content')
     <div class="main-box-style1 bg-white radius-9 mx-4 my-3 mt-4">
         <header class="tc-header-style1 pb-70"
@@ -231,101 +235,27 @@
     </div>
     {{-- Slider --}}
     <div class="slider-content float_box_container overflow-hidden pt-100 pb-100">
-        <div class="tc-awards-slider1 swiper-initialized swiper-horizontal swiper-pointer-events">
-            <div class="swiper-wrapper" id="swiper-wrapper-fe55dd622d2ce487" aria-live="off"
-                style="transition-duration: 10000ms; transform: translate3d(-9266.39px, 0px, 0px);">
-                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group"
-                    aria-label="1 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" role="group"
-                    aria-label="2 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group"
-                    aria-label="3 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group"
-                    aria-label="4 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="4"
-                    role="group" aria-label="5 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="0" role="group"
-                    aria-label="1 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="1" role="group"
-                    aria-label="2 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide" data-swiper-slide-index="2" role="group" aria-label="3 / 5"
-                    style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide" data-swiper-slide-index="3" role="group" aria-label="4 / 5"
-                    style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="4" role="group"
-                    aria-label="5 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate swiper-slide-active" data-swiper-slide-index="0"
-                    role="group" aria-label="1 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="1"
-                    role="group" aria-label="2 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group"
-                    aria-label="3 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group"
-                    aria-label="4 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="4"
-                    role="group" aria-label="5 / 5" style="margin-right: 80px;">
-                    <div class="service-card">
-                        <h2> <a href="#">Get Free Quote</a> </h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="tc-awards-slider1 swiper-initialized swiper-horizontal swiper-pointer-events">
+                        <div class="swiper-wrapper" id="swiper-wrapper-fe55dd622d2ce487" aria-live="off"
+                            style="transition-duration: 1000ms; transform: translate3d(-9266.39px, 0px, 0px);">
+
+                            @foreach ($service_slider as $service)
+                                <div class="swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="0"
+                                    role="group" aria-label="1 / 5" style="margin-right: 80px;">
+                                    <div class="service-card">
+                                        <h2> <a href="#"
+                                                style="font-size: 40px;color:#999999">{{ $service }}</a> </h2>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                     </div>
                 </div>
             </div>
-            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
         </div>
     </div>
 @endsection
