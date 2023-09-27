@@ -6,7 +6,7 @@
                 <img src="{{ asset('default/default.png') }}" alt="" class="lt_item" style="max-width: 50%">
 
             </a>
-            <div class="logo-text fsz-14">
+            <div class="logo-text fsz-14 d-none d-md-block">
                 Build | Create | Prolong
             </div>
             <span class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
