@@ -34,10 +34,6 @@ class SitemapController extends Controller
             ->add(Url::create('/terms-and-privacy-policy')
                 ->setLastModificationDate(Carbon::yesterday())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY)
-                ->setPriority(0.1))
-            ->add(Url::create('/portfolio')
-                ->setLastModificationDate(Carbon::yesterday())
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY)
                 ->setPriority(0.1));
 
         foreach ($project as $projects) {
