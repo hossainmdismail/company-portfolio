@@ -4,6 +4,7 @@
 /public/hot
 /public/uploads
 /public/storage
+/public/sitemap.xml
 /storage/*.key
 /vendor
 .env
@@ -18,3 +19,4 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/sitemap.xml
