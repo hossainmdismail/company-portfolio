@@ -3,3 +3,9 @@
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^synexdigital\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.synexdigital\.com$
+RewriteRule ^/?$ "https\:\/\/synexdigital\.com\/" [R=301,L]
+
