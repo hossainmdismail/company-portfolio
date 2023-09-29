@@ -45,7 +45,6 @@ class SitemapController extends Controller
 
         $sitemap->writeToFile(public_path('sitemap.xml'));
 
-        // Optionally, you can also copy the sitemap to the root directory
         File::copy(public_path('sitemap.xml'), base_path('sitemap.xml'));
 
         return response()->download(public_path('sitemap.xml'), 'sitemap.xml');
