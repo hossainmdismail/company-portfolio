@@ -53,7 +53,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-
 //============== Front End ==============//
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

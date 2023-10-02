@@ -7,13 +7,15 @@ use App\Models\Service;
 use App\Models\Social_links;
 use App\Models\Team;
 use App\Models\Testimonial;
-
+use Artesaos\SEOTools\Facades\SEOTools;
 //use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        SEOTools::setTitle('Synex Digital');
+
         $project = Project::select('id', 'slugs', 'product_id', 'title', 'thumbnail')->where('status', 1)->get();
         $team    = Team::where('status', 1)->get();
         $social  = Social_links::where('status', 1)->get();

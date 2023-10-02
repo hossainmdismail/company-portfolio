@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Artesaos\SEOTools\Facades\SEOTools;
+
 
 class AboutController extends Controller
 {
-    function link(){
+    function link()
+    {
+        SEOTools::setTitle('Synex Digital - About');
         return view('frontend.pages.about');
     }
 }
