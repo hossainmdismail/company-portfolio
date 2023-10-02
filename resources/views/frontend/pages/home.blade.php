@@ -168,8 +168,9 @@
                                                     </div>
                                                     <div class="inf">
                                                         <h6 class="fsz-16 fw-bold mb-1"> {{ $testimonial->name }} </h6>
-                                                        <p class="fsz-14 color-666"> CEO of <a href="#"
-                                                                class="text-primary"> {{ $testimonial->field }} </a> </p>
+                                                        <p class="fsz-14 color-666"> {{ $testimonial->title }} of <a
+                                                                href="#" class="text-primary">
+                                                                {{ $testimonial->field }} </a> </p>
                                                     </div>
                                                 </div>
                                             </div>
