@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <h6 class="sub-title"> Synex Digital </h6>
-                    <a href="#" class="fsz-22 text-decoration-underline color-000"> contact@synexdigital.com </a>
+                    <a href="#" class="fsz-22 text-decoration-underline color-000"> digitalsynex@gmail.com </a>
                     <a href="#" class="mt-30">Dhaka, Bangladesh</a> <br>
                     <a href="#" class="mt-20"> (+880) 1757647319 </a>
                     {{-- <a href="#" class="mt-20"> (+880) 1757647319 </a> --}}
