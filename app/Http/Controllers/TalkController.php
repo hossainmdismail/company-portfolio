@@ -19,6 +19,6 @@ class TalkController extends Controller
 
     function store(Request $request)
     {
-        return back();
+        return view('frontend.pages.thankyou');
     }
 }
