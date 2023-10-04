@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slugs');
             $table->string('thumbnail');
-            $table->string('description');
+            $table->longText('description');
             $table->integer('status')->default(1);
             $table->timestamps();
         });

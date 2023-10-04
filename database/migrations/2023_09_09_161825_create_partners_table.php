@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->string('logo');
             $table->string('title');
-            $table->string('description');
+            $table->longText('description');
             $table->integer('status')->default(1);
             $table->timestamps();
         });

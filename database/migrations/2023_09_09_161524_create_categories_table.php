@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('name');
-            $table->string('description');
+            $table->longText('description');
             $table->string('seo_title')->nullable();
             $table->string('seo_description')->nullable();
             $table->string('seo_tags')->nullable();
