@@ -3,7 +3,8 @@
     <nav class="navbar navbar-expand-lg navbar-light style1">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ asset('default/default.png') }}" alt="" class="lt_item" style="max-width: 50%">
+                <img src="{{ asset('default/default.png') }}" alt="Synex Digital Logo" class="lt_item"
+                    style="max-width: 50%">
 
             </a>
             <div class="logo-text fsz-14 d-none d-md-block">
@@ -41,15 +42,15 @@
     </nav>
 </div>
 <div class="side_menu style-1" id="side_menu">
-    <a href="#0" class="side_menu_cls">
+    <a href="#" class="side_menu_cls">
         <i class="la la-times fs-3"></i>
     </a>
     <div class="content">
         <div class="logo">
-            <a href="#" class="w-100">
+            {{-- <a href="#" class="w-100">
                 <img src="" alt="" class="lt_item">
                 <img src="" alt="" class="dr_item">
-            </a>
+            </a> --}}
         </div>
         <div class="pages_links">
             <ul>

@@ -90,18 +90,13 @@ class ServiceController extends Controller
             ]);
         } else {
             $image = Service::where('id', $id)->first()->thumbnail;
-            $image_delete = public_path('uploads/service/' . $image);
-            unlink($image_delete);
+            Photo::delete('uploads/service/', $image);
 
-
-            $thumbnail = $request->thumbnail;
-            $extension = $thumbnail->getClientOriginalExtension();
-            $file_name = Str::random(5) . rand(1000, 999999) . '.' . $extension;
-            Image::make($thumbnail)->save(public_path('uploads/service/' . $file_name));
+            Photo::upload($request->thumbnail, 'uploads/service', 'TEAM');
 
             Service::find($id)->update([
                 'user_id'           =>  Auth::user()->id,
-                'thumbnail'         =>  $file_name,
+                'thumbnail'         =>  Photo::$name,
                 'title'             =>  $request->title,
                 'slugs'             =>  Str::slug($request->title),
                 'description'       =>  $request->description,
@@ -117,8 +112,7 @@ class ServiceController extends Controller
     public function destroy(string $id)
     {
         $image = Service::where('id', $id)->first()->thumbnail;
-        $image_delete = public_path('uploads/service/' . $image);
-        unlink($image_delete);
+        Photo::delete('uploads/service/', $image);
 
         Service::find($id)->delete();
         return back();

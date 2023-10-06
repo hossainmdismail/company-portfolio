@@ -3,12 +3,12 @@
         <i class="fa-solid fa-plus"></i>
     </a>
     <div class="content">
-        <div class="logo">
+        {{-- <div class="logo">
             <a href="#" class="w-100">
                 <img src="assets/img/logo_home1.png" alt="" class="lt_item">
                 <img src="assets/img/logo_home1_lt.png" alt="" class="dr_item">
             </a>
-        </div>
+        </div> --}}
         <div class="pages_links">
             <ul>
                 <li><a href="{{ route('home') }}" class="active">Home</a></li>

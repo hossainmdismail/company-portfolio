@@ -18,7 +18,7 @@ class TestimonialController extends Controller
     {
         $testimonials = Testimonial::all();
         return view('backend.pages.Testimonial.create', [
-            'testimonials'=>$testimonials,
+            'testimonials' => $testimonials,
         ]);
     }
 
@@ -81,7 +81,7 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        if($request->profile == ''){
+        if ($request->profile == '') {
             Testimonial::find($id)->update([
                 'user_id'        =>  1, //User ID Will be added
                 'name'           =>  $request->name,
@@ -90,11 +90,11 @@ class TestimonialController extends Controller
                 'comment'        =>  $request->comment,
                 'status'         =>  $request->status,
             ]);
-        }
-        else{
-            
-            Photo::upload($request->profile, 'uploads/testimonial', 'TESTIMONIAL',);
+        } else {
+            $image = Testimonial::find($id)->profile;
+            Photo::delete('uploads/testimonial', $image);
 
+            Photo::upload($request->profile, 'uploads/testimonial', 'TESTIMONIAL');
             Testimonial::find($id)->update([
                 'user_id'        =>  1, //User ID Will be added
                 'profile'        =>  Photo::$name,
@@ -113,6 +113,9 @@ class TestimonialController extends Controller
      */
     public function destroy(string $id)
     {
+        $image = Testimonial::where('id', $id)->first()->profile;
+        Photo::delete('uploads/testimonial', $image);
+
         Testimonial::find($id)->delete();
         return back();
     }

@@ -14,7 +14,7 @@ class SitemapController extends Controller
     function index()
     {
         $project = Project::select('slugs')->where('status', 1)->get();
-        $service = Service::select('slugs')->where('status', 1)->get();
+        // $service = Service::select('slugs')->where('status', 1)->get();
 
         $sitemap = Sitemap::create();
         $sitemap->add(Url::create('/')
@@ -46,12 +46,12 @@ class SitemapController extends Controller
                 ->setPriority(0.1));
         }
         //Dynamic Service
-        foreach ($service as $services) {
-            $sitemap->add(Url::create('/our-service' . '/' . $services->slugs)
-                ->setLastModificationDate(Carbon::now())
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-                ->setPriority(0.1));
-        }
+        // foreach ($service as $services) {
+        //     $sitemap->add(Url::create('/our-service' . '/' . $services->slugs)
+        //         ->setLastModificationDate(Carbon::now())
+        //         ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+        //         ->setPriority(0.1));
+        // }
 
         $sitemap->writeToFile(public_path('sitemap.xml'));
 

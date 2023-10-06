@@ -20,7 +20,7 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/70b22ffbec.js" crossorigin="anonymous"></script>
     <!-- line-awesome icons  -->
-    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/line-awesome.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/line-awesome.css') }}"> --}}
     <!-- themify icons  -->
     <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/themify-icons.css') }}">
     <!-- ionicons icons  -->
@@ -71,11 +71,11 @@
         </div>
     @endif
 
-    @include('frontend.layouts.sidenav')
+    {{-- @include('frontend.layouts.sidenav') --}}
     <div class="ScrollSmoother-wrapper"
         style="inset: 0px; width: 100%; height: 100%; position: fixed; overflow: hidden;">
         <div class="smooth-scroll-content" id="scrollsmoother-container"
-            style="translate: none; rotate: none; scale: none; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); box-sizing: border-box; width: 100%; overflow: visible;">
+            style="translate: none; rotate: none; scale: none; box-sizing: border-box; width: 100%; overflow: visible;">
             <!--Contents-->
             <main>
                 @include('frontend.layouts.header')

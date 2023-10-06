@@ -124,7 +124,6 @@
         </div>
     </div>
 
-
     <section class="tc-inner-footer-style1">
         <div class="foot-content">
             <div class="info text-center">

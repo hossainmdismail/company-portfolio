@@ -1,4 +1,4 @@
-$( function() {
+$(function () {
 
     var wind = $(window);
 
@@ -22,7 +22,7 @@ $( function() {
 
     // ---------- to top -----------
 
-    wind.on("scroll", function() {
+    wind.on("scroll", function () {
 
         var bodyScroll = wind.scrollTop(),
             toTop = $(".to_top")
@@ -36,8 +36,8 @@ $( function() {
             toTop.removeClass("show");
         }
     });
-    
-    $('.to_top').click(function() {
+
+    $('.to_top').click(function () {
         $('html, body').animate({
             scrollTop: 0
         }, 0);
@@ -45,15 +45,15 @@ $( function() {
     });
 
 
-     /* ==  float_box_container button  == */
-    $( ".float_box_container" ).mousemove(function(e) {
-        var parentOffset = $(this).offset(); 
+    /* ==  float_box_container button  == */
+    $(".float_box_container").mousemove(function (e) {
+        var parentOffset = $(this).offset();
         var relX = e.pageX - parentOffset.left;
         var relY = e.pageY - parentOffset.top;
-        $(".float_box").css({"left": relX, "top": relY });
+        $(".float_box").css({ "left": relX, "top": relY });
         $(".float_box").addClass("show");
     });
-    $( ".float_box_container" ).mouseleave(function(e) {
+    $(".float_box_container").mouseleave(function (e) {
         $(".float_box").removeClass("show");
     });
 
@@ -65,28 +65,28 @@ $( function() {
     });
 
 
-      /* ==  Button Animation  == */
-    $( ".button_su_inner" ).mouseenter(function(e) {
-        var parentOffset = $(this).offset(); 
+    /* ==  Button Animation  == */
+    $(".button_su_inner").mouseenter(function (e) {
+        var parentOffset = $(this).offset();
         var relX = e.pageX - parentOffset.left;
         var relY = e.pageY - parentOffset.top;
-        $(this).prev(".su_button_circle").css({"left": relX, "top": relY });
+        $(this).prev(".su_button_circle").css({ "left": relX, "top": relY });
         $(this).prev(".su_button_circle").removeClass("desplode-circle");
         $(this).prev(".su_button_circle").addClass("explode-circle");
     });
-    
-    $( ".button_su_inner" ).mouseleave(function(e) {
-        var parentOffset = $(this).offset(); 
+
+    $(".button_su_inner").mouseleave(function (e) {
+        var parentOffset = $(this).offset();
         var relX = e.pageX - parentOffset.left;
         var relY = e.pageY - parentOffset.top;
-        $(this).prev(".su_button_circle").css({"left": relX, "top": relY });
+        $(this).prev(".su_button_circle").css({ "left": relX, "top": relY });
         $(this).prev(".su_button_circle").removeClass("explode-circle");
         $(this).prev(".su_button_circle").addClass("desplode-circle");
     });
-        
+
 });
 
-$( function() {
+$(function () {
 
     // ------------ tc-testimonials-slider1 -----------
     var swiper = new Swiper('.tc-testimonials-slider1', {
@@ -137,7 +137,7 @@ $( function() {
             delay: 1,
         },
         loop: true,
-    //   allowTouchMove: false,
+        //   allowTouchMove: false,
         disableOnInteraction: true,
     });
 
@@ -146,57 +146,57 @@ $( function() {
 
 
 // ------------ gsap scripts -----------
-$( function() {
+$(function () {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
     // create the smooth scroller FIRST!
     const smoother = ScrollSmoother.create({
-    content: "#scrollsmoother-container",
-    smooth: 2,
-    normalizeScroll: true,
-    ignoreMobileResize: true,
+        content: "#scrollsmoother-container",
+        smooth: 2,
+        normalizeScroll: true,
+        ignoreMobileResize: true,
         effects: true,
-    //preventDefault: true,
-    //ease: 'power4.out',
-    //smoothTouch: 0.1, 
+        //preventDefault: true,
+        //ease: 'power4.out',
+        //smoothTouch: 0.1,
     });
 
     // smoother.effects("img", { speed: "auto" });
 
     let headings = gsap.utils.toArray(".js-title").reverse();
     headings.forEach((heading, i) => {
-    let headingIndex = i + 1;
-    let mySplitText = new SplitText(heading, { type: "chars" });
-    let chars = mySplitText.chars;
+        let headingIndex = i + 1;
+        let mySplitText = new SplitText(heading, { type: "chars" });
+        let chars = mySplitText.chars;
 
-    chars.forEach((char, i) => {
-    smoother.effects(char, { lag: (i + headingIndex) * 0.1, speed: 1 });
-    });
+        chars.forEach((char, i) => {
+            smoother.effects(char, { lag: (i + headingIndex) * 0.1, speed: 1 });
+        });
     });
 
 
     let splitTextLines = gsap.utils.toArray(".js-splittext-lines");
 
     splitTextLines.forEach(splitTextLine => {
-    const tl = gsap.timeline({
-        scrollTrigger: {
-        trigger: splitTextLine,
-        start: 'top 90%',
-        duration: 2,
-        end: 'bottom 60%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play none none none'
-        // toggleActions: 'play none play reset'
-        }
-    });
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: splitTextLine,
+                start: 'top 90%',
+                duration: 2,
+                end: 'bottom 60%',
+                scrub: false,
+                markers: false,
+                toggleActions: 'play none none none'
+                // toggleActions: 'play none play reset'
+            }
+        });
 
-    const itemSplitted = new SplitText(splitTextLine, { type: "lines" });
-    gsap.set(splitTextLine, { perspective: 400 });
-    itemSplitted.split({ type: "lines" })
-    // tl.from(itemSplitted.lines, { y: 100, delay: 0.2, opacity: 0, stagger: 0.1, duration: 1, ease: 'inOut' });
-    // tl.from(itemSplitted.lines, { y: 100, opacity: 0, stagger: 0.05, duration: 1, ease: 'back.inOut' });
-    tl.from(itemSplitted.lines, { duration: 1, delay: 0.5, opacity: 0, rotationX: -80, force3D: true, transformOrigin: "top center -50", stagger: 0.1 });
+        const itemSplitted = new SplitText(splitTextLine, { type: "lines" });
+        gsap.set(splitTextLine, { perspective: 400 });
+        itemSplitted.split({ type: "lines" })
+        // tl.from(itemSplitted.lines, { y: 100, delay: 0.2, opacity: 0, stagger: 0.1, duration: 1, ease: 'inOut' });
+        // tl.from(itemSplitted.lines, { y: 100, opacity: 0, stagger: 0.05, duration: 1, ease: 'back.inOut' });
+        tl.from(itemSplitted.lines, { duration: 1, delay: 0.5, opacity: 0, rotationX: -80, force3D: true, transformOrigin: "top center -50", stagger: 0.1 });
     });
 
 });

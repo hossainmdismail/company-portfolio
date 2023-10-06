@@ -59,7 +59,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'link'])->name('about');
 Route::get('/portfolio/{slugs}', [FronProjectController::class, 'link'])->name('portfolio');
 Route::get('/grid/portfolio', [FronProjectController::class, 'portfolio'])->name('portfolio.grid');
-Route::get('/our-service/{slugs}', [OurServiceController::class, 'index'])->name('our.service');
+// Route::get('/our-service/{slugs}', [OurServiceController::class, 'index'])->name('our.service');
 Route::get('/contact-us', [ContactCotroller::class, 'index'])->name('contact');
 
 

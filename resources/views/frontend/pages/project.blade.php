@@ -64,7 +64,7 @@
         <section class="tc-single-project-style1">
             <div class="container">
                 <div class="main-img img-cover">
-                    <img src="{{ asset('uploads/project/' . $project->thumbnail) }}" alt="">
+                    <img src="{{ asset('uploads/project/' . $project->thumbnail) }}" alt="{{ $project->title }}">
                 </div>
                 <div class="main-info">
                     <div class="item">

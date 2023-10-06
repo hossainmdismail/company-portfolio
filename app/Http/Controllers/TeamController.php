@@ -40,7 +40,7 @@ class TeamController extends Controller
             '*' => 'required',
         ]);
 
-        Photo::upload($request->profile, 'uploads/team', 'TEAM',);
+        Photo::upload($request->profile, 'uploads/team', 'TEAM');
 
         Team::insert([
             'user_id'        =>  Auth::user()->id,
@@ -77,13 +77,28 @@ class TeamController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        Team::find($id)->update([
-            'user_id'        =>  1, //User ID Will be added
-            'profile'        =>  $request->profile,
-            'name'           =>  $request->name,
-            'career_title'   =>  $request->career_title,
-            'status'         =>  $request->status,
-        ]);
+        if ($request->profile == '') {
+            Team::find($id)->update([
+                'user_id'        =>  Auth::user()->id, //User ID Will be added
+                'name'           =>  $request->name,
+                'career_title'   =>  $request->career_title,
+                'status'         =>  $request->status,
+            ]);
+        } else {
+
+            $image = Team::find($id)->profile;
+            Photo::delete('uploads/team', $image);
+
+            Photo::upload($request->profile, 'uploads/team', 'TEAM');
+
+            Team::find($id)->update([
+                'user_id'        =>  Auth::user()->id, //User ID Will be added
+                'profile'        =>  Photo::$name,
+                'name'           =>  $request->name,
+                'career_title'   =>  $request->career_title,
+                'status'         =>  $request->status,
+            ]);
+        }
         return back();
     }
 
@@ -92,6 +107,9 @@ class TeamController extends Controller
      */
     public function destroy(string $id)
     {
+        $image = Team::find($id)->profile;
+        Photo::delete('uploads/team', $image);
+
         Team::find($id)->delete();
         return back();
     }

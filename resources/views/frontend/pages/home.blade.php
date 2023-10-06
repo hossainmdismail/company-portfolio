@@ -69,8 +69,10 @@
                             <div class="col-lg-{{ $key > 1 ? '4' : '6' }}">
                                 <a href="{{ route('portfolio', $project->slugs) }}" class="portfolio-card md-card">
                                     <div class="img img-cover">
-                                        <img src="{{ asset('uploads/project/' . $project->thumbnail) }}" alt="">
-                                        <img src="{{ asset('uploads/project/' . $project->thumbnail) }}" alt="">
+                                        <img src="{{ asset('uploads/project/' . $project->thumbnail) }}"
+                                            alt="{{ $project->title }}">
+                                        <img src="{{ asset('uploads/project/' . $project->thumbnail) }}"
+                                            alt="{{ $project->title }}">
                                         <span class="icon"> <i class="fa-solid fa-arrow-right"></i> </span>
                                     </div>
                                     <div class="info pt-40">
@@ -108,21 +110,19 @@
                     <div class="row gx-3">
                         @forelse ($services as $service)
                             <div class="col-lg-3">
-                                <a href="{{ route('our.service', $service->slugs) }}" class="partner-card wow fadeInUp"
-                                    data-wow-delay="0.1s">
+                                <div class="partner-card wow fadeInUp" data-wow-delay="0.1s">
                                     <div class="logo">
-                                        <img src="{{ asset('uploads/service/' . $service->thumbnail) }}" alt=""
-                                            class="main-img lt_item">
-                                        <img src="" alt="" class="main-img dr_item">
+                                        <img src="{{ asset('uploads/service/' . $service->thumbnail) }}"
+                                            alt="{{ $service->title }}" class="main-img lt_item">
                                     </div>
                                     <div class="foot-inf">
                                         <p> {{ $service->title }} </p>
-                                        <span class="icon"> <i class="fa-solid fa-plus"></i> </span>
+                                        {{-- <span class="icon"> <i class="fa-solid fa-plus"></i> </span> --}}
                                     </div>
                                     <div class="info">
                                         <p> {{ $service->description }} </p>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         @empty
                         @endforelse
@@ -173,7 +173,7 @@
                                                 <div class="client-card d-flex align-items-center">
                                                     <div class="img icon-45 rounded-circle overflow-hidden img-cover me-3">
                                                         <img src="{{ asset('uploads/testimonial/' . $testimonial->profile) }}"
-                                                            alt="">
+                                                            alt="{{ $testimonial->name }}">
                                                     </div>
                                                     <div class="inf">
                                                         <h6 class="fsz-16 fw-bold mb-1"> {{ $testimonial->name }} </h6>
@@ -228,13 +228,13 @@
                 <div class="row">
                     @forelse ($teams->take(5) as $key => $team)
                         <div class="col-lg-{{ $key == 1 ? '4' : '2' }} {{ $key == 4 ? 'ord-last' : '' }}">
-                            <a href="#" class="team-img-card img-cover {{ $key == 1 ? 'lg-card' : '' }} wow zoomIn"
+                            <div class="team-img-card img-cover {{ $key == 1 ? 'lg-card' : '' }} wow zoomIn"
                                 data-wow-delay="0.2s">
-                                <img src="{{ asset('uploads/team/' . $team->profile) }}" alt="">
+                                <img src="{{ asset('uploads/team/' . $team->profile) }}" alt="{{ $team->name }}">
                                 <div class="info">
                                     <h6> {{ $team->name }} </h6>
                                 </div>
-                            </a>
+                            </div>
 
                         </div>
                     @empty

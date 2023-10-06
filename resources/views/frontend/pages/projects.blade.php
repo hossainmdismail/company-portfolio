@@ -33,9 +33,20 @@
             font-family: monospace;
         }
 
+        h2.text-capitalize {
+            font-size: 3rem;
+        }
+
         @media screen and (max-width: 991px) {
             .main-info {
                 display: block;
+            }
+
+        }
+
+        @media screen and (max-width: 720px) {
+            h2.text-capitalize {
+                font-size: 2rem;
             }
         }
 
@@ -50,7 +61,7 @@
         <div class="container text-center"
             style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);padding-top: 6rem">
             <p class="fsz-14 text-uppercase color-blue1 mb-10"> Welcome to Synex Digital </p>
-            <h2 class="fsz-80 text-capitalize"> Portfolio Grid </h2>
+            <h2 class="text-capitalize"> Portfolio Grid </h2>
         </div>
         <section class="tc-portfolio-grid-style1 pt-120 pb-120">
             <div class="container">
@@ -59,7 +70,8 @@
                         <div class="col-lg-4">
                             <div class="portfolio-card mb-80 wow fadeInUp slow">
                                 <div class="img th-400 overflow-hidden img-cover">
-                                    <img src="{{ asset('uploads/project/' . $project->thumbnail) }}" alt="">
+                                    <img src="{{ asset('uploads/project/' . $project->thumbnail) }}"
+                                        alt="{{ $project->title }}">
                                 </div>
                                 <div class="info pt-30">
                                     <p class="fsz-14 text-uppercase color-999 mb-10"> design, ux </p>

@@ -37,10 +37,10 @@
             <div class="row">
                 <div class="col-lg-9">
                     <div class="d-flex align-items-center flex-wrap">
-                        <div class="foot-logo">
+                        {{-- <div class="foot-logo">
                             <img src="" alt="" class="lt_item">
                             <img src="" alt="" class="dr_item">
-                        </div>
+                        </div> --}}
                         <div class="inf ms-80">
                             <p> © 2023 By <a href="#" class="color-000"> Synex Digital </a> All Rights Reserved.
                             </p>
