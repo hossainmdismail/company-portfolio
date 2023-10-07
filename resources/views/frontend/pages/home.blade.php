@@ -49,7 +49,7 @@
                                     </text>
                                 </svg>
                             </a>
-                            <img src="{{ asset('default/default.png') }}" class="icon fsz-45" width="40"
+                            <img src="{{ asset('default/webpack.png') }}" class="icon fsz-45" width="40"
                                 alt="Synex Digital">
                         </div>
                     </div>

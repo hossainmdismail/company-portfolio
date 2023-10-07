@@ -376,9 +376,10 @@
 
 .tc-header-style1 .rotate-box .icon {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    padding: 5px;
+    left: 65%;
+    width: 100px;
+    top: 36%;
+    padding: 0px;
     -webkit-transform: translate(-100%);
     -ms-transform: translate(-100%);
     transform: translate(-100%);
