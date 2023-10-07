@@ -104,7 +104,7 @@
                 <div class="mind"> got a project in mind? </div>
                 </p>
                 <h2>
-                    <div><a href=""> let’s talk! </a> </div>
+                    <div><a href="{{ route('talk') }}"> let’s talk! </a> </div>
                 </h2>
 
             </div>
