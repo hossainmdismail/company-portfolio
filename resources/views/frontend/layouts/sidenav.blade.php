@@ -9,7 +9,7 @@
                 <img src="assets/img/logo_home1_lt.png" alt="" class="dr_item">
             </a>
         </div> --}}
-        <div class="pages_links">
+        {{-- <div class="pages_links">
             <ul>
                 <li><a href="{{ route('home') }}" class="active">Home</a></li>
                 <li><a href="{{ route('about') }}">about</a></li>
@@ -19,7 +19,7 @@
                 <li><a href="../inner_pages/page_contact.html">contact</a></li>
                 <li><a href="../inner_pages/page_product_grid.html">shop</a></li>
             </ul>
-        </div>
+        </div> --}}
         <div class="side_foot">
             <h5> get in touch </h5>
             <div class="row">
