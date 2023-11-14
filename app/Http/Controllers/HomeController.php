@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
         SEOTools::setTitle('Synex Digital');
 
-        $project = Project::select('id', 'slugs', 'product_id', 'title', 'thumbnail')->where('status', 1)->get();
+        $project = Project::select('id', 'slugs', 'product_id', 'title', 'thumbnail', 'seo_description')->where('status', 1)->get();
         $team    = Team::where('status', 1)->get();
         $social  = Social_links::where('status', 1)->get();
         $service = Service::where('status', 1)->get()->take(8);

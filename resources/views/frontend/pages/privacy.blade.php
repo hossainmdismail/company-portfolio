@@ -1,136 +1,81 @@
-@extends('frontend.layouts.app')
-
-@section('style')
-    <style>
-        h2.main_title {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 4rem;
-        }
-
-        p.details_text {
-            font-size: 18px;
-            color: #3f3d3de0;
-        }
-
-        .boxes {
-            margin-bottom: 3rem;
-        }
-    </style>
-@endsection
+@extends('frontend.layouts.blank')
 @section('content')
-    <div class="main-box-style1 bg-white radius-9 mx-4 my-3 mt-4">
-        <section style="padding: 20px">
-            <div id="terms_condition" style="margin-top: 3rem;margin-bottom: 3rem">
-                <div class="container">
-                    <h2 class="main_title">Terms and <span class="fst-italic color-999 fw-500 fm-playfair">Privacy
-                            Policy</span></h2>
-                    <p class="details_text">The present Privacy Policy outlines how Codixel collects, utilizes, manages, and
-                        reveals the data acquired from users. It applies to all services and products offered by Codixel.
-                    </p>
-                    <div class="boxes">
-                        <h3 class="sub_title">License to use website</h3>
-                        <p class="details_text">The intellectual property rights in the website and the materials on the
-                            website
-                            belong to us or our licensors. All these intellectual property rights are reserved, except as
-                            otherwise
-                            stated in the license below. You may only view, download for the purpose of caching, and print
-                            pages or
-                            other content from the website for your personal use, subject to the restrictions outlined below
-                            and
-                            elsewhere in these terms and conditions.</p>
-                        <p class="details_text">Any violation of the points outlined may result in federal action being
-                            taken against the offender. Please be aware that we take these violations seriously and will
-                            pursue legal action if necessary. It is your responsibility to abide by these rules and
-                            regulations to avoid any legal consequences.</p>
+    <main class="mt-9 lg:mt-16 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
+        <div class="flex flex-col md:flex-col lg:flex-row gap-10 pb-20">
+            <div class="w-full md:w-full lg:w-2/3">
+                <div>
+                    <h1 class="text-xl md:text-2xl lg:text-[3.0517578125rem] font-semibold"
+                        style="font-family: 'Figtree', sans-serif;">
+                        Privacy Policy for Synex digital
+                    </h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-[17px] leading-[2rem] font-medium"
+                            style="font-family: 'Figtree', sans-serif;">At Synex Digital, accessible from
+                            www.synexdigital.com, one of our main priorities is the privacy of our visitors. This Privacy
+                            Policy document contains types of information that is collected and recorded by Synex Digital
+                            and how we use it.</p>
+                        <p class="text-sm md:text-base lg:text-lg font-medium">If you have additional questions or require
+                            more information about our Privacy Policy, do not hesitate to contact us.</p>
+                        <p class="text-sm md:text-base lg:text-lg font-medium">This Privacy Policy applies only to our online
+                            activities and is valid for visitors to our website with regards to the information that they
+                            shared and/or collect in Synex Digital. This policy is not applicable to any information
+                            collected offline or via channels other than this website.</p>
                     </div>
-                    <div class="boxes">
-                        <h3 class="sub_title">Personal identification information</h3>
-                        <p class="details_text">We may collect personal identification information through various means
-                            from Users, which include but are not limited to, visiting our site, registering on the site,
-                            placing an order, subscribing to the newsletter, participating in a survey, filling out a form,
-                            and utilizing other activities, services, features or resources made available on our Site.</p>
-                        <p class="details_text">When appropriate, Users may be requested to provide their name, email
-                            address, mailing address, and phone number. We will collect personal identification information
-                            from Users only when it is voluntarily submitted to us. Users have the option to decline
-                            providing personally identifiable information; however, doing so may hinder their participation
-                            in certain Site-related activities.</p>
+                </div>
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-4xl font-bold">Information we collect</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">The personal information that you are asked
+                            to provide, and the reasons why you are asked to provide it, will be made clear to you at the
+                            point we ask you to provide your personal information.</p>
+                        <p class="text-sm md:text-base lg:text-lg font-medium">If you contact us directly, we may receive
+                            additional information about you such as your name, email address, phone number, the contents of
+                            the message and/or attachments you may send us, and any other information you may choose to
+                            provide.</p>
+                        <p class="text-sm md:text-base lg:text-lg font-medium">When you register for an Account, we may ask
+                            for your contact information, including items such as name, company name, address, email
+                            address, and telephone number.</p>
                     </div>
-                    <div class="boxes">
-                        <h3 class="sub_title">Non-personal identification information</h3>
-                        <p class="details_text">Whenever users engage with our Site, we may gather non-personal
-                            identification information that pertains to their interaction. Such information may include the
-                            type of computer, browser, and technical details about the user's means of connecting to our
-                            Site, including their operating system and internet service provider, among other similar
-                            information.</p>
+                </div>
+                <div class="">
+                    <h1 class="text-xl md:text-2xl lg:text-4xl font-bold">How we use your information</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">We use the information we collect in various
+                            ways, including to:</p>
+                        <ol class="list-disc px-10">
+                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">Provide, operate, and maintain
+                                our website</li>
+                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">Improve, personalize, and
+                                expand our website</li>
+                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">ImpUnderstand and analyze how
+                                you use our website</li>
+                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">Develop new products,
+                                services, features, and functionality</li>
+                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">Communicate with you, either
+                                directly or through one of our partners, including for customer service, to provide you with
+                                updates and other information relating to the website, and for marketing and promotional
+                                purposes</li>
+                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">Send you emails</li>
+                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">Find and prevent fraud</li>
+                        </ol>
                     </div>
-                    <div class="boxes">
-                        <h3 class="sub_title">Web browser cookies</h3>
-                        <p class="details_text">To improve user experience, our Site may use cookies. These small files are
-                            placed on a user's hard drive by web browsers for record-keeping purposes and, at times, to
-                            track information about them. Users have the option to configure their web browser settings to
-                            either refuse cookies or to receive alerts when cookies are being transmitted. It is important
-                            to note, however, that disabling cookies may result in some parts of the Site not functioning
-                            properly.</p>
-                    </div>
-                    <div class="boxes">
-                        <h3 class="sub_title">How we protect your information</h3>
-                        <p class="details_text">We have implemented appropriate data collection, storage, and processing
-                            practices, as well as security measures, to safeguard against unauthorized access, modification,
-                            disclosure, or destruction of your personal information, username, password, transaction
-                            information, and other data stored on our Site.</p>
-                    </div>
-                    <div class="boxes">
-                        <h3 class="sub_title">Sharing your personal information</h3>
-                        <p class="details_text">We do not disclose, trade, or lease personal identification information of
-                            our
-                            Users to any third party. However, we may share generic aggregated demographic information,
-                            which is
-                            not linked to any personal identification information, with our trusted business partners,
-                            affiliates, and advertisers for the purposes mentioned earlier.</p>
-                        <p class="details_text">We do not disclose, trade, or lease personal identification information of
-                            our
-                            Users to any third party. However, we may share generic aggregated demographic information,
-                            which is
-                            not linked to any personal identification information, with our trusted business partners,
-                            affiliates, and advertisers for the purposes mentioned earlier.</p>
-                    </div>
-                    <div class="boxes">
-                        <h3 class="sub_title">Third-party websites</h3>
-                        <p class="details_text">Our Site may contain advertising or other content that includes links to the
-                            websites and services of our partners, suppliers, advertisers, sponsors, licensors, and other
-                            third
-                            parties. However, we do not control the content or links that appear on these sites and are not
-                            liable for the practices used by websites linked to or from our Site.</p>
-                        <p class="details_text">It should be noted that these sites or services, including their content and
-                            links, may be continually changing. Furthermore, these sites and services may have their own
-                            customer service policies and privacy policies. Any interaction or browsing on any other
-                            website,
-                            including sites that have a link to our Site, is subject to that particular website's own terms
-                            and
-                            policies.</p>
-                    </div>
-                    <div class="boxes">
-                        <h3 class="sub_title">Changes to this privacy policy</h3>
-                        <p class="details_text">Codixel reserves the right to modify this privacy policy at its discretion
-                            and
-                            at any time. In the event of any updates or changes, the revised date will be indicated at the
-                            bottom of this page. We advise Users to check this page regularly to stay informed about how we
-                            safeguard the personal information we collect. By using our Site, you acknowledge and agree that
-                            it
-                            is your responsibility to review this privacy policy periodically and remain informed of any
-                            modifications.</p>
-                    </div>
-                    <div class="boxes">
-                        <h3 class="sub_title">Your acceptance of these terms</h3>
-                        <p class="details_text">If you use our Site, it means that you agree to abide by this policy. If you
-                            do
-                            not agree with this policy, please do not use our Site. Your continued use of the Site after we
-                            post
-                            changes to this policy will mean that you accept those changes.</p>
+                </div>
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-4xl font-bold">Advertising Partners Privacy Policies</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">You may consult this list to find the Privacy
+                            Policy for each of the advertising partners of Synex Digital.</p>
+                        <p class="text-sm md:text-base lg:text-lg font-medium">Third-party ad servers or ad networks uses
+                            technologies like cookies, JavaScript, or Web Beacons that are used in their respective
+                            advertisements and links that appear on Synex Digital, which are sent directly to users'
+                            browser. They automatically receive your IP address when this occurs. These technologies are
+                            used to measure the effectiveness of their advertising campaigns and/or to personalize the
+                            advertising content that you see on websites that you visit.</p>
+                        <p class="text-sm md:text-base lg:text-lg font-medium">Note that Synex Digital has no access to or
+                            control over these cookies that are used by third-party advertisers.</p>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </main>
 @endsection
