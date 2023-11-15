@@ -5,49 +5,71 @@
     <main class="mt-9 lg:mt-16 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
         <div class="flex flex-col md:flex-row lg:flex-row items-center gap-5">
             <div class="flex-1 space-y-2 md:space-y-3 lg:space-y-4">
-                <h2 class="text-xl md:text-2xl lg:text-4xl font-semibold leading-tight">{{ $project->title }}</h2>
+                <h2 class="text-xl md:text-2xl lg:text-4xl font-semibold leading-tight">{{ $blog->title }}</h2>
                 <p class="text-base md:text-lg lg:text-xl font-medium">Share with :</p>
                 <div class="flex gap-4 text-xl">
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}" target="_blank">
                         <i class="fa-brands fa-facebook"></i>
                     </a>
-                    <a href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}&text={{ urlencode($project->title) }}"
+                    <a href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}&text={{ urlencode($blog->title) }}"
                         target="_blank">
                         <i class="fa-brands fa-twitter"></i>
                     </a>
                 </div>
             </div>
             <div class="flex-1">
-                <img class="w-full" src="{{ asset('uploads/project/' . $project->thumbnail) }}" alt="">
+                <img class="w-full rounded-xl" src="{{ asset('uploads/blog/' . $blog->thumbnail) }}" alt="">
             </div>
         </div>
         <div class="flex flex-col-reverse md:flex-col-reverse lg:flex-row gap-10 py-20">
             <div class="w-full lg:w-2/3">
-                {!! $project->content !!}
+                {!! $blog->content !!}
             </div>
-            <div class="w-full lg:w-1/3">
-                <h3 class="text-xl font-bold py-5">Author</h3>
-                <div class="flex gap-5 items-center ring-2 rounded-lg ring-gray-400 p-3">
-                    <div class="w-14 h-14 rounded-full bg-gray-300">
-                        <img src="" alt="">
+            {{-- left Side grid --}}
+            <div class="w-2/6 h-fit rounded-lg">
+                <div class="w-full border rounded-lg p-4 mb-4">
+                    <div class="text-lg font-semibold mb-1">
+                        Recent Post
                     </div>
-                    <div
-                        class="flex flex-col md:flex-row lg:flex-row justify-around items-center gap-2 md:gap-10 lg:gap-10">
-                        <div>
-                            <h3 class="text-lg font-semibold">{{ $project->client }}</h3>
-                            <p class="text-base font-medium">${{ number_format($project->budget) }}</p>
-                        </div>
+                    <hr>
+                    <div class="w-full mt-3 flex flex-col gap-4">
+                        @forelse ($blogs as $blog)
+                            <a href="{{ route('frontBlog', $blog->slugs) }}"
+                                class="px-2 py-2 bg-slate-100 duration-150 hover:bg-slate-200 rounded-lg flex">
+                                <div class="mr-2 w-24 h-14 rounded-lg overflow-hidden">
+                                    <img class="bg-slate-400 w-20 h-14 rounded-lg"
+                                        src="{{ asset('uploads/blog/' . $blog->thumbnail) }}" alt="">
+                                </div>
+                                <div>
+                                    <h1 class="font-semibold">{{ $blog->title }}</h1>
+                                    <span class="text-[#315A6B] text-xs">{{ $blog->created_at->format('d M Y') }}</span>
+                                </div>
+                            </a>
+                        @empty
+                        @endforelse
                     </div>
                 </div>
-                <div class="py-10">
-                    <h3 class="text-lg font-bold">Published</h3>
-                    <p class="text-lg font-semibold">{{ $project->created_at->format('d M Y') }}</p>
+
+                <div class="w-full border rounded-lg p-4 mb-4">
+                    <div class="text-lg font-semibold mb-1">
+                        Category
+                    </div>
+                    <hr>
+                    <div class="w-full mt-3 flex flex-col gap-4">
+                        @foreach ($categories as $category)
+                            <a href="{{ route('blog.list') }}"
+                                class="px-2 py-2 bg-slate-100 duration-150 hover:bg-slate-200 block rounded-lg">{{ $category->name }}</a>
+                        @endforeach
+
+                    </div>
                 </div>
             </div>
+
         </div>
     </main>
-    <div class="mt-5 lg:mt-20 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
-        <div class="flex flex-col lg:flex-row lg:gap-14 py-10 md:py-14 lg:py-20">
+    {{-- Newsletter --}}
+    <div class="my-5 lg:my-20 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
+        <div class="flex flex-col lg:flex-row lg:gap-14 shadow-xl rounded-3xl">
             <div class="flex-1">
                 <div class="hidden lg:flex lg:h-full relative rounded-l-3xl"
                     style="background-image: url('{{ asset('asset/Frontend/Hero_Section.png') }}'); background-position: bottom; background-size: cover;">
@@ -58,11 +80,8 @@
                     </div>
                 </div>
             </div>
-            <div class="flex md:flex lg:hidden justify-center text-center pb-7 md:pb-10 ">
-                <h3 class="text-xl md:text-2xl font-semibold">Interested in collaborating with us?</h3>
-            </div>
-            <form class="flex flex-1 flex-col gap-5 p-10 rounded-3xl border-r-0 md:border-r-4 border-r-[#124346]"
-                action="{{ route('talk.store') }}" method="post">
+            <form class="flex flex-1 flex-col gap-5 p-0 md:p-10 rounded-full" action="{{ route('talk.store') }}"
+                method="post">
                 @csrf
                 <div class="flex flex-col lg:flex-row md:flex-row gap-3 md:gap-5 lg:gap-6 w-full">
                     <div class="flex-1 space-y-2">
@@ -96,7 +115,7 @@
 
                 <div class="flex gap-7 w-full">
                     <div class="flex-1 space-y-2">
-                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Project
+                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your blog
                             Brief</label>
                         <textarea
                             class="w-full py-3 lg:py-3 px-6 font-semibold placeholder-gray-500 rounded-xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 text-base lg:text-lg h-24"

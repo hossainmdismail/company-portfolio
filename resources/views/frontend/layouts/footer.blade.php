@@ -1,6 +1,6 @@
 <footer
     style="background-image: url({{ asset('/asset/Frontend/BG.png') }}); background-position: center; background-repeat: no-repeat;">
-    <div class="mx-auto max-w-screen-xl py-4 px-4 md:px-0 lg:px-0">
+    <div class="mx-auto max-w-screen-xl px-4 md:px-0 lg:px-0">
         <div class="flex flex-col lg:flex-row gap-10">
             <div
                 class="w-full flex md:flex lg:flex-col items-center md:items-center lg:items-start gap-3 lg:gap-0 lg:w-2/4 px-0 md:px-40 lg:px-0 text-center justify-center">
@@ -161,27 +161,11 @@
                 </div>
             </div>
         </div>
-        <div class="border border-[#515151] mt-10 md:mt-14 lg:mt-20">
+        <div class="border border-[#C2E813] mt-10 md:mt-14 lg:mt-20">
 
         </div>
-        <div class=" flex gap-2 justify-center items-center py-10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24"
-                fill="none">
-                <g clip-path="url(#clip0_91_7498)">
-                    <path
-                        d="M12.5 21C17.4706 21 21.5 16.9706 21.5 12C21.5 7.02944 17.4706 3 12.5 3C7.52944 3 3.5 7.02944 3.5 12C3.5 16.9706 7.52944 21 12.5 21Z"
-                        stroke="#353535" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M15.5 14.25C15.0278 14.8796 14.3694 15.3448 13.6181 15.5794C12.8669 15.8141 12.0608 15.8065 11.3141 15.5576C10.5675 15.3087 9.91804 14.8312 9.45784 14.1927C8.99764 13.5542 8.75 12.7871 8.75 12C8.75 11.2129 8.99764 10.4458 9.45784 9.80734C9.91804 9.16884 10.5675 8.69133 11.3141 8.44244C12.0608 8.19355 12.8669 8.1859 13.6181 8.42057C14.3694 8.65525 15.0278 9.12035 15.5 9.75"
-                        stroke="#353535" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </g>
-                <defs>
-                    <clipPath id="clip0_91_7498">
-                        <rect width="24" height="24" fill="white" transform="translate(0.5)" />
-                    </clipPath>
-                </defs>
-            </svg>
-            <p class="text-xs md:text-lg lg:text-xl font-normal">Copyright all rights by Synex Digital</p>
+        <div class="flex gap-2 justify-center items-center py-6">
+            <p class="text-xs md:text-lg lg:text-xl font-normal">Copyright © 2023 Synex Digital</p>
         </div>
     </div>
 </footer>

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Project;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Illuminate\Http\Request;
 
 class FronProjectController extends Controller
 {
@@ -19,15 +21,26 @@ class FronProjectController extends Controller
 
         return view('frontend.pages.project', ['project' => $project]);
     }
-    function portfolio()
+
+    function portfolio(Request $request)
     {
         SEOTools::setTitle('Synex Digital - Portfolio');
         SEOTools::setDescription('Explore our diverse portfolio featuring a range of web applications, websites, and design projects. See how Synex Digital brings creativity and innovation to life.');
         SEOMeta::addKeyword(['portfolio', 'web development', 'web applications', 'design projects', 'Synex Digital', 'showcase, creative work', 'innovation', 'web design', 'application development']);
 
-        $project = Project::where('status', 1)->get();
+        $data = Project::query();
+        if ($request->has('category')) {
+            if ($request->category != 'clear') {
+                $data->where('product_id', $request->category);
+            }
+        }
+
+        $portfolio = Product::where('status', 1)->get();
+
+        $project = $data->where('status', 1)->get();
         return view('frontend.pages.projects', [
             'projects' => $project,
+            'categories' => $portfolio,
         ]);
     }
 }

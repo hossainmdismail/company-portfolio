@@ -14,10 +14,10 @@
                 </ul>
             </div>
             <div class="flex-1">
-                <div class="flex gap-1 lg:gap-2 items-end">
+                <a href="{{ route('home') }}" class="flex gap-1 lg:gap-2 items-end">
                     <img class="w-28 p-1 lg:32 xl:w-40" src="{{ asset('asset/Frontend/logo_dsefault.png') }}"
                         alt="Synex Digital Logo">
-                </div>
+                </a>
             </div>
         </div>
         <div class="navbar-center hidden lg:flex">

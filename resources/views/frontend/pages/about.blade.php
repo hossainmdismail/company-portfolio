@@ -79,8 +79,7 @@
     <div class="py-10 mt-10 mb-10" style="background-image: url('{{ asset('asset/Frontend/testimonial.png') }}')">
         <!-- Header Title and descripiton -->
         <div class="flex flex-col gap-3">
-            <p class="font-semibold text-2xl text-center text-[#6F840A]">Our
-                Portfolio</p>
+            <p class="font-semibold text-2xl text-center text-[#6F840A]">Testimonial</p>
             <h2 class="text-white text-sm lg:text-3xl font-semibold lg:font-bold text-center leading-6 lg:leading-9">
                 Our
                 inventive productions

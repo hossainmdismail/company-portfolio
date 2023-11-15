@@ -2,21 +2,25 @@
 @section('content')
     <main class="mt-9 lg:mt-16 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
         <div class="flex flex-col md:flex-col lg:flex-row gap-10 pb-20">
-            <div class="w-full md:w-full lg:w-2/3">
+            <div class="w-full">
                 <div>
-                    <h1 class="text-xl md:text-2xl lg:text-[3.0517578125rem] font-semibold"
-                        style="font-family: 'Figtree', sans-serif;">
-                        Privacy Policy for Synex digital
-                    </h1>
+                    <div class="w-full text-center">
+                        <h1 class="text-xl md:text-2xl lg:text-[3.0517578125rem] font-semibold mb-6"
+                            style="font-family: 'Figtree', sans-serif;">
+                            Privacy Policy for Synex digital
+                        </h1>
+                    </div>
                     <div class="py-5 space-y-7">
-                        <p class="text-sm md:text-base lg:text-[17px] leading-[2rem] font-medium"
-                            style="font-family: 'Figtree', sans-serif;">At Synex Digital, accessible from
+                        <p class="text-sm leading-loose text-paragraph md:text-base lg:text-[17px]  font-medium ">At Synex
+                            Digital,
+                            accessible from
                             www.synexdigital.com, one of our main priorities is the privacy of our visitors. This Privacy
                             Policy document contains types of information that is collected and recorded by Synex Digital
                             and how we use it.</p>
                         <p class="text-sm md:text-base lg:text-lg font-medium">If you have additional questions or require
                             more information about our Privacy Policy, do not hesitate to contact us.</p>
-                        <p class="text-sm md:text-base lg:text-lg font-medium">This Privacy Policy applies only to our online
+                        <p class="text-sm md:text-base lg:text-lg font-medium">This Privacy Policy applies only to our
+                            online
                             activities and is valid for visitors to our website with regards to the information that they
                             shared and/or collect in Synex Digital. This policy is not applicable to any information
                             collected offline or via channels other than this website.</p>

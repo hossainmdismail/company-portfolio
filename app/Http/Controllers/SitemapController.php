@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Project;
 use App\Models\Service;
 use Carbon\Carbon;
@@ -14,7 +15,7 @@ class SitemapController extends Controller
     function index()
     {
         $project = Project::select('slugs')->where('status', 1)->get();
-        // $service = Service::select('slugs')->where('status', 1)->get();
+        $blogs = Blog::select('slugs')->where('status', 1)->get();
 
         $sitemap = Sitemap::create();
         $sitemap->add(Url::create('/')
@@ -33,7 +34,7 @@ class SitemapController extends Controller
                 ->setLastModificationDate(Carbon::now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.1))
-            ->add(Url::create('/terms-and-privacy-policy')
+            ->add(Url::create('/privacy-policy')
                 ->setLastModificationDate(Carbon::now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.1));
@@ -46,12 +47,12 @@ class SitemapController extends Controller
                 ->setPriority(0.1));
         }
         //Dynamic Service
-        // foreach ($service as $services) {
-        //     $sitemap->add(Url::create('/our-service' . '/' . $services->slugs)
-        //         ->setLastModificationDate(Carbon::now())
-        //         ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-        //         ->setPriority(0.1));
-        // }
+        foreach ($blogs as $blog) {
+            $sitemap->add(Url::create('/front/blog' . '/' . $blog->slugs)
+                ->setLastModificationDate(Carbon::now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                ->setPriority(0.1));
+        }
 
         $sitemap->writeToFile(public_path('sitemap.xml'));
 
