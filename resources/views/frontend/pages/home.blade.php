@@ -240,7 +240,7 @@
         </div>
         <div class="py-10">
             <div class="flex flex-col lg:flex-row gap-6">
-                <div class="flex-1">
+                <div class="flex-1 block">
                     <div class="hero h-[500px;] lg:h-full relative rounded-xl"
                         style="background-image: url({{ asset('uploads/blog/' . $singleBlog->thumbnail) }});">
                         <div class="hero-overlay bg-gradient-to-tr from-black rounded-xl"></div>

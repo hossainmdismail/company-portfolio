@@ -24,7 +24,13 @@ class HomeController extends Controller
         $testimonial = Testimonial::where('status', 1)->get();
 
         $singleBlog = Blog::where('status', 1)->first();
-        $blog = Blog::where('status', 1)->whereNotIn('id', [$singleBlog->id])->get();
+
+        $data = Blog::query();
+        if ($singleBlog) {
+            $blog = $data->where('status', 1)->whereNotIn('id', [$singleBlog->id])->get();
+        }
+
+        $blog = $data->get();
 
         return view('frontend.pages.home', [
             'projects'      => $project,
