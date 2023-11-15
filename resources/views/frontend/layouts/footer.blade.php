@@ -15,14 +15,14 @@
                 <div class="flex flex-col gap-3">
                     <h4 class="text-lg lg:text-xl font-semibold text-[#04364A]">Quick Link</h4>
                     <div class="flex flex-col gap-2 md:gap-3 lg:gap-4">
-                        <a href=""
+                        <a href="{{ route('home') }}"
                             class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Home</a>
-                        <a href=""
+                        <a href="{{ route('about') }}"
                             class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">About</a>
-                        <a href=""
-                            class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Service</a>
-                        <a href=""
+                        <a href="{{ route('blog.list') }}"
                             class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Blog</a>
+                        <a href="{{ route('portfolio.grid') }}"
+                            class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Project</a>
                     </div>
                 </div>
                 <div class="flex flex-col gap-3">
@@ -31,12 +31,9 @@
                         <a href="{{ route('privacy') }}"
                             class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Privecy
                             Policy</a>
-                        <a href=""
-                            class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Help
-                            & Support</a>
-                        <a href=""
-                            class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Terms
-                            & Conditions</a>
+                        <a href="{{ route('talk') }}"
+                            class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Contact
+                            us</a>
                     </div>
                 </div>
                 <div class="">
@@ -49,7 +46,7 @@
                                     d="M2 4.5C2 3.70435 2.31607 2.94129 2.87868 2.37868C3.44129 1.81607 4.20435 1.5 5 1.5H6.372C7.232 1.5 7.982 2.086 8.191 2.92L9.296 7.343C9.38554 7.701 9.36746 8.07746 9.24401 8.42522C9.12055 8.77299 8.89723 9.07659 8.602 9.298L7.309 10.268C7.174 10.369 7.145 10.517 7.183 10.62C7.74738 12.1549 8.6386 13.5487 9.79495 14.7051C10.9513 15.8614 12.3451 16.7526 13.88 17.317C13.983 17.355 14.13 17.326 14.232 17.191L15.202 15.898C15.4234 15.6028 15.727 15.3794 16.0748 15.256C16.4225 15.1325 16.799 15.1145 17.157 15.204L21.58 16.309C22.414 16.518 23 17.268 23 18.129V19.5C23 20.2956 22.6839 21.0587 22.1213 21.6213C21.5587 22.1839 20.7956 22.5 20 22.5H17.75C9.052 22.5 2 15.448 2 6.75V4.5Z"
                                     fill="#111111" />
                             </svg>
-                            <p class="font-semibold">(904) 335-2403</p>
+                            <p class="font-semibold">+8801613408101</p>
                         </div>
                         <div class="flex items-center gap-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24"
@@ -61,7 +58,7 @@
                                     d="M23 6.908V6.75C23 5.95435 22.6839 5.19129 22.1213 4.62868C21.5587 4.06607 20.7956 3.75 20 3.75H5C4.20435 3.75 3.44129 4.06607 2.87868 4.62868C2.31607 5.19129 2 5.95435 2 6.75V6.908L11.714 12.886C11.9504 13.0314 12.2225 13.1084 12.5 13.1084C12.7775 13.1084 13.0496 13.0314 13.286 12.886L23 6.908Z"
                                     fill="#111111" />
                             </svg>
-                            <p class="font-semibold">judith403@gmail.com</p>
+                            <p class="font-semibold">digitalsynex@gmail.com</p>
                         </div>
                         <div class="flex gap-6">
                             <a href="">
