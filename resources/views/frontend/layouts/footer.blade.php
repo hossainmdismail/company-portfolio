@@ -61,7 +61,7 @@
                             <p class="font-semibold">digitalsynex@gmail.com</p>
                         </div>
                         <div class="flex gap-6">
-                            <a href="">
+                            <a href="https://www.facebook.com/synexdigital">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-[33px;] md:w-[40px;] lg:w-[40px;]"
                                     viewBox="0 0 41 40" fill="none">
                                     <g clip-path="url(#clip0_91_7069)">
@@ -80,7 +80,7 @@
                                     </defs>
                                 </svg>
                             </a>
-                            <a href="">
+                            <a href="https://www.linkedin.com/company/synex-digital">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-[33px;] md:w-[40px;] lg:w-[40px;]"
                                     viewBox="0 0 41 40" fill="none">
                                     <g clip-path="url(#clip0_91_7073)">
@@ -102,7 +102,7 @@
                                     </defs>
                                 </svg>
                             </a>
-                            <a href="">
+                            <a href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-[33px;] md:w-[40px;] lg:w-[40px;]"
                                     viewBox="0 0 41 40" fill="none">
                                     <g clip-path="url(#clip0_91_7481)">
@@ -145,14 +145,14 @@
                                     </defs>
                                 </svg>
                             </a>
-                            <a href="">
+                            {{-- <a href="">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-[33px;] md:w-[40px;] lg:w-[40px;]"
                                     viewBox="0 0 41 40" fill="none">
                                     <path
                                         d="M3.91317 5L16.5694 21.9225L3.83325 35.6812H6.69964L17.8501 23.6353L26.8593 35.6812H36.6137L23.2455 17.8069L35.1001 5H32.2338L21.9647 16.0941L13.6676 5H3.91317ZM8.12841 7.11138H12.6096L32.3979 33.5695H27.9166L8.12841 7.11138Z"
                                         fill="black" />
                                 </svg>
-                            </a>
+                            </a> --}}
                         </div>
                     </div>
                 </div>
