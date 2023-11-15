@@ -12,82 +12,73 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('default/default.png') }}" title="Favicon" sizes="16x16">
 
-    <!-- bootstrap 5 -->
-    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/bootstrap.min.css') }}">
-
-    <!-- font family -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <script src="https://kit.fontawesome.com/70b22ffbec.js" crossorigin="anonymous"></script>
-    <!-- line-awesome icons  -->
-    {{-- <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/line-awesome.css') }}"> --}}
-    <!-- themify icons  -->
-    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/themify-icons.css') }}">
-    <!-- ionicons icons  -->
-    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/ionicons.css') }}">
-    <!-- animate css  -->
-    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/animate.css') }}">
-    <!-- fancybox popup  -->
-    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/jquery.fancybox.css') }}">
-    <!-- lity popup  -->
-    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/lity.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/all.min.css') }}">
-    <!-- swiper slider  -->
-    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/lib/swiper8.min.css') }}">
-    <!-- cursor  -->
-    <!-- <link rel="stylesheet" href="../common/assets/css/lib/cursor.css"> -->
-
-    <!-- common style -->
-    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/common_style.css') }}">
-
-    <!-- home style -->
-    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/home_1_style.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('asset/Frontend/css/inner_pages.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,500;0,600;1,300&family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="{{ asset('asset/Frontend/') }}/lib/owl/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{ asset('asset/Frontend/') }}/lib/owl/owl.theme.default.min.css">
+    <script src="{{ asset('asset/Frontend/') }}/lib/owl/owl.carousel.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "button-primary": "#C2E812",
+                        "primary-bg": "#C2E812",
+                        "primary-hover": "#c2e813f0",
+                        "text-primary": "#111",
+                        "footer-bg": "#121212;",
+                        "carusel-primary": "#121212",
+                        "h-overlay": "linear-gradient(180deg, #121212 0%, rgba(18, 18, 18, 0.00) 100%)",
+                    },
+                    fontFamily: {
+                        'figtree': ['Figtree', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
     @yield('style')
 </head>
 
-<body class="home-style1 bg-light1"
-    style="height: 9175px; touch-action: pan-x; overscroll-behavior: none; scroll-behavior: auto;"
-    cz-shortcut-listen="true">
+<body class="font-figtree">
+    <!-- header section  -->
+    <div class="bg-cover" style="background-image: url('{{ asset('asset/Frontend/cover.png') }}')">
+        <header class="mx-auto max-w-screen-xl py-4">
+            <!-- navigation bar start-->
+            @include('frontend.layouts.header')
+            <!-- navigation bar end  -->
+        </header>
 
-    @php
-        $path = request()->path();
-    @endphp
-
-    @if ($path === '/')
-        <div class="loader-wrap">
-            <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-                <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-            </svg>
-
-            <div class="loader-wrap-heading">
-                <div class="load-text">
-                    <span>SYNEX</span>
-                    <span>DIGITAL</span>
-                </div>
-            </div>
+        <div
+            class="mx-auto max-w-screen-xl  py-3 px-2 md:py-5 lg:py-10 xl:pt-16 xl:pb-24 flex flex-col lg:flex-row gap-10 ">
+            @yield('headerTab')
         </div>
-    @endif
-
-    {{-- @include('frontend.layouts.sidenav') --}}
-    <div class="ScrollSmoother-wrapper"
-        style="inset: 0px; width: 100%; height: 100%; position: fixed; overflow: hidden;">
-        <div class="smooth-scroll-content" id="scrollsmoother-container"
-            style="translate: none; rotate: none; scale: none; box-sizing: border-box; width: 100%; overflow: visible;">
-            <!--Contents-->
-            <main>
-                @include('frontend.layouts.header')
-                @yield('content')
-            </main>
-            @include('frontend.layouts.footer')
-        </div>
+        <!-- banner part end  -->
     </div>
-    <a href="#" class="to_top show">
-        <i class="fa-solid fa-chevron-up"></i>
-    </a>
-    @include('frontend.layouts.script')
+    <!-- header section end  -->
+    <!-- main section start  -->
+    <main>
+        @yield('content')
+    </main>
+
+    @include('frontend.layouts.footer')
     @yield('script')
 </body>
 

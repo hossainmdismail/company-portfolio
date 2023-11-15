@@ -1,113 +1,50 @@
 @extends('frontend.layouts.app')
 
-@section('style')
-    <style>
-        .tc-single-project-style1 {
-            padding: 120px 0;
-            color: #1b1b1e;
-        }
-
-        .main-info {
-            padding: 50px 0;
-            border-bottom: 1px solid rgba(12, 86, 237, 0.2666666667);
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-
-        .item {
-            -webkit-margin-end: 60px;
-            margin-inline-end: 60px;
-        }
-
-        .tc-inner-footer-style1 {
-            background-color: #1b1b1e;
-            color: #fff;
-        }
-
-        .mind {
-            font-size: 2rem;
-            font-family: monospace;
-        }
-
-        h2.text-capitalize {
-            font-size: 3rem;
-        }
-
-        @media screen and (max-width: 991px) {
-            .main-info {
-                display: block;
-            }
-
-        }
-
-        @media screen and (max-width: 720px) {
-            h2.text-capitalize {
-                font-size: 2rem;
-            }
-        }
-
-        .mind {
-            font-size: 1.2rem;
-        }
-    </style>
+@section('headerTab')
+    <div class="w-full text-white text-center space-y-3 lg:space-y-5 py-9">
+        <h2 class="text-xl lg:text-4xl font-bold ">Our Portfolio</h2>
+        <p class="text-sm lg:text-lg font-medium">Home > Our Portfolio</p>
+    </div>
 @endsection
 
 @section('content')
-    <div class="main-box-style1 bg-white radius-9 mx-4 my-3 mt-4">
-        <div class="container text-center"
-            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);padding-top: 6rem">
-            <p class="fsz-14 text-uppercase color-blue1 mb-10"> Welcome to Synex Digital </p>
-            <h2 class="text-capitalize"> Portfolio Grid </h2>
-        </div>
-        <section class="tc-portfolio-grid-style1 pt-120 pb-120">
-            <div class="container">
-                <div class="row gx-5">
-                    @forelse ($projects as $project)
-                        <div class="col-lg-4">
-                            <div class="portfolio-card mb-80 wow fadeInUp slow">
-                                <div class="img th-400 overflow-hidden img-cover">
-                                    <img src="{{ asset('uploads/project/' . $project->thumbnail) }}"
-                                        alt="{{ $project->title }}">
-                                </div>
-                                <div class="info pt-30">
-                                    <p class="fsz-14 text-uppercase color-999 mb-10"> design, ux </p>
-                                    <h5> <a href="{{ route('portfolio', $project->slugs) }}"
-                                            class="fsz-24 fw-bold hover-blue1">
-                                            {{ $project->title }} </a> </h5>
-                                </div>
-                            </div>
+    <main class="mt-5 mb-10 lg:mb-24 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0 flex flex-col lg:flex-row gap-6">
+        <div class="w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-11" aria-labelledby="profile-tab">
+                @forelse ($projects as $project)
+                    <a href="{{ route('portfolio', $project->slugs) }}"
+                        class="border border-[#DBDBDB] group rounded-lg p-4 space-b-1 duration-150 hover:shadow-xl shadow-slate-300 border-none ring-1 ring-gray-300 hover:ring-2 hover:ring-[#124346]">
+                        <div class="flex flex-col items-center rounded-lg mb-4">
+                            <img class="rounded-lg" src="{{ asset('uploads/project/' . $project->thumbnail) }}"
+                                alt="">
                         </div>
+                        <h3 class="text-xl font-bold text-left text-[#111]">{{ $project->title }}</h3>
+                        <p class="text-base font-medium">{{ $project->seo_description }}</p>
+                    </a>
+                @empty
+                    No Data found
+                @endforelse
+            </div>
+        </div>
+
+        <div class="w-2/6 mt-11 h-fit rounded-lg">
+            <div class="w-full border rounded-lg p-4">
+                <div class="text-lg font-semibold mb-1">
+                    Category
+                </div>
+                <hr>
+                <form action="" class="w-full mt-3 flex flex-col gap-4" method="get">
+                    @csrf
+                    <button type="submit" name="category" value="clear"
+                        class="px-2 py-2 bg-slate-100 duration-150 hover:bg-slate-200 block rounded-lg">Clear</button>
+                    @forelse ($categories as $category)
+                        <button type="submit" name="category" value="{{ $category->id }}"
+                            class="px-2 py-2 bg-slate-{{ request()->input('category') == $category->id ? '200' : '50' }} duration-150 hover:bg-slate-200 block rounded-lg">{{ $category->service }}</button>
                     @empty
                     @endforelse
-                </div>
-                {{-- <div class="text-center">
-                <div class="button_su border-0 rounded-0">
-                    <span class="su_button_circle bg-light1 desplode-circle"></span>
-                    <a href="#"
-                        class="butn text-uppercase border-1 border_light border button_su_inner bg-transparent py-4 px-5 rounded-0">
-                        <span class="button_text_container fsz-14 color-blue1"> more works <i class="fal fa-plus ms-2"></i>
-                        </span>
-                    </a>
-                </div>
-            </div> --}}
-            </div>
-        </section>
-    </div>
-    <section class="tc-inner-footer-style1">
-        <div class="foot-content">
-            <div class="info text-center">
-                <p>
-                <div class="mind"> got a project in mind? </div>
-                </p>
-                <h2>
-                    <div><a href="{{ route('talk') }}"> let’s talk! </a> </div>
-                </h2>
-
+                </form>
             </div>
         </div>
-    </section>
+
+    </main>
 @endsection

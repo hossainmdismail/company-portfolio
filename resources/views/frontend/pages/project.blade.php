@@ -1,112 +1,184 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.blank')
 
-@section('style')
-    <style>
-        .tc-single-project-style1 {
-            padding: 120px 0;
-            color: #1b1b1e;
-        }
-
-        .main-info {
-            padding: 50px 0;
-            border-bottom: 1px solid rgba(12, 86, 237, 0.2666666667);
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-
-        .item {
-            -webkit-margin-end: 60px;
-            margin-inline-end: 60px;
-        }
-
-        .tc-inner-footer-style1 {
-            background-color: #1b1b1e;
-            color: #fff;
-        }
-
-        .mind {
-            font-size: 2rem;
-            font-family: monospace;
-        }
-
-        @media screen and (max-width: 991px) {
-            .main-info {
-                display: block;
-            }
-        }
-
-        .mind {
-            font-size: 1.2rem;
-        }
-    </style>
-@endsection
 
 @section('content')
-    <div class="main-box-style1 bg-white radius-9 mx-4 my-3 mt-4">
-        <div class="tc-inner-header-style1"
-            style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-            <!--  start header  -->
-            <div class="header-content text-center">
-                <div class="container"
-                    style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                    <p class="fsz-14 text-uppercase color-blue1 mb-10"> Welcome to Synex Digital </p>
-                    <h2 class="fsz-80 text-capitalize"> {{ $project->title }} </h2>
+    <main class="mt-9 lg:mt-16 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
+        <div class="flex flex-col md:flex-row lg:flex-row items-center gap-5">
+            <div class="flex-1 space-y-2 md:space-y-3 lg:space-y-4">
+                <h2 class="text-xl md:text-2xl lg:text-4xl font-semibold leading-tight">{{ $project->title }}</h2>
+                <p class="text-base md:text-lg lg:text-xl font-medium">Share with :</p>
+                <div class="flex gap-4 text-xl">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}&text={{ urlencode($project->title) }}"
+                        target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
                 </div>
             </div>
-            {{-- <img src="" alt="" class="symbol1">
-    <img src="" alt="" class="symbol2"> --}}
+            <div class="flex-1">
+                <img class="w-full" src="{{ asset('uploads/project/' . $project->thumbnail) }}" alt="">
+            </div>
         </div>
-
-        <section class="tc-single-project-style1">
-            <div class="container">
-                <div class="main-img img-cover">
-                    <img src="{{ asset('uploads/project/' . $project->thumbnail) }}" alt="{{ $project->title }}">
+        <div class="flex flex-col-reverse md:flex-col-reverse lg:flex-row gap-10 py-20">
+            <div class="w-full lg:w-2/3">
+                {!! $project->content !!}
+            </div>
+            <div class="w-full lg:w-1/3">
+                <h3 class="text-xl font-bold py-5">Author</h3>
+                <div class="flex gap-5 items-center ring-2 rounded-lg ring-gray-400 p-3">
+                    <div class="w-14 h-14 rounded-full bg-gray-300">
+                        <img src="" alt="">
+                    </div>
+                    <div
+                        class="flex flex-col md:flex-row lg:flex-row justify-around items-center gap-2 md:gap-10 lg:gap-10">
+                        <div>
+                            <h3 class="text-lg font-semibold">{{ $project->client }}</h3>
+                            <p class="text-base font-medium">${{ number_format($project->budget) }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="main-info">
-                    <div class="item">
-                        <p class="fsz-14 text-uppercase color-666 mb-10"> Author </p>
-                        <h5 class="fsz-24 fw-bold mb-0"> {{ $project->client }} </h5>
-                    </div>
-                    <div class="item">
-                        <p class="fsz-14 text-uppercase color-666 mb-10"> date </p>
-                        <h5 class="fsz-24 fw-bold mb-0"> {{ $project->created_at->format('Y-m-d') }} </h5>
-                    </div>
-                    <div class="item">
-                        <p class="fsz-14 text-uppercase color-666 mb-10"> budget </p>
-                        <h5 class="fsz-24 fw-bold mb-0"> & {{ $project->budget }} </h5>
-                    </div>
-                    <div class="item">
-                        <p class="fsz-14 text-uppercase color-666 mb-10"> services </p>
-                        <h5 class="fsz-24 fw-bold mb-0"> aaaa </h5>
-                    </div>
-                    <a href="#0" class="icon"> <i class="fal fa-long-arrow-right"></i> </a>
-                </div>
-                <div class="sub-title mt-60 mb-40">
-                    <h3 class="fsz-40"> Project Overview </h3>
-                </div>
-                <div class="text fsz-16 color-777 mt-30">
-                    {!! $project->content !!}
+                <div class="py-10">
+                    <h3 class="text-lg font-bold">Published</h3>
+                    <p class="text-lg font-semibold">{{ $project->created_at->format('d M Y') }}</p>
                 </div>
             </div>
-        </section>
-    </div>
-    <div class="container">
-        <section class="tc-inner-footer-style1">
-            <div class="foot-content">
-                <div class="info text-center">
-                    <p>
-                    <div class="mind"> got a project in mind? </div>
-                    </p>
-                    <h2>
-                        <div><a href=""> let’s talk! </a> </div>
-                    </h2>
-
+        </div>
+    </main>
+    <div class="mt-5 lg:mt-20 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
+        <div class="flex flex-col lg:flex-row lg:gap-14 py-10 md:py-14 lg:py-20">
+            <div class="flex-1">
+                <div class="hidden lg:flex lg:h-full relative rounded-l-3xl"
+                    style="background-image: url('{{ asset('asset/Frontend/Hero_Section.png') }}'); background-position: bottom; background-size: cover;">
+                    <div class="text-black text-left p-10">
+                        <h2 class="text-2xl font-bold text-white py-5">Interested in collaborating <br> with us?</h2>
+                        <p class="text-xl text-[#edededba]">By completing the form to consent to message storage, you
+                            can now get in touch with us directly.</p>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div class="flex md:flex lg:hidden justify-center text-center pb-7 md:pb-10 ">
+                <h3 class="text-xl md:text-2xl font-semibold">Interested in collaborating with us?</h3>
+            </div>
+            <form class="flex flex-1 flex-col gap-5 p-10 rounded-3xl border-r-0 md:border-r-4 border-r-[#124346]"
+                action="{{ route('talk.store') }}" method="post">
+                @csrf
+                <div class="flex flex-col lg:flex-row md:flex-row gap-3 md:gap-5 lg:gap-6 w-full">
+                    <div class="flex-1 space-y-2">
+                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Name</label>
+                        <input
+                            class="w-full py-3 lg:py-3 px-6 font-semibold placeholder-gray-500 rounded-xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 text-base lg:text-lg"
+                            type="text" name="name" id="" placeholder="John*">
+                    </div>
+                    <div class="flex-1 space-y-2">
+                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Email</label>
+                        <input
+                            class="w-full py-3 lg:py-3 px-6 font-semibold placeholder-gray-500 rounded-xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 text-base lg:text-lg"
+                            type="email" name="email" id="" placeholder="example@gmail.com*">
+                    </div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row md:flex-row gap-3 md:gap-5 lg:gap-6 w-full">
+                    <div class="flex-1 space-y-2">
+                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Number</label>
+                        <input
+                            class="w-full py-3 lg:py-3 px-6 font-semibold placeholder-gray-500 rounded-xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 text-base lg:text-lg"
+                            type="text" name="number" id="" placeholder="+1">
+                    </div>
+                    <div class="flex-1 space-y-2">
+                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Company</label>
+                        <input
+                            class="w-full py-3 lg:py-3 px-6 font-semibold placeholder-gray-500 rounded-xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 text-base lg:text-lg"
+                            type="text" name="compnay" id="" placeholder="Company Name">
+                    </div>
+                </div>
+
+                <div class="flex gap-7 w-full">
+                    <div class="flex-1 space-y-2">
+                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Project
+                            Brief</label>
+                        <textarea
+                            class="w-full py-3 lg:py-3 px-6 font-semibold placeholder-gray-500 rounded-xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 text-base lg:text-lg h-24"
+                            name="message" id="" cols="10" rows="10"></textarea>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit"
+                        class="text-xl font-semibold text-white bg-[#124346] px-6 py-3 rounded-full hover:bg-[#243d3f]">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
+@endsection
+
+
+@section('script')
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <script>
+                $(document).ready(function() {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.onmouseenter = Swal.stopTimer;
+                            toast.onmouseleave = Swal.resumeTimer;
+                        }
+                    });
+                    Toast.fire({
+                        icon: "error",
+                        title: "{{ $error }}"
+                    });
+                });
+            </script>
+        @endforeach
+    @endif
+    @if (session()->has('err'))
+        <script>
+            $(document).ready(function() {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "error",
+                    title: "{{ session('err') }}"
+                });
+            });
+        </script>
+    @endif
+
+    @if (session()->has('succ'))
+        <script>
+            $(document).ready(function() {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "success",
+                    title: "{{ session('succ') }}"
+                });
+            });
+        </script>
+    @endif
 @endsection

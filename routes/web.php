@@ -10,6 +10,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactCotroller;
 use App\Http\Controllers\FronProjectController;
+use App\Http\Controllers\FrontBlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurServiceController;
 use App\Http\Controllers\PrivacyController;
@@ -59,10 +60,12 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'link'])->name('about');
 Route::get('/portfolio/{slugs}', [FronProjectController::class, 'link'])->name('portfolio');
 Route::get('/grid/portfolio', [FronProjectController::class, 'portfolio'])->name('portfolio.grid');
+Route::get('/front/blog/{slugs}', [FrontBlogController::class, 'link'])->name('frontBlog');
+Route::get('/list/blog', [FrontBlogController::class, 'list'])->name('blog.list');
+Route::get('/blog/list/{$id}', [FrontBlogController::class, 'category'])->name('blog.category');
 // Route::get('/our-service/{slugs}', [OurServiceController::class, 'index'])->name('our.service');
 Route::get('/contact-us', [ContactCotroller::class, 'index'])->name('contact');
 
-
 Route::get('/talk', [TalkController::class, 'index'])->name('talk');
 Route::post('/talk/store', [TalkController::class, 'store'])->name('talk.store');
-Route::get('/terms-and-privacy-policy', [PrivacyController::class, 'index'])->name('privacy');
+Route::get('/privacy-policy', [PrivacyController::class, 'index'])->name('privacy');

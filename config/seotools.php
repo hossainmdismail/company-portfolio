@@ -57,7 +57,7 @@ return [
             'url'         => 'http://synexdigital.com', // Set null for using Url::current(), set false to total remove
             'type'        => 'Digital Web Development and UI/UX Design Agency',
             'site_name'   => 'Synex Digital',
-            'images'      => ['http://synexdigital.com/default/default.png'],
+            'images'      => ['http://synexdigital.com/asset/Frontend/logo_dsefault.png'],
         ],
     ],
     'twitter' => [
@@ -78,10 +78,10 @@ return [
             'description'   => 'Welcome to Synex Digital - your trusted partner for web application development, web development, UI/UX design, and more. Let us bring your digital dreams to life.', // set false to total remove
             'url'           => 'http://synexdigital.com', // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type'          => 'Organization',
-            'images'        => ['http://synexdigital.com/default/default.png'],
+            'images'        => ['http://synexdigital.com/asset/Frontend/logo_dsefault.png'],
 
             "name"          => "Synex Digital",
-            "logo"          => "http://synexdigital.com/default/default.png",
+            "logo"          => "http://synexdigital.com/asset/Frontend/logo_dsefault.png",
 
             "address"       => [
                 "@type"             => "PostalAddress",
