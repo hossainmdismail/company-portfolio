@@ -96,9 +96,9 @@
         </div>
         <!-- service caard end -->
         <!-- about part start  -->
-        <div class="py-10 flex flex-col-reverse md:flex-row lg:flex-row items-center gap-10">
+        <div class="py-10 flex flex-col-reverse md:flex-row lg:flex-row lg:py-20 items-center gap-10">
             <div class="flex-1">
-                <img class="rounded-lg h-full" src="{{ asset('asset/Frontend/Rectangle 3.png') }}" alt>
+                <img class="rounded-lg h-full" src="{{ asset('default/thumbBody.jpg') }}" alt>
             </div>
             <div class="flex-1">
                 <div class="flex flex-col gap-3 lg:gap-5">
