@@ -6,6 +6,8 @@ use App\Models\Product;
 use App\Models\Project;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\TwitterCard;
 use Illuminate\Http\Request;
 
 class FronProjectController extends Controller
@@ -13,11 +15,15 @@ class FronProjectController extends Controller
     function link($slugs)
     {
         $project = Project::where('slugs', $slugs)->first();
+        $image = asset('uploads/project/' . $project->thumbnail);
 
         //Seo details
         SEOTools::setTitle($project->seo_title);
         SEOTools::setDescription($project->seo_description);
         SEOMeta::addKeyword([$project->seo_tags]);
+
+        OpenGraph::addImage($image);
+        TwitterCard::setImage($image);
 
         return view('frontend.pages.project', ['project' => $project]);
     }

@@ -64,7 +64,7 @@
 
 @section('content')
     <div class="mt-5 lg:mt-10 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
-        <div class="mt-5 mb-10 lg:mt-10 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
+        <div class="mt-5 mb-10 lg:mt-10 mx-auto max-w-screen-xl px-0 md:px-8 lg:px-0">
             <!-- service part start  -->
             <div class="py-5 lg:py-10 flex flex-col gap-5">
                 <p class="font-medium lg:font-semibold text-lg lg:text-2xl text-center text-[#6F840A]">Our

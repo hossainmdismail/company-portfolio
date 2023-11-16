@@ -62,7 +62,7 @@ Route::get('/portfolio/{slugs}', [FronProjectController::class, 'link'])->name('
 Route::get('/grid/portfolio', [FronProjectController::class, 'portfolio'])->name('portfolio.grid');
 Route::get('/front/blog/{slugs}', [FrontBlogController::class, 'link'])->name('frontBlog');
 Route::get('/list/blog', [FrontBlogController::class, 'list'])->name('blog.list');
-Route::get('/blog/list/{$id}', [FrontBlogController::class, 'category'])->name('blog.category');
+// Route::get('/blog/list/{$id}', [FrontBlogController::class, 'category'])->name('blog.category');
 // Route::get('/our-service/{slugs}', [OurServiceController::class, 'index'])->name('our.service');
 Route::get('/contact-us', [ContactCotroller::class, 'index'])->name('contact');
 

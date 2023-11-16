@@ -26,7 +26,7 @@
                 {!! $blog->content !!}
             </div>
             {{-- left Side grid --}}
-            <div class="w-2/6 h-fit rounded-lg">
+            <div class="w-full lg:w-2/6 h-fit rounded-lg">
                 <div class="w-full border rounded-lg p-4 mb-4">
                     <div class="text-lg font-semibold mb-1">
                         Recent Post
@@ -80,7 +80,7 @@
                     </div>
                 </div>
             </div>
-            <form class="flex flex-1 flex-col gap-5 p-0 md:p-10 rounded-full" action="{{ route('talk.store') }}"
+            <form class="flex flex-1 flex-col gap-5 p-2 md:p-10 rounded-full" action="{{ route('talk.store') }}"
                 method="post">
                 @csrf
                 <div class="flex flex-col lg:flex-row md:flex-row gap-3 md:gap-5 lg:gap-6 w-full">
