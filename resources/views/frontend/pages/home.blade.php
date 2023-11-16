@@ -30,8 +30,8 @@
             and IT Service.</p>
         <div class="flex gap-6 pt-5 text-center flex-col md:flex-row">
             <a href="{{ route('portfolio.grid') }}"
-                class="py-2.5 px-5 me-2 mb-2 text-base font-semibold text-gray-900 focus:outline-none bg-button-primary rounded-full duration-150 ease-in-out hover:bg-[#b8ec3ff0] ">Explore
-                Our Portfolio</a>
+                class="py-2.5 px-5 mt-2 mb-2 text-base font-semibold text-gray-900 focus:outline-none bg-button-primary rounded-full duration-150 ease-in-out hover:bg-[#b8ec3ff0] ">Explore
+                Our Project</a>
             <a href="{{ route('about') }}"
                 class="py-2.5 px-5 me-2 mb-2 text-base text-button-primary font-semibold focus:outline-none border border-button-primary bg-transparent rounded-full duration-150 ease-in-out hover:bg-[#b8ec3ff0] hover:text-black ">About
                 us</a>
