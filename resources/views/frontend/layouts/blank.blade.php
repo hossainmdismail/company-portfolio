@@ -68,8 +68,12 @@
                                         class="cursor-pointer duration-150 hover:text-primary-bg">Home</a>
                                 </li>
                                 <li><a href="{{ route('about') }}"
-                                        class="cursor-pointer duration-150 hover:text-primary-bg">About
-                                        Us</a></li>
+                                        class="cursor-pointer duration-150 hover:text-primary-bg">About</a>
+                                </li>
+                                <li><a href="{{ route('blog.list') }}"
+                                        class="cursor-pointer duration-150 hover:text-primary-bg">Blog</a></li>
+                                <li><a href="{{ route('portfolio.grid') }}"
+                                        class="cursor-pointer duration-150 hover:text-primary-bg">Project</a></li>
                             </ul>
                         </div>
                         <div class="flex-1">
@@ -87,6 +91,10 @@
                             <li><a href="{{ route('about') }}"
                                     class="cursor-pointer duration-150 hover:text-primary-bg">About</a>
                             </li>
+                            <li><a href="{{ route('blog.list') }}"
+                                    class="cursor-pointer duration-150 hover:text-primary-bg">Blog</a></li>
+                            <li><a href="{{ route('portfolio.grid') }}"
+                                    class="cursor-pointer duration-150 hover:text-primary-bg">Project</a></li>
                         </ul>
                     </div>
                     <div class="flex-row-reverse relative items-center hidden lg:flex">

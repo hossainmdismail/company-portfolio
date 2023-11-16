@@ -61,7 +61,7 @@
             <div class="flex md:flex lg:hidden justify-center text-center pb-7 md:pb-10 ">
                 <h3 class="text-xl md:text-2xl font-semibold">Interested in collaborating with us?</h3>
             </div>
-            <form class="flex flex-1 flex-col gap-5 p-10 rounded-3xl border-r-0 md:border-r-4 border-r-[#124346]"
+            <form class="flex flex-1 flex-col gap-5 p-0 lg:p-10 rounded-3xl border-r-0 md:border-r-4 border-r-[#124346]"
                 action="{{ route('talk.store') }}" method="post">
                 @csrf
                 <div class="flex flex-col lg:flex-row md:flex-row gap-3 md:gap-5 lg:gap-6 w-full">

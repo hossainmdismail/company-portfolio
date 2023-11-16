@@ -7,6 +7,8 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\TwitterCard;
 
 class FrontBlogController extends Controller
 {
@@ -16,10 +18,15 @@ class FrontBlogController extends Controller
         if (!$blog) {
             return back();
         }
+        $image = asset('uploads/blog/' . $blog->thumbnail);
+
         //Seo details
         SEOTools::setTitle($blog->seo_title);
         SEOTools::setDescription($blog->seo_description);
         SEOMeta::addKeyword([$blog->seo_tags]);
+
+        OpenGraph::addImage($image);
+        TwitterCard::setImage($image);
 
         $blogs = Blog::where('status', 1)->latest()->get()->take(4);
         $category = Category::where('status', 1)->get();
