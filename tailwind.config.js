@@ -23,6 +23,10 @@ export default {
             // Add any other theme customizations here
         },
     },
-    plugins: [],
+    plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+        ...(process.env.NODE_ENV === 'production' ? { cssnano: {} } : {})
+    }
 }
 

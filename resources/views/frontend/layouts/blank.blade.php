@@ -9,6 +9,9 @@
     <meta name="author" content="">
     {!! SEO::generate() !!}
 
+
+    {{-- Google Site Verification --}}
+    <meta name="google-site-verification" content="WD0y1ieiXYkW_OffpIe7LpBPOr-mSFQpmqju5Vz79B8" />
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('default/default.png') }}" title="Favicon" sizes="16x16">
 
@@ -31,6 +34,16 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0D02Y90D7E');
+    </script>
     <script>
         tailwind.config = {
             theme: {

@@ -137,7 +137,7 @@
                                 AND DEVELOPERS</p>
                         </div>
                     </div>
-                    <a href=""
+                    <a href="{{ route('about') }}"
                         class="font-semibold text-base bg-[#124346] text-white px-5 py-2.5 rounded-full max-w-fit duration-150 ease-in-out hover:bg-[#094346eb]">Learn
                         More</a>
                 </div>

@@ -9,6 +9,8 @@
     <meta name="author" content="SynexDigital">
     {!! SEO::generate() !!}
 
+    {{-- Google Site Verification --}}
+    <meta name="google-site-verification" content="WD0y1ieiXYkW_OffpIe7LpBPOr-mSFQpmqju5Vz79B8" />
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('default/default.png') }}" title="Favicon" sizes="16x16">
 
