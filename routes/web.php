@@ -38,6 +38,7 @@ Route::get('/generate-sitemap', [SitemapController::class, 'index'])->name('site
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/notifiaction/ckeckup/{id}', [AdminController::class, 'check'])->name('order.nptofoaction.check');
     Route::resources([
         'user'          => UserController::class,
         'category'      => CategoryController::class,

@@ -1,6 +1,6 @@
 <footer
     style="background-image: url({{ asset('/asset/Frontend/BG.png') }}); background-position: center; background-repeat: no-repeat;">
-    <div class="mx-auto max-w-screen-xl px-4 md:px-0 lg:px-0">
+    <div class="mx-auto max-w-screen-xl px-4 md:px-0 lg:px-0 text-gray-700">
         <div class="flex flex-col lg:flex-row gap-10">
             <div
                 class="w-full flex md:flex lg:flex-col items-center md:items-center lg:items-start gap-3 lg:gap-0 lg:w-2/4 px-0 md:px-40 lg:px-0 text-center justify-center">

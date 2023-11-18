@@ -1,6 +1,6 @@
 @extends('frontend.layouts.blank')
 @section('content')
-    <main class="mt-9 lg:mt-16 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
+    <main class="mt-9 lg:mt-16 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0 text-gray-700">
         <div class="flex flex-col md:flex-col lg:flex-row gap-10 pb-20">
             <div class="w-full">
                 <div>

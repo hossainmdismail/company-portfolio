@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class OrderNotification extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'notification'
+    ];
 }

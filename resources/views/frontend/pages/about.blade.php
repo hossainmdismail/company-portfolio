@@ -8,10 +8,10 @@
 @section('content')
     <div class="mt-5 lg:mt-20 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
         <div class="space-y-4 md:space-y-5 lg:space-y-8 pt-5">
-            <h2 class="text-xl lg:text-4xl md:text-3xl font-semibold lg:font-bold ">Going
+            <h2 class="text-xl lg:text-4xl md:text-3xl font-semibold lg:font-bold text-black">Going
                 further than just a cowering space,Synex Digital offers
                 more.</h2>
-            <p class="text-sm lg:text-lg font-normal lg:font-medium">Synex
+            <p class="text-sm lg:text-lg font-normal lg:font-medium text-gray-950">Synex
                 Digital is a Professional Software Agency Platform. Here we
                 will provide you only interesting content, which you will
                 like very much. We're dedicated to providing you the best of
@@ -119,8 +119,9 @@
         </div>
     </div>
 
-    <div class="mt-5 lg:mt-20 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
-        <div class="flex flex-col lg:flex-row lg:gap-14 py-10 md:py-14 lg:py-20">
+    {{-- Newsletter --}}
+    <div class="my-5 lg:my-20 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
+        <div class="flex flex-col lg:flex-row lg:gap-14 shadow-xl rounded-3xl">
             <div class="flex-1">
                 <div class="hidden lg:flex lg:h-full relative rounded-l-3xl"
                     style="background-image: url('{{ asset('asset/Frontend/Hero_Section.png') }}'); background-position: bottom; background-size: cover;">
@@ -131,49 +132,49 @@
                     </div>
                 </div>
             </div>
-            <div class="flex md:flex lg:hidden justify-center text-center pb-7 md:pb-10 ">
-                <h3 class="text-xl md:text-2xl font-semibold">Interested in collaborating with us?</h3>
-            </div>
-            <form class="flex flex-1 flex-col gap-5 p-10 rounded-3xl border-r-0 md:border-r-4 border-r-[#124346]"
-                action="{{ route('talk.store') }}" method="post">
+            <form class="flex flex-1 flex-col gap-5 p-2 md:p-10 rounded-full" action="{{ route('talk.store') }}"
+                method="post">
                 @csrf
                 <div class="flex flex-col lg:flex-row md:flex-row gap-3 md:gap-5 lg:gap-6 w-full">
                     <div class="flex-1 space-y-2">
                         <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Name</label>
                         <input
                             class="w-full py-3 lg:py-3 px-6 font-semibold placeholder-gray-500 rounded-xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 text-base lg:text-lg"
-                            type="text" name="" id="" placeholder="Entire Your Name">
+                            type="text" name="name" id="" placeholder="John*">
                     </div>
                     <div class="flex-1 space-y-2">
-                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Name</label>
+                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Email</label>
                         <input
                             class="w-full py-3 lg:py-3 px-6 font-semibold placeholder-gray-500 rounded-xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 text-base lg:text-lg"
-                            type="text" name="" id="" placeholder="Entire Your Name">
+                            type="email" name="email" id="" placeholder="example@gmail.com*">
                     </div>
                 </div>
+
                 <div class="flex flex-col lg:flex-row md:flex-row gap-3 md:gap-5 lg:gap-6 w-full">
                     <div class="flex-1 space-y-2">
-                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Name</label>
+                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Number</label>
                         <input
                             class="w-full py-3 lg:py-3 px-6 font-semibold placeholder-gray-500 rounded-xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 text-base lg:text-lg"
-                            type="text" name="" id="" placeholder="Entire Your Name">
+                            type="text" name="number" id="" placeholder="+1">
                     </div>
                     <div class="flex-1 space-y-2">
-                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Name</label>
+                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Company</label>
                         <input
                             class="w-full py-3 lg:py-3 px-6 font-semibold placeholder-gray-500 rounded-xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 text-base lg:text-lg"
-                            type="text" name="" id="" placeholder="Entire Your Name">
+                            type="text" name="compnay" id="" placeholder="Company Name">
                     </div>
                 </div>
+
                 <div class="flex gap-7 w-full">
                     <div class="flex-1 space-y-2">
-                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Project
+                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your blog
                             Brief</label>
                         <textarea
                             class="w-full py-3 lg:py-3 px-6 font-semibold placeholder-gray-500 rounded-xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 text-base lg:text-lg h-24"
-                            name="" id="" cols="10" rows="10"></textarea>
+                            name="message" id="" cols="10" rows="10"></textarea>
                     </div>
                 </div>
+
                 <div>
                     <button type="submit"
                         class="text-xl font-semibold text-white bg-[#124346] px-6 py-3 rounded-full hover:bg-[#243d3f]">Submit</button>

@@ -1,14 +1,15 @@
 @extends('frontend.layouts.app')
 
 @section('headerTab')
-    <div class="w-full text-white text-center space-y-3 lg:space-y-5 py-9">
+    <div class="w-full text-white text-center space-y-3 lg:space-y-5 py-9 ">
         <h2 class="text-xl lg:text-4xl font-bold ">Our Project</h2>
         <p class="text-sm lg:text-lg font-medium">Home > Project</p>
     </div>
 @endsection
 
 @section('content')
-    <main class="mt-5 mb-10 lg:mb-24 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0 flex flex-col lg:flex-row gap-6">
+    <main
+        class="mt-5 mb-10 lg:mb-24 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0 flex flex-col lg:flex-row gap-6 text-gray-700">
         <div class="w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-11" aria-labelledby="profile-tab">
                 @forelse ($projects as $project)

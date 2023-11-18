@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <main class="mt-9 lg:mt-16 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
+    <main class="mt-9 lg:mt-16 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0 text-gray-700">
         <div class="flex flex-col md:flex-row lg:flex-row items-center gap-5">
             <div class="flex-1 space-y-2 md:space-y-3 lg:space-y-4">
                 <h2 class="text-xl md:text-2xl lg:text-4xl font-semibold leading-tight">{{ $blog->title }}</h2>
