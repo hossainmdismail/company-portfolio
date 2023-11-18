@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div class="mt-9 lg:mt-16 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0 mb-10">
+    <div class="mt-9 lg:mt-16 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0 mb-10 text-gray-700">
         <div class=" col-10 col-md-4 text-center">
             <div class="box mb-5 flex items-center justify-center">
                 <img src="{{ asset('default/icons8-box.gif') }}" alt="synex gif">

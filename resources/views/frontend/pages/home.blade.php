@@ -9,9 +9,12 @@
 @endsection
 
 
-@php
-    $service_slider = ['Web Customization', 'PHP-Laravel', 'SEO', 'Social Media Marketing', 'Google Ads', 'API'];
-@endphp
+@section('loader')
+    <!-- Preloader -->
+    <div id="preloader" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-white z-50">
+        <div class="loader border-0 border-t-2 border-[#124346] rounded-full w-20 h-20 animate-spin"></div>
+    </div>
+@endsection
 
 @section('headerTab')
     <div class="w-full lg:w-4/5 space-y-5">
@@ -325,6 +328,21 @@
                     }
                 }
             })
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            const visited = localStorage.getItem('visited');
+
+            if (!visited) {
+                localStorage.setItem('visited', 'true');
+                $('#preloader').show();
+                $(window).on('load', function() {
+                    $('#preloader').fadeOut('slow');
+                });
+            } else {
+                $('#preloader').hide();
+            }
         });
     </script>
 @endsection

@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    <main class="mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
+    <main class="mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0 text-gray-700">
         <div class="flex flex-col-reverse md:flex-col-reverse lg:flex-row gap-10 py-20">
             <div class="w-full">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

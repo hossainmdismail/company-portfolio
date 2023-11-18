@@ -23,10 +23,11 @@ export default {
             // Add any other theme customizations here
         },
     },
-    plugins: {
-        tailwindcss: {},
-        autoprefixer: {},
-        ...(process.env.NODE_ENV === 'production' ? { cssnano: {} } : {})
-    }
+    screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+    },
 }
 
