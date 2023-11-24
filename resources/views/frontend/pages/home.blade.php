@@ -5,6 +5,13 @@
             border: 1px solid #4b4b4b1f;
             box-shadow: 5px 3px 9px -11px;
         }
+        .img-header{
+            @media screen and (min-width: 1024px) {
+                .img-header{
+                    margin-right:200px;
+                }
+            }
+        }
     </style>
 @endsection
 
@@ -17,7 +24,7 @@
 @endsection
 
 @section('headerTab')
-    <div class="w-full lg:w-4/5 space-y-5">
+    <div class="w-full lg:w-4/5 space-y-5 ">
         <h1 class="text-white text-2xl md:text-3xl lg:text-6xl font-bold leading-10">
             Unlock your <br>
             <span class="text-[#C2E812]"> business's potential</span>
@@ -53,13 +60,12 @@
                 Awesome Team</p>
         </div>
     </div>
-    <div class="w-8/12 flex relative hidden lg:flex">
+    <div class="w-8/12  relative hidden md:hidden  lg:flex xl:flex">
         <div
             class="flex rounded-3xl absolute bottom-3 overflow-hidden z-10 mt-20 w-80 ml-20 mb-0 -skew-x-12 p-4 border-l-4 border-b-4  border-primary-bg">
             <img class=" rounded-2xl mr-10 z-10" src="{{ asset('asset/Frontend/Rectangle 3.png') }}" alt>
         </div>
-        <div
-            class="flex rounded-3xl overflow-hidden absolute ml-56 w-80 top-10 right-0 -mr-10  mb-0 -skew-x-12 p-4 border-t-4 border-r-4 border-b-4  border-primary-bg border-t-opacity-50">
+        <div class="flex mr-10  rounded-3xl overflow-hidden absolute ml-56 w-80 top-10 right-0 lg:-mr-10  mb-0 -skew-x-12 p-4 border-t-4 border-r-4 border-b-4  border-primary-bg border-t-opacity-50">
             <img class="w-min h-full rounded-2xl" src="{{ asset('asset/Frontend/Rectangle 3.png') }}" alt>
         </div>
     </div>
@@ -67,11 +73,10 @@
 
 @section('content')
     <div class="mt-5 lg:mt-10 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
-        <div class="mt-5 mb-10 lg:mt-10 mx-auto max-w-screen-xl px-0 md:px-8 lg:px-0">
+        <div class="mt-5 pt-10 mb-10 lg:mt-10 mx-auto max-w-screen-xl px-0 md:px-8 lg:px-0">
             <!-- service part start  -->
             <div class="py-5 lg:py-10 flex flex-col gap-5">
-                <p class="font-medium lg:font-semibold text-lg lg:text-2xl text-center text-[#6F840A]">Our
-                    Service</p>
+                <p class="font-medium lg:font-semibold text-lg lg:text-2xl text-center text-[#6F840A]">Our Service</p>
                 <h2
                     class="text-text-primary text-sm lg:text-3xl font-semibold lg:font-bold text-center leading-6 lg:leading-9 font-figtree">
                     Going
@@ -99,7 +104,7 @@
         </div>
         <!-- service caard end -->
         <!-- about part start  -->
-        <div class="py-10 flex flex-col-reverse md:flex-row lg:flex-row lg:py-20 items-center gap-10">
+        <div class="py-10 flex flex-col-reverse md:flex-row lg:flex-row lg:py-16 items-center gap-10">
             <div class="flex-1">
                 <img class="rounded-lg h-full" src="{{ asset('default/thumbBody.jpg') }}" alt>
             </div>
@@ -149,7 +154,7 @@
         <!-- about part end -->
 
         <!-- portfolio part start  -->
-        <div class="py-10">
+        <div class="py-10 lg:py-20">
             <!-- Header Title and descripiton -->
             <div class="flex flex-col gap-3">
                 <p class="font-semibold text-2xl text-center text-[#6F840A]">Our
@@ -187,13 +192,12 @@
         </div>
     </div>
     <!-- Testimonial -->
-    <div class="py-10 mt-10" style="background-image: url('{{ asset('asset/Frontend/testimonial.png') }}')">
+    <div class="py-10  mt-10 lg:py-0" style="background-image: url('{{ asset('asset/Frontend/testimonial.png') }}')">
         <!-- Header Title and descripiton -->
         <div class="flex flex-col gap-3">
             <p class="font-semibold text-2xl text-center text-[#6F840A]">Testimonial</p>
             <h2 class="text-white text-sm lg:text-3xl font-semibold lg:font-bold text-center leading-6 lg:leading-9">
-                Our
-                inventive productions
+                Our inventive productions
             </h2>
         </div>
 
@@ -230,9 +234,9 @@
         </div>
     </div>
     <!-- Testimonial End-->
-    <div class="mt-5 lg:mt-10 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
+    <div class="mt-5 lg:mt-0 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
         <!-- blog part start  -->
-        <div class="pt-10">
+        <div class="pt-10 lg:mt-20">
             <div class="flex flex-col gap-5">
                 <p class="font-semibold text-2xl text-center text-[#6F840A]">Our Blog</p>
                 <h2
@@ -245,19 +249,19 @@
             <div class="flex flex-col lg:flex-row gap-6">
                 <div class="flex-1 block">
                     <div class="hero h-[500px;] lg:h-full relative rounded-xl"
-                        style="background-image: url({{ asset('uploads/blog/' . $singleBlog->thumbnail) }});">
+                        style="background-image: url({{ asset('uploads/blog/' . $singleBlog->thumbnail) }});" >
                         <div class="hero-overlay bg-gradient-to-tr from-black rounded-xl"></div>
                         <div class="flex flex-col gap-3 absolute left-6 bottom-8 text-white text-left">
                             <div class="flex gap-4">
                                 <div class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none">
                                         <path
                                             d="M17.982 18.7252C17.2833 17.8001 16.3793 17.0498 15.3412 16.5336C14.3031 16.0173 13.1594 15.7491 12 15.7502C10.8407 15.7491 9.6969 16.0173 8.65883 16.5336C7.62077 17.0498 6.71675 17.8001 6.01801 18.7252M17.982 18.7252C19.3455 17.5124 20.3071 15.9137 20.7412 14.1413C21.1753 12.3688 21.0603 10.5063 20.4115 8.80067C19.7627 7.09506 18.6107 5.62697 17.1084 4.59109C15.6061 3.55521 13.8244 3.00049 11.9995 3.00049C10.1747 3.00049 8.39295 3.55521 6.89062 4.59109C5.38829 5.62697 4.23634 7.09506 3.58755 8.80067C2.93875 10.5063 2.82376 12.3688 3.25783 14.1413C3.6919 15.9137 4.65451 17.5124 6.01801 18.7252M17.982 18.7252C16.336 20.1934 14.2056 21.0033 12 21.0002C9.79404 21.0036 7.66425 20.1936 6.01801 18.7252M15 9.75019C15 10.5458 14.6839 11.3089 14.1213 11.8715C13.5587 12.4341 12.7957 12.7502 12 12.7502C11.2044 12.7502 10.4413 12.4341 9.87869 11.8715C9.31608 11.3089 9.00001 10.5458 9.00001 9.75019C9.00001 8.95454 9.31608 8.19148 9.87869 7.62887C10.4413 7.06626 11.2044 6.75019 12 6.75019C12.7957 6.75019 13.5587 7.06626 14.1213 7.62887C14.6839 8.19148 15 8.95454 15 9.75019Z"
                                             stroke="#FDFDFD" stroke-width="1.5" stroke-linecap="round"
                                             stroke-linejoin="round" />
-                                    </svg>
-                                    <p class="text-base ml-1 font-normal">Admin</p>
+                                    </svg> --}}
+                                    <p class="text-base ml-1 font-normal">{{ $singleBlog->created_at->format('d M Y') }}</p>
                                 </div>
                             </div>
                             <h2 class="text-2xl font-bold">{{ $singleBlog->title }}</h2>
@@ -280,15 +284,15 @@
                                 </figure>
                                 <div class="mt-6">
                                     <div class="flex gap-4">
-                                        <div class="flex">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        <div class="flex items-center gap-1">
+                                            {{-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                 viewBox="0 0 20 20" fill="none">
                                                 <path
                                                     d="M14.9849 15.6044C14.4026 14.8335 13.6493 14.2083 12.7842 13.7781C11.9192 13.3478 10.9661 13.1244 9.99993 13.1252C9.0338 13.1244 8.08067 13.3478 7.21561 13.7781C6.35056 14.2083 5.59721 14.8335 5.01493 15.6044M14.9849 15.6044C16.1212 14.5937 16.9225 13.2615 17.2842 11.7845C17.646 10.3074 17.5501 8.75532 17.0095 7.33397C16.4688 5.91263 15.5089 4.68922 14.2569 3.82599C13.005 2.96276 11.5202 2.50049 9.99951 2.50049C8.47881 2.50049 6.99404 2.96276 5.7421 3.82599C4.49016 4.68922 3.5302 5.91263 2.98954 7.33397C2.44888 8.75532 2.35306 10.3074 2.71478 11.7845C3.0765 13.2615 3.87868 14.5937 5.01493 15.6044M14.9849 15.6044C13.6133 16.8279 11.838 17.5029 9.99993 17.5002C8.16162 17.5031 6.38679 16.8281 5.01493 15.6044M12.4999 8.12524C12.4999 8.78828 12.2365 9.42417 11.7677 9.89301C11.2989 10.3619 10.663 10.6252 9.99993 10.6252C9.33689 10.6252 8.701 10.3619 8.23216 9.89301C7.76332 9.42417 7.49993 8.78828 7.49993 8.12524C7.49993 7.4622 7.76332 6.82632 8.23216 6.35748C8.701 5.88863 9.33689 5.62524 9.99993 5.62524C10.663 5.62524 11.2989 5.88863 11.7677 6.35748C12.2365 6.82632 12.4999 7.4622 12.4999 8.12524Z"
                                                     stroke="#111111" stroke-width="1.5" stroke-linecap="round"
                                                     stroke-linejoin="round" />
-                                            </svg>
-                                            <p class="text-base font-normal">Admin</p>
+                                            </svg> --}}
+                                            <p class="text-base font-normal">{{ $blog->created_at->format('d M Y') }}</p>
                                         </div>
                                     </div>
                                     <h3 class="text-lg font-bold mt-2">{{ $blog->title }}</h3>
@@ -299,7 +303,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center py-16">
+            <div class="text-center py-8">
                 <a href="{{ route('blog.list') }}"
                     class="font-semibold text-base bg-[#124346] text-white px-5 py-2.5 rounded-full max-w-fit duration-150 ease-in-out hover:bg-[#094346eb]">View
                     All</a>
