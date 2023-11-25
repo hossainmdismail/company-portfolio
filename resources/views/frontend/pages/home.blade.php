@@ -5,10 +5,11 @@
             border: 1px solid #4b4b4b1f;
             box-shadow: 5px 3px 9px -11px;
         }
-        .img-header{
+
+        .img-header {
             @media screen and (min-width: 1024px) {
-                .img-header{
-                    margin-right:200px;
+                .img-header {
+                    margin-right: 200px;
                 }
             }
         }
@@ -51,7 +52,7 @@
                 @forelse ($teams->take(5) as $key => $team)
                     <img class="inline-block h-14 w-14 rounded-full ring-2
        ring-[#0A4246] hover:ring-button-primary"
-                        src="{{ asset('uploads/team/' . $team->profile) }}" alt="">
+                        src="{{ asset('uploads/team/' . $team->profile) }}" alt="{{ $team->name }}">
                 @empty
                 @endforelse
 
@@ -250,7 +251,7 @@
             <div class="flex flex-col lg:flex-row gap-6">
                 <div class="flex-1 block">
                     <div class="hero h-[500px;] lg:h-full relative rounded-xl"
-                        style="background-image: url({{ asset('uploads/blog/' . $singleBlog->thumbnail) }});" >
+                        style="background-image: url({{ asset('uploads/blog/' . $singleBlog->thumbnail) }});">
                         <div class="hero-overlay bg-gradient-to-tr from-black rounded-xl"></div>
                         <div class="flex flex-col gap-3 absolute left-6 bottom-8 text-white text-left">
                             <div class="flex gap-4">
@@ -262,7 +263,8 @@
                                             stroke="#FDFDFD" stroke-width="1.5" stroke-linecap="round"
                                             stroke-linejoin="round" />
                                     </svg> --}}
-                                    <p class="text-base ml-1 font-normal">{{ $singleBlog->created_at->format('d M Y') }}</p>
+                                    <p class="text-base ml-1 font-normal">{{ $singleBlog->created_at->format('d M Y') }}
+                                    </p>
                                 </div>
                             </div>
                             <h2 class="text-2xl font-bold">{{ $singleBlog->title }}</h2>
@@ -320,7 +322,8 @@
             $('.owl-carousel').owlCarousel({
                 loop: true,
                 margin: 10,
-                nav: true,
+                dots: false,
+                nav: false,
                 responsive: {
                     0: {
                         items: 1
