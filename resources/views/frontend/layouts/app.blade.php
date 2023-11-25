@@ -9,7 +9,7 @@
 <body class="font-figtree dark:bg-white">
     @yield('loader')
     <!-- header section  -->
-    <div class="bg-cover" style="background-image: url('{{ asset('asset/Frontend/cover.png') }}')">
+    <div class="bg-cover bg-[#003f44]" style="background-image: url('{{ asset('asset/Frontend/cover.png') }}')">
         <header class="mx-auto max-w-screen-xl py-4">
             <!-- navigation bar start-->
             @include('frontend.layouts.header')

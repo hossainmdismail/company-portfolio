@@ -9,13 +9,17 @@ use App\Models\Social_links;
 use App\Models\Team;
 use App\Models\Testimonial;
 use Artesaos\SEOTools\Facades\SEOTools;
+use Artesaos\SEOTools\Facades\SEOMeta;
+
 //use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        //Meta SEO
         SEOTools::setTitle('Synex Digital');
+        SEOMeta::setCanonical(url()->current());
 
         $project = Project::select('id', 'slugs', 'product_id', 'title', 'thumbnail', 'seo_description')->where('status', 1)->get()->take(6);
         $team    = Team::where('status', 1)->get();

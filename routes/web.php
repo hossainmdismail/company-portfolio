@@ -8,11 +8,9 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\WebinfoController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ContactCotroller;
 use App\Http\Controllers\FronProjectController;
 use App\Http\Controllers\FrontBlogController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\OurServiceController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
@@ -65,7 +63,7 @@ Route::get('/front/blog/{slugs}', [FrontBlogController::class, 'link'])->name('f
 Route::get('/list/blog', [FrontBlogController::class, 'list'])->name('blog.list');
 // Route::get('/blog/list/{$id}', [FrontBlogController::class, 'category'])->name('blog.category');
 // Route::get('/our-service/{slugs}', [OurServiceController::class, 'index'])->name('our.service');
-Route::get('/contact-us', [ContactCotroller::class, 'index'])->name('contact');
+// Route::get('/contact-us', [ContactCotroller::class, 'index'])->name('contact');
 
 Route::get('/talk', [TalkController::class, 'index'])->name('talk');
 Route::post('/talk/store', [TalkController::class, 'store'])->name('talk.store');
