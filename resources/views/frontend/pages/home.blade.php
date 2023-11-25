@@ -54,13 +54,13 @@
         </div>
     </div>
     <div class="w-8/12 flex relative hidden lg:flex">
-        <div
-            class="flex rounded-3xl absolute bottom-3 overflow-hidden z-10 mt-20 w-80 ml-20 mb-0 -skew-x-12 p-4 border-l-4 border-b-4  border-primary-bg">
-            <img class=" rounded-2xl mr-10 z-10" src="{{ asset('asset/Frontend/Rectangle 3.png') }}" alt>
+        <div class="flex rounded-3xl absolute overflow-hidden z-10 mt-10 w-80  -skew-x-12 p-4 border-l-4 border-b-4  border-primary-bg"
+            style="top: 3rem;left:3rem;">
+            <img class=" rounded-2xl mr-10 z-10" src="{{ asset('asset/Frontend/banner.webp') }}" alt>
         </div>
         <div
-            class="flex rounded-3xl overflow-hidden absolute ml-56 w-80 top-10 right-0 -mr-10  mb-0 -skew-x-12 p-4 border-t-4 border-r-4 border-b-4  border-primary-bg border-t-opacity-50">
-            <img class="w-min h-full rounded-2xl" src="{{ asset('asset/Frontend/Rectangle 3.png') }}" alt>
+            class="flex rounded-3xl overflow-hidden absolute w-80 -top-10 right-0 mr-10  mb-0 -skew-x-12 p-4 border-t-4 border-r-4 border-b-4  border-primary-bg border-t-opacity-50">
+            <img class="w-min h-full rounded-2xl" src="{{ asset('asset/Frontend/banner2.webp') }}" alt>
         </div>
     </div>
 @endsection

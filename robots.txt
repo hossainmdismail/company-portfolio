@@ -1,1 +1,18 @@
 User-agent: *
+Disallow: /login
+Disallow: /register
+Disallow: /password/reset
+Disallow: /dashboard
+Disallow: /notification/
+Disallow: /user/
+Disallow: /category/
+Disallow: /blog/
+Disallow: /team/
+Disallow: /service/
+Disallow: /sociallink/
+Disallow: /webinfo/
+Disallow: /product/
+Disallow: /project/
+Disallow: /testimonial/
+Disallow: /talk/store
+

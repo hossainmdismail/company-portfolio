@@ -46,8 +46,9 @@
             </div>
         </div>
     </main>
-    <div class="mt-5 lg:mt-20 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
-        <div class="flex flex-col lg:flex-row lg:gap-14 py-10 md:py-14 lg:py-20">
+    {{-- Newsletter --}}
+    <div class="my-5 lg:my-20 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
+        <div class="flex flex-col lg:flex-row lg:gap-14 shadow-xl rounded-3xl">
             <div class="flex-1">
                 <div class="hidden lg:flex lg:h-full relative rounded-l-3xl"
                     style="background-image: url('{{ asset('asset/Frontend/Hero_Section.png') }}'); background-position: bottom; background-size: cover;">
@@ -58,11 +59,8 @@
                     </div>
                 </div>
             </div>
-            <div class="flex md:flex lg:hidden justify-center text-center pb-7 md:pb-10 ">
-                <h3 class="text-xl md:text-2xl font-semibold">Interested in collaborating with us?</h3>
-            </div>
-            <form class="flex flex-1 flex-col gap-5 p-0 lg:p-10 rounded-3xl border-r-0 md:border-r-4 border-r-[#124346]"
-                action="{{ route('talk.store') }}" method="post">
+            <form class="flex flex-1 flex-col gap-5 p-2 md:p-10 rounded-full" action="{{ route('talk.store') }}"
+                method="post">
                 @csrf
                 <div class="flex flex-col lg:flex-row md:flex-row gap-3 md:gap-5 lg:gap-6 w-full">
                     <div class="flex-1 space-y-2">
@@ -96,7 +94,7 @@
 
                 <div class="flex gap-7 w-full">
                     <div class="flex-1 space-y-2">
-                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Project
+                        <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your blog
                             Brief</label>
                         <textarea
                             class="w-full py-3 lg:py-3 px-6 font-semibold placeholder-gray-500 rounded-xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2 text-base lg:text-lg h-24"

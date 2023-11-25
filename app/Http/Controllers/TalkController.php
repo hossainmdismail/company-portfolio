@@ -6,12 +6,15 @@ use App\Models\OrderNotification;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Artesaos\SEOTools\Facades\SEOTools;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class TalkController extends Controller
 {
     function index()
     {
         SEOTools::setTitle('Synex Digital - Talk');
+        SEOMeta::setCanonical(url()->current());
+
         $product = Product::where('status', 1)->get();
         return view('frontend.pages.talk', [
             'products' => $product,

@@ -1,5 +1,5 @@
 <footer
-    style="background-image: url({{ asset('/asset/Frontend/BG.png') }}); background-position: center; background-repeat: no-repeat;">
+    style="background-image: url({{ asset('/asset/Frontend/BG.png') }}); background-position: center; background-repeat: no-repeat;    padding-top: 1.5rem;">
     <div class="mx-auto max-w-screen-xl px-4 md:px-0 lg:px-0 text-gray-700">
         <div class="flex flex-col lg:flex-row gap-10">
             <div
@@ -29,7 +29,7 @@
                     <h4 class="text-lg lg:text-xl font-semibold text-[#04364A]">Supports</h4>
                     <div class="flex flex-col gap-2 md:gap-3 lg:gap-4">
                         <a href="{{ route('privacy') }}"
-                            class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Privecy
+                            class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Privacy
                             Policy</a>
                         <a href="{{ route('talk') }}"
                             class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Contact
