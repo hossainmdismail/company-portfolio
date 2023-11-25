@@ -7,78 +7,166 @@
                     <div class="w-full text-center">
                         <h1 class="text-xl md:text-2xl lg:text-[3.0517578125rem] font-semibold mb-6"
                             style="font-family: 'Figtree', sans-serif;">
-                            Privacy Policy for Synex digital
+                            Privacy Policy
                         </h1>
                     </div>
                     <div class="py-5 space-y-7">
-                        <p class="text-sm leading-loose text-paragraph md:text-base lg:text-[17px]  font-medium ">At Synex
-                            Digital,
-                            accessible from
-                            www.synexdigital.com, one of our main priorities is the privacy of our visitors. This Privacy
-                            Policy document contains types of information that is collected and recorded by Synex Digital
-                            and how we use it.</p>
-                        <p class="text-sm md:text-base lg:text-lg font-medium">If you have additional questions or require
-                            more information about our Privacy Policy, do not hesitate to contact us.</p>
-                        <p class="text-sm md:text-base lg:text-lg font-medium">This Privacy Policy applies only to our
-                            online
-                            activities and is valid for visitors to our website with regards to the information that they
-                            shared and/or collect in Synex Digital. This policy is not applicable to any information
-                            collected offline or via channels other than this website.</p>
+                        <p class="text-sm md:text-base lg:text-lg font-medium">Last updated: September 25, 2023</p>
+
+                        <p class="text-sm leading-loose text-paragraph md:text-base lg:text-[17px]  font-medium ">Thank you
+                            for choosing Synex Digital for your web development, app development, SEO, AEM solutions,
+                            e-commerce, and website customization needs. This Privacy Policy outlines how we collect, use,
+                            and safeguard your data when you interact with our services.</p>
                     </div>
                 </div>
+
                 <div class="py-5">
-                    <h1 class="text-xl md:text-2xl lg:text-4xl font-bold">Information we collect</h1>
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">1. Contact Information:</h1>
                     <div class="py-5 space-y-7">
-                        <p class="text-sm md:text-base lg:text-lg font-medium">The personal information that you are asked
-                            to provide, and the reasons why you are asked to provide it, will be made clear to you at the
-                            point we ask you to provide your personal information.</p>
-                        <p class="text-sm md:text-base lg:text-lg font-medium">If you contact us directly, we may receive
-                            additional information about you such as your name, email address, phone number, the contents of
-                            the message and/or attachments you may send us, and any other information you may choose to
-                            provide.</p>
-                        <p class="text-sm md:text-base lg:text-lg font-medium">When you register for an Account, we may ask
-                            for your contact information, including items such as name, company name, address, email
-                            address, and telephone number.</p>
+                        <p class="text-sm md:text-base lg:text-lg font-medium">For privacy-related inquiries or concerns,
+                            you can contact us at <a href="https://synexdigital.com/">digitalsynex@gmail.com</a>.</p>
                     </div>
                 </div>
-                <div class="">
-                    <h1 class="text-xl md:text-2xl lg:text-4xl font-bold">How we use your information</h1>
-                    <div class="py-5 space-y-7">
-                        <p class="text-sm md:text-base lg:text-lg font-medium">We use the information we collect in various
-                            ways, including to:</p>
-                        <ol class="list-disc px-10">
-                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">Provide, operate, and maintain
-                                our website</li>
-                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">Improve, personalize, and
-                                expand our website</li>
-                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">ImpUnderstand and analyze how
-                                you use our website</li>
-                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">Develop new products,
-                                services, features, and functionality</li>
-                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">Communicate with you, either
-                                directly or through one of our partners, including for customer service, to provide you with
-                                updates and other information relating to the website, and for marketing and promotional
-                                purposes</li>
-                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">Send you emails</li>
-                            <li class="text-sm md:text-base lg:text-lg font-medium list-disc">Find and prevent fraud</li>
-                        </ol>
-                    </div>
-                </div>
+
                 <div class="py-5">
-                    <h1 class="text-xl md:text-2xl lg:text-4xl font-bold">Advertising Partners Privacy Policies</h1>
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">2. Scope of Policy:</h1>
                     <div class="py-5 space-y-7">
-                        <p class="text-sm md:text-base lg:text-lg font-medium">You may consult this list to find the Privacy
-                            Policy for each of the advertising partners of Synex Digital.</p>
-                        <p class="text-sm md:text-base lg:text-lg font-medium">Third-party ad servers or ad networks uses
-                            technologies like cookies, JavaScript, or Web Beacons that are used in their respective
-                            advertisements and links that appear on Synex Digital, which are sent directly to users'
-                            browser. They automatically receive your IP address when this occurs. These technologies are
-                            used to measure the effectiveness of their advertising campaigns and/or to personalize the
-                            advertising content that you see on websites that you visit.</p>
-                        <p class="text-sm md:text-base lg:text-lg font-medium">Note that Synex Digital has no access to or
-                            control over these cookies that are used by third-party advertisers.</p>
+                        <p class="text-sm md:text-base lg:text-lg font-medium">This policy covers our services, including
+                            web development, app development, SEO, AEM solutions, e-commerce, website customization, and
+                            associated activities.
+                        </p>
                     </div>
                 </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">3. Data Collection:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">We collect personal information such as
+                            names, email addresses, phone numbers, etc., primarily through forms on our website.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">4. Data Usage:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">We use usage data to analyze and enhance our
+                            services, tailor content, and improve the overall user experience. This includes optimizing
+                            website performance, identifying trends, and addressing user preferences.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">5. Cookies and Tracking:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">To enhance your website experience and gather
+                            information about your browsing habits, we employ cookies and similar tracking technologies.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">6. Data Sharing:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">We may share your information with trusted
+                            third-party service providers who assist us in delivering our services, including hosting
+                            providers, payment processors, and analytics services.</p>
+                    </div>
+                </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">7. Legal Basis:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">We may disclose your information when
+                            required by law, in response to legal processes such as subpoenas or court orders, or to protect
+                            our rights, privacy, safety, or property</p>
+                    </div>
+                </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">8. Data Security:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">We employ industry-standard security measures
+                            to protect your data from unauthorized access, disclosure, alteration, and destruction. However,
+                            no method of data transmission or storage is entirely secure, so we cannot guarantee absolute
+                            security.</p>
+                    </div>
+                </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">9. User Rights:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">You have the right to access, correct,
+                            update, or delete your personal information. To exercise these rights, please contact us at <a
+                                href="https://synexdigital.com"> digitalsynex@gmail.com.</a> We will respond to your request
+                            within a reasonable timeframe.</p>
+                    </div>
+                </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">10. Children's Privacy:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">Our services are not intended for individuals
+                            under the age of 18. We do not knowingly collect personal information from children. If you are
+                            a parent or guardian and believe your child has provided us with personal information, please
+                            contact us.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">11. Data Retention:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">We may use usage data to analyze and improve
+                            our services, tailor content, and enhance the user experience.</p>
+                    </div>
+                </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">12. Marketing and Communication:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">With your consent, we may use your contact
+                            information to send you promotional materials and updates about our services. You can opt out of
+                            marketing communications at any time.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">13. Data Transfer:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">We use your personal information to provide
+                            our services, including communicating with you, processing payments, and delivering requested
+                            services.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">14. Changes to the Policy:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">We may update this Privacy Policy from time
+                            to time to reflect changes in our practices or legal requirements. We will notify you of any
+                            significant changes through our website or other appropriate means.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="py-5">
+                    <h1 class="text-xl md:text-2xl lg:text-xl font-bold">15. Effective Date:</h1>
+                    <div class="py-5 space-y-7">
+                        <p class="text-sm md:text-base lg:text-lg font-medium">This policy is effective as of September 25,
+                            2023.
+                            ‌<br><br>
+                            At Synex Digital, we are committed to protecting your privacy and maintaining the security of
+                            your personal information. By using our services, you consent to the practices outlined in this
+                            Privacy Policy. If you have any questions or concerns, please do not hesitate to contact us. We
+                            value your trust and are dedicated to providing a secure and seamless experience for our users.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
