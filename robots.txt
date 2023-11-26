@@ -15,4 +15,8 @@ Disallow: /product/
 Disallow: /project/
 Disallow: /testimonial/
 Disallow: /talk/store
-
+Disallow: /our-service/digital-marketing
+Disallow: /our-service/website-development
+Disallow: /inner_pages/page_contact.html
+Disallow: /inner_pages/page_blog_list.html
+Disallow: /inner_pages/page_portfolio_grid.html
