@@ -13,16 +13,16 @@ class BlogController extends Controller
 {
     public function index(Request $request)
     {
-        $category = Category::select('id','name')->where('status',1)->get();
-        
+        $category = Category::select('id', 'name')->where('status', 1)->get();
+
         $query = Blog::query();
-        if(!$request->input('category')){
-            $blog = $query->select('id','title','seo_title','seo_description','seo_tags','status','created_at')->paginate(15);
-        }else{
-            $blog = $query->select('id','title','seo_title','seo_description','seo_tags','status','created_at')->where('category_id',$request->category)->get();
+        if (!$request->input('category')) {
+            $blog = $query->select('id', 'title', 'seo_title', 'seo_description', 'seo_tags', 'status', 'created_at')->paginate(15);
+        } else {
+            $blog = $query->select('id', 'title', 'seo_title', 'seo_description', 'seo_tags', 'status', 'created_at')->where('category_id', $request->category)->get();
         }
-        
-        return view('backend.pages.Blog.list',[
+
+        return view('backend.pages.Blog.list', [
             'data'      => $blog,
             'category'  => $category,
         ]);
@@ -30,8 +30,8 @@ class BlogController extends Controller
 
     public function create()
     {
-        $category = Category::select('id','name')->where('status',1)->get();
-        return view('backend.pages.Blog.create',['category' => $category]);
+        $category = Category::select('id', 'name')->where('status', 1)->get();
+        return view('backend.pages.Blog.create', ['category' => $category]);
     }
 
     public function store(Request $request)
@@ -43,12 +43,12 @@ class BlogController extends Controller
             'thumbnail' => 'required',
             'content'   => 'required',
         ]);
-        
-        if(Blog::where('slugs',Str::slug($request->title))->exists()){
-            return back()->with('err','Title is already exits');
-         } //checking slugs copy
 
-        Photo::upload($request->thumbnail ,'uploads/blog','BLOG',['1200','900']);
+        if (Blog::where('slugs', Str::slug($request->title))->exists()) {
+            return back()->with('err', 'Title is already exits');
+        } //checking slugs copy
+
+        Photo::upload($request->thumbnail, 'uploads/blog', 'BLOG', ['700', '500']);
 
         Blog::insert([
             'user_id'           => 1, //user will be added
@@ -62,8 +62,7 @@ class BlogController extends Controller
             'seo_tags'          => $request->seo_tags,
             'created_at'        => Carbon::now(),
         ]);
-        return back()->with('succ','Create post successfully');
-        
+        return back()->with('succ', 'Create post successfully');
     }
 
     public function show(Blog $blog)
@@ -73,8 +72,8 @@ class BlogController extends Controller
 
     public function edit(Blog $blog)
     {
-        $category = Category::select('id','name')->where('status',1)->get();
-        return view('backend.pages.Blog.edit',[
+        $category = Category::select('id', 'name')->where('status', 1)->get();
+        return view('backend.pages.Blog.edit', [
             'category'  => $category,
             'blog'      => $blog,
         ]);
@@ -83,7 +82,7 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         //dd($request->all());
-        
+
         $request->validate([
             'category'  => 'required|integer',
             'title'     => 'required|string',
@@ -91,8 +90,8 @@ class BlogController extends Controller
         ]);
 
         if (!empty($request->thumbnail)) {
-            Photo::delete('uploads/blog',$blog->thumbnail);
-            Photo::upload($request->thumbnail ,'uploads/blog','BLOGU',['1200','900']);
+            Photo::delete('uploads/blog', $blog->thumbnail);
+            Photo::upload($request->thumbnail, 'uploads/blog', 'BLOGU', ['700', '500']);
         }
 
         Blog::find($blog->id)->update([
@@ -100,20 +99,20 @@ class BlogController extends Controller
             'category_id'       => $request->category,
             'title'             => $request->title,
             'slugs'             => Str::slug($request->title),
-            'thumbnail'         => !empty($request->thumbnail)?Photo::$name:$blog->thumbnail,
+            'thumbnail'         => !empty($request->thumbnail) ? Photo::$name : $blog->thumbnail,
             'content'           => $request->content,
             'seo_title'         => $request->seo_title,
             'seo_description'   => $request->seo_description,
             'seo_tags'          => $request->seo_tags,
             'created_at'        => Carbon::now(),
         ]);
-        return back()->with('succ','Update successfully');
+        return back()->with('succ', 'Update successfully');
     }
 
     public function destroy(Blog $blog)
     {
-        Photo::delete('uploads/blog',$blog->thumbnail);
+        Photo::delete('uploads/blog', $blog->thumbnail);
         Blog::find($blog->id)->delete();
-        return back()->with('succ','delete successfully');
+        return back()->with('succ', 'delete successfully');
     }
 }

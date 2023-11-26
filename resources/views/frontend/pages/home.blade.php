@@ -1,19 +1,8 @@
 @extends('frontend.layouts.app')
 @section('style')
-    <style>
-        .img.img-cover {
-            border: 1px solid #4b4b4b1f;
-            box-shadow: 5px 3px 9px -11px;
-        }
-
-        .img-header {
-            @media screen and (min-width: 1024px) {
-                .img-header {
-                    margin-right: 200px;
-                }
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('asset/Frontend/') }}/lib/owl/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{ asset('asset/Frontend/') }}/lib/owl/owl.theme.default.min.css">
+    <script src="{{ asset('asset/Frontend/') }}/lib/owl/owl.carousel.min.js"></script>
 @endsection
 
 

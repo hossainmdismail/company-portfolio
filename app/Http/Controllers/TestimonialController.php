@@ -42,7 +42,7 @@ class TestimonialController extends Controller
             'field'     => 'required',
         ]);
 
-        Photo::upload($request->profile, 'uploads/testimonial', 'TESTIMONIAL',);
+        Photo::upload($request->profile, 'uploads/testimonial', 'TESTIMONIAL', ['100', '100']);
 
         Testimonial::insert([
             'user_id'        =>  Auth::user()->id,
@@ -94,7 +94,7 @@ class TestimonialController extends Controller
             $image = Testimonial::find($id)->profile;
             Photo::delete('uploads/testimonial', $image);
 
-            Photo::upload($request->profile, 'uploads/testimonial', 'TESTIMONIAL');
+            Photo::upload($request->profile, 'uploads/testimonial', 'TESTIMONIAL', ['100', '100']);
             Testimonial::find($id)->update([
                 'user_id'        =>  1, //User ID Will be added
                 'profile'        =>  Photo::$name,
