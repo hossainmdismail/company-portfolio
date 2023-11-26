@@ -16,14 +16,14 @@ class ProjectController extends Controller
         $product = Product::all();
 
         $query = Project::query();
-        if(!$request->input('product')){
-            $project = $query->select('id','title','seo_title','seo_description','seo_tags','status','thumbnail','created_at')->paginate(15);
-        }else{
-            $project = $query->select('id','title','seo_title','seo_description','seo_tags','status','thumbnail','created_at')->where('product_id',$request->product)->get();
+        if (!$request->input('product')) {
+            $project = $query->select('id', 'title', 'seo_title', 'seo_description', 'seo_tags', 'status', 'thumbnail', 'created_at')->paginate(15);
+        } else {
+            $project = $query->select('id', 'title', 'seo_title', 'seo_description', 'seo_tags', 'status', 'thumbnail', 'created_at')->where('product_id', $request->product)->get();
         }
 
         // $project = Project::all();
-        return view('backend.pages.Project.list',[
+        return view('backend.pages.Project.list', [
             'data' => $project,
             'product' => $product,
         ]);
@@ -32,7 +32,7 @@ class ProjectController extends Controller
     public function create()
     {
         $product = Product::all();
-        return view('backend.pages.Project.create',['product' => $product]);
+        return view('backend.pages.Project.create', ['product' => $product]);
     }
 
     public function store(Request $request)
@@ -43,11 +43,11 @@ class ProjectController extends Controller
             'content'       => 'required',
             'thumbnail'       => 'required',
         ]);
-        if(Project::where('slugs',Str::slug($request->title))->exists()){
-            return back()->with('err','Title is already exits');
-         } //checking slugs copy
+        if (Project::where('slugs', Str::slug($request->title))->exists()) {
+            return back()->with('err', 'Title is already exits');
+        } //checking slugs copy
 
-        Photo::upload($request->thumbnail ,'uploads/project','PROJECT',['1200','900']);
+        Photo::upload($request->thumbnail, 'uploads/project', 'PROJECT', ['700', '500']);
 
         Project::insert([
             'user_id'           => 1, //user will be added
@@ -63,7 +63,7 @@ class ProjectController extends Controller
             'seo_tags'          => $request->seo_tags,
             'created_at'        => Carbon::now(),
         ]);
-        return back()->with('succ','Create post successfully');
+        return back()->with('succ', 'Create post successfully');
     }
 
     public function show(Project $project)
@@ -73,8 +73,8 @@ class ProjectController extends Controller
 
     public function edit(Project $project)
     {
-        $product = Product::select('id','service')->where('status',1)->get();
-        return view('backend.pages.Project.edit',[
+        $product = Product::select('id', 'service')->where('status', 1)->get();
+        return view('backend.pages.Project.edit', [
             'product'  => $product,
             'project'  => $project,
         ]);
@@ -89,15 +89,15 @@ class ProjectController extends Controller
         ]);
 
         if (!empty($request->thumbnail)) {
-            Photo::delete('uploads/project',$project->thumbnail);
-            Photo::upload($request->thumbnail ,'uploads/project','PROJECT',['1200','900']);
+            Photo::delete('uploads/project', $project->thumbnail);
+            Photo::upload($request->thumbnail, 'uploads/project', 'PROJECT', ['700', '500']);
         }
 
         Project::find($project->id)->update([
             'product_id'        => $request->product,
             'title'             => $request->title,
             'slugs'             => Str::slug($request->title),
-            'thumbnail'         => !empty($request->thumbnail)?Photo::$name:$project->thumbnail,
+            'thumbnail'         => !empty($request->thumbnail) ? Photo::$name : $project->thumbnail,
             'budget'            => $request->budget,
             'client'            => $request->client,
             'content'           => $request->content,
@@ -106,13 +106,13 @@ class ProjectController extends Controller
             'seo_tags'          => $request->seo_tags,
             'created_at'        => Carbon::now(),
         ]);
-        return redirect()->route('project.index')->with('succ','Update post successfully');
+        return redirect()->route('project.index')->with('succ', 'Update post successfully');
     }
 
     public function destroy(Project $project)
     {
-        Photo::delete('uploads/project',$project->thumbnail);
+        Photo::delete('uploads/project', $project->thumbnail);
         Project::find($project->id)->delete();
-        return back()->with('succ','delete successfully');
+        return back()->with('succ', 'delete successfully');
     }
 }

@@ -42,7 +42,7 @@ class ServiceController extends Controller
             '*' => 'required',
         ]);
 
-        Photo::upload($request->thumbnail, 'uploads/service', 'TEAM');
+        Photo::upload($request->thumbnail, 'uploads/service', 'TEAM', ['200', '200']);
 
         Service::insert([
             'user_id'        =>  Auth::user()->id,
@@ -92,7 +92,7 @@ class ServiceController extends Controller
             $image = Service::where('id', $id)->first()->thumbnail;
             Photo::delete('uploads/service/', $image);
 
-            Photo::upload($request->thumbnail, 'uploads/service', 'TEAM');
+            Photo::upload($request->thumbnail, 'uploads/service', 'TEAM', ['200', '200']);
 
             Service::find($id)->update([
                 'user_id'           =>  Auth::user()->id,

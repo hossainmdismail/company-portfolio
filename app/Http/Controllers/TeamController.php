@@ -40,7 +40,7 @@ class TeamController extends Controller
             '*' => 'required',
         ]);
 
-        Photo::upload($request->profile, 'uploads/team', 'TEAM');
+        Photo::upload($request->profile, 'uploads/team', 'TEAM', ['100', '100']);
 
         Team::insert([
             'user_id'        =>  Auth::user()->id,
@@ -89,7 +89,7 @@ class TeamController extends Controller
             $image = Team::find($id)->profile;
             Photo::delete('uploads/team', $image);
 
-            Photo::upload($request->profile, 'uploads/team', 'TEAM');
+            Photo::upload($request->profile, 'uploads/team', 'TEAM', ['100', '100']);
 
             Team::find($id)->update([
                 'user_id'        =>  Auth::user()->id, //User ID Will be added
