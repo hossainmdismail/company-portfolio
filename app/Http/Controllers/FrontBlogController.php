@@ -24,7 +24,7 @@ class FrontBlogController extends Controller
         SEOTools::setTitle($blog->seo_title);
         SEOTools::setDescription($blog->seo_description);
         SEOMeta::addKeyword([$blog->seo_tags]);
-        SEOMeta::setCanonical(url()->current());
+        SEOMeta::setCanonical('https://synexdigital.com' . request()->getPathInfo());
 
         OpenGraph::addImage($image);
         TwitterCard::setImage($image);
@@ -50,10 +50,10 @@ class FrontBlogController extends Controller
                 SEOTools::setTitle($category->seo_title);
                 SEOTools::setDescription($category->seo_description);
                 SEOMeta::addKeyword([$category->seo_tags]);
-                SEOMeta::setCanonical(url()->current());
+                SEOMeta::setCanonical('https://synexdigital.com' . request()->getPathInfo());
             }
         } else {
-            SEOMeta::setCanonical(url()->current());
+            SEOMeta::setCanonical('https://synexdigital.com' . request()->getPathInfo());
         }
 
         $blogs = $data->where('status', 1)->get();

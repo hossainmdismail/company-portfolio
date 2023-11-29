@@ -12,7 +12,7 @@ class AboutController extends Controller
     function link()
     {
         SEOTools::setTitle('Synex Digital - About');
-        SEOMeta::setCanonical(url()->current());
+        SEOMeta::setCanonical('https://synexdigital.com' . request()->getPathInfo());
 
         $service = Service::where('status', 1)->get()->take(8);
         $testimonial = Testimonial::where('status', 1)->get();

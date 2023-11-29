@@ -6,12 +6,12 @@
 @endsection
 
 
-@section('loader')
+{{-- @section('loader')
     <!-- Preloader -->
     <div id="preloader" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-white z-50">
         <div class="loader border-0 border-t-2 border-[#124346] rounded-full w-20 h-20 animate-spin"></div>
     </div>
-@endsection
+@endsection --}}
 
 @section('headerTab')
     <div class="w-full lg:w-4/5 space-y-5 ">
@@ -149,7 +149,7 @@
             <!-- Header Title and descripiton -->
             <div class="flex flex-col gap-3">
                 <p class="font-semibold text-2xl text-center text-[#6F840A]">Our
-                    Portfolio</p>
+                    Project</p>
                 <h2
                     class="text-text-primary text-sm lg:text-3xl font-semibold lg:font-bold text-center leading-6 lg:leading-9">
                     Our
