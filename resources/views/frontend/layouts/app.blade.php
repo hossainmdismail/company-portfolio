@@ -17,7 +17,7 @@
         </header>
 
         <div
-            class="mx-auto max-w-screen-xl  py-3 px-2 md:py-5 lg:py-10 xl:pt-16 xl:pb-24 flex flex-col lg:flex-row gap-10 ">
+            class="mx-auto max-w-screen-xl  py-3 px-3 md:py-5 lg:py-10 xl:pt-16 xl:pb-24 flex flex-col lg:flex-row gap-10 ">
             @yield('headerTab')
         </div>
         <!-- banner part end  -->

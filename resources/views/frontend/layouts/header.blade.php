@@ -1,4 +1,4 @@
-<nav class="  text-black lg:text-white">
+<nav class="text-black lg:text-white">
     <div class="flex justify-between items-center px-2">
         <div class="flex flex-row-reverse lg:flex justify-between w-[100%] lg:w-auto">
             {{-- Mobile nav --}}
