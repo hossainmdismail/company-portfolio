@@ -1,3 +1,10 @@
+<?php
+use App\Models\Blog;
+
+$blogs = Blog::where('status', 1)->get();
+
+?>
+
 <footer
     style="background-image: url({{ asset('/asset/Frontend/BG.png') }}); background-position: center; background-repeat: no-repeat;    padding-top: 1.5rem;">
     <div class="mx-auto max-w-screen-xl px-4 md:px-0 lg:px-0 text-gray-700">
@@ -23,6 +30,17 @@
                             class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Blog</a>
                         <a href="{{ route('portfolio.grid') }}"
                             class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Project</a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h4 class="text-lg lg:text-xl font-semibold text-[#04364A]">Blogs</h4>
+                    <div class="flex flex-col gap-2 md:gap-3 lg:gap-4">
+                        @forelse ($blogs as $blog)
+                        <a href="{{ route('frontBlog', $blog->slugs) }}"
+                        class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">{{ $blog->title }}</a>
+                        @empty
+                        <p>No data found</p>
+                        @endforelse
                     </div>
                 </div>
                 <div class="flex flex-col gap-3">
