@@ -33,7 +33,7 @@ Route::get('/generate-sitemap', [SitemapController::class, 'index'])->name('site
 
 //========= BackEnd Controllers =========//
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/notifiaction/ckeckup/{id}', [AdminController::class, 'check'])->name('order.nptofoaction.check');

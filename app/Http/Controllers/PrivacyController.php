@@ -10,7 +10,7 @@ class PrivacyController extends Controller
     function index()
     {
         SEOTools::setTitle('Synex Digital - Terms & Conditions');
-        SEOMeta::setCanonical(url()->current());
+        SEOMeta::setCanonical('https://synexdigital.com' . request()->getPathInfo());
 
         return view('frontend.pages.privacy');
     }
