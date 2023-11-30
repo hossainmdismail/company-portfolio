@@ -21,7 +21,7 @@ class HomeController extends Controller
         SEOTools::setTitle('Synex Digital');
         SEOMeta::setCanonical('https://synexdigital.com' . request()->getPathInfo());
 
-        $project = Project::select('id', 'slugs', 'product_id', 'title', 'thumbnail', 'seo_description')->where('status', 1)->get()->take(6);
+        $project = Project::select('id', 'slugs', 'product_id', 'title', 'created_at', 'thumbnail', 'seo_description')->where('status', 1)->get()->take(6);
         $team    = Team::where('status', 1)->get();
         $social  = Social_links::where('status', 1)->get();
         $service = Service::where('status', 1)->get()->take(8);

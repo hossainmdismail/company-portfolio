@@ -23,7 +23,11 @@
 
         </h1>
         <p class="text-sm font-normal text-gray-200 lg:text-base  leading-6">
-            Source for Web Development, Mobile App Development, and Skilled Digital Marketing is Synex Digital. With a focus on PHP-Laravel frameworks and React.js, our skilled team creates dynamic websites using state-of-the-art frontend and backend solutions. We create exceptional iOS and Android apps that seamlessly translate concepts into reality and guarantee a user experience that's unmatched. Boost your internet visibility <a href="{{ route('about') }}" class="underline text-button-primary">See more</a>
+            Source for Web Development, Mobile App Development, and Skilled Digital Marketing is Synex Digital. With a focus
+            on PHP-Laravel frameworks and React.js, our skilled team creates dynamic websites using state-of-the-art
+            frontend and backend solutions. We create exceptional iOS and Android apps that seamlessly translate concepts
+            into reality and guarantee a user experience that's unmatched. Boost your internet visibility <a
+                href="{{ route('about') }}" class="underline text-button-primary">See more</a>
         </p>
         <div class="flex gap-6 pt-5 text-center flex-col md:flex-row">
             <a href="{{ route('portfolio.grid') }}"
@@ -46,21 +50,15 @@
                 Awesome Team</p>
         </div>
     </div>
-    <div class="w-8/12 flex relative hidden lg:flex">
-        <div class="flex rounded-3xl absolute overflow-hidden z-10 mt-10 w-80  -skew-x-12 p-4 border-l-4 border-b-4  border-primary-bg"
-            style="top: 3rem;left:3rem;">
-            <img class=" rounded-2xl mr-10 z-10" src="{{ asset('asset/Frontend/banner.webp') }}" alt>
-        </div>
-        <div
-            class="flex rounded-3xl overflow-hidden absolute w-80 -top-10 right-0 mr-10  mb-0 -skew-x-12 p-4 border-t-4 border-r-4 border-b-4  border-primary-bg border-t-opacity-50">
-            <img class="w-min h-full rounded-2xl" src="{{ asset('asset/Frontend/banner2.webp') }}" alt>
-        </div>
+    <div class="w-8/12 hidden lg:flex items-center" style="justify-content: flex-end">
+
+        <img class=" h-fit" src="{{ asset('default/main.webp') }}" alt="" style="width: 28rem">
     </div>
 @endsection
 
 @section('content')
-    <div class="mt-5 lg:mt-10 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
-        <div class="mt-5 pt-10 mb-10 lg:mt-10 mx-auto max-w-screen-xl px-0 md:px-8 lg:px-0">
+    <div class="mx-auto max-w-screen-xl px-5 md:px-8 lg:px-2">
+        <div class=" pt-10 mb-10  mx-auto max-w-screen-xl px-0 md:px-8 lg:px-0">
             <!-- service part start  -->
             <div class="py-5 lg:py-10 flex flex-col gap-5">
                 <p class="font-medium lg:font-semibold text-lg lg:text-2xl text-center text-[#6F840A]">Our Service</p>
@@ -104,7 +102,13 @@
                         class="text-text-primary text-sm lg:text-3xl font-semibold lg:font-bold text-center lg:text-left leading-6 lg:leading-9">
                         Stellar Records by Synex Digital are an example of exemplary achievement.
                     </h2>
-                    <p class="text-text-primary text-xs lg:text-lg font-semibold lg:font-medium text-left">Synex Digital's outstanding records reflect our commitment to excellence. With a proven track record in web and app development, transformative UI/UX design, and impactful digital marketing, we consistently surpass expectations. Our portfolio of successful projects stands as a testament to our dedication, delivering top-notch solutions that propel businesses forward. Our history of exceeding milestones, ensuring timely delivery, and surpassing quality benchmarks underscores why Synex Digital is the trusted choice for unparalleled digital success.</p>
+                    <p class="text-text-primary text-xs lg:text-lg font-semibold lg:font-medium text-left">Synex Digital's
+                        outstanding records reflect our commitment to excellence. With a proven track record in web and app
+                        development, transformative UI/UX design, and impactful digital marketing, we consistently surpass
+                        expectations. Our portfolio of successful projects stands as a testament to our dedication,
+                        delivering top-notch solutions that propel businesses forward. Our history of exceeding milestones,
+                        ensuring timely delivery, and surpassing quality benchmarks underscores why Synex Digital is the
+                        trusted choice for unparalleled digital success.</p>
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-6 py-0 lg:py-5">
                         <div class="bg-[#e7e7e7] py-2 lg:py-5 text-center space-y-2 lg:space-y-2 rounded-lg">
                             <h1 class="text-[#04364A] font-medium lg:font-bold text-2xl lg:text-4xl">5+</h1>
@@ -151,11 +155,19 @@
                     <a href="{{ route('portfolio', $project->slugs) }}"
                         class="border border-[#DBDBDB] group rounded-lg p-4 space-b-1 duration-150 hover:shadow-xl shadow-slate-300 border-none ring-1 ring-gray-300 hover:ring-2 hover:ring-[#124346]">
                         <div class="flex flex-col items-center rounded-lg mb-4">
-                            <img class="rounded-lg" src="{{ asset('uploads/project/' . $project->thumbnail) }}"
+                            <img class="rounded-lg border-b" src="{{ asset('uploads/project/' . $project->thumbnail) }}"
                                 alt="">
                         </div>
-                        <h3 class="text-xl font-bold text-left text-[#111]">{{ $project->title }}</h3>
-                        <p class="text-base font-medium">{{ $project->seo_description }}</p>
+                        <div class="flex flex-col gap-2">
+                            <p class="rounded-lg px-2 py-1 text-xs bg-opacity-10"
+                                style="background: #afe33d6b;width: fit-content; padding: 2px 8px 2px 8px;">
+                                {{ $project->created_at->format('d M Y') }}
+                            </p>
+                            <div>
+                                <h3 class="text-xl font-bold text-left text-[#111]">{{ $project->title }}</h3>
+                                <p class="text-base font-medium text-gray-500">{{ $project->seo_description }}</p>
+                            </div>
+                        </div>
                     </a>
                 @endforeach
             </div>
@@ -169,7 +181,7 @@
         </div>
     </div>
     <!-- Testimonial -->
-    <div class="py-10  mt-10 lg:py-0" style="background-image: url('{{ asset('asset/Frontend/testimonial.png') }}')">
+    <div class="py-10  mt-10 lg:py-10" style="background-image: url('{{ asset('asset/Frontend/testimonial.png') }}')">
         <!-- Header Title and descripiton -->
         <div class="flex flex-col gap-3">
             <p class="font-semibold text-2xl text-center text-[#6F840A]">Testimonial</p>
@@ -223,40 +235,45 @@
             </div>
         </div>
         <div class="py-10">
-            <div class="flex flex-col lg:flex-row gap-6">
-                <div class="flex-1 block">
-                    <div class="bg-no-repeat bg-cover h-[500px;] lg:h-full relative rounded-xl"
-                        style="background-image: url({{ asset('uploads/blog/' . $singleBlog->thumbnail) }});">
-                        {{-- <div class="hero-overlay bg-gradient-to-tr from-black rounded-xl"></div> --}}
-                        <div class="flex flex-col gap-3 absolute left-6 bottom-8 text-white text-left">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1">
+                    <a href="{{ route('frontBlog', $singleBlog->slugs) }}"
+                        class=" flex flex-col border rounded-lg p-4 hover:border-gray-700 hover:shadow-xl hover:cursor-pointer">
+                        <figure>
+                            <img class="w-full rounded-md" src="{{ asset('uploads/blog/' . $singleBlog->thumbnail) }}"
+                                alt="{{ $singleBlog->title }}">
+                        </figure>
+                        <div class="mt-6">
                             <div class="flex gap-4">
-                                <div class="flex">
-                                    <p class="text-base ml-1 font-normal">{{ $singleBlog->created_at->format('d M Y') }}
+                                <div class="flex flex-col gap-2">
+                                    <p class="rounded-lg px-2 py-1 text-xs"
+                                        style="background: #afe33d;width: fit-content; padding: 2px 14px 2px 14px;">
+                                        {{ $singleBlog->category->name }}
+                                    </p>
+                                    <p class="text-sm font-normal text-gray-500">
+                                        {{ $singleBlog->created_at->format('d M Y') }}
                                     </p>
                                 </div>
                             </div>
-                            <h2 class="text-2xl font-bold">{{ $singleBlog->title }}</h2>
-                            <p class="text-base font-normal w-4/5">{{ $singleBlog->seo_description }}</p>
-                            <a href="{{ route('frontBlog', $singleBlog->slugs) }}"
-                                class="text-lg font-semibold text-[#C2E812]">Read
-                                More</a>
+                            <h3 class="text-lg font-bold mt-2">{{ $singleBlog->title }}</h3>
+                            <p class="text-base text-gray-700">{{ $singleBlog->seo_description }}</p>
                         </div>
-                    </div>
-
+                    </a>
                 </div>
-                <div class="flex-1">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6  lg:px-0">
+                <div class="flex">
+                    <div class="grid grid-cols-1 sm:grid-cols-2  gap-6  lg:px-0">
                         @forelse ($blogs as $blog)
                             <a href="{{ route('frontBlog', $blog->slugs) }}"
                                 class="border rounded-lg p-4 hover:border-gray-700 hover:shadow-xl hover:cursor-pointer">
                                 <figure>
-                                    <img class="w-full" src="{{ asset('uploads/blog/' . $blog->thumbnail) }}"
-                                        alt="">
+                                    <img class="w-full rounded-lg" src="{{ asset('uploads/blog/' . $blog->thumbnail) }}"
+                                        alt="{{ $blog->title }}">
                                 </figure>
                                 <div class="mt-6">
                                     <div class="flex gap-4">
                                         <div class="flex items-center gap-1">
-                                            <p class="text-base font-normal">{{ $blog->created_at->format('d M Y') }}</p>
+                                            <p class="font-normal text-sm text-gray-500">
+                                                {{ $blog->created_at->format('d M Y') }}</p>
                                         </div>
                                     </div>
                                     <h3 class="text-lg font-bold mt-2">{{ $blog->title }}</h3>

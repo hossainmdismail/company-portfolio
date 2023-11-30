@@ -8,8 +8,8 @@
 @section('content')
     <form action="{{ route('talk.store') }}" method="post">
         @csrf
-        <div class="mt-9 lg:mt-16 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
-            <div class="flex flex-1 flex-col gap-5 lg:gap-10 lg:px-36 py-10 pb-20">
+        <div class="mt-9 lg:mt-16 mx-auto max-w-screen-md px-5 md:px-8 lg:px-0">
+            <div class="flex flex-1 flex-col gap-5 lg:gap-10 px-4 my-24">
                 <div class="flex flex-col lg:flex-row md:flex-row gap-3 md:gap-5 lg:gap-10 w-full">
                     <div class="flex-1 space-y-2">
                         <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Name</label>
