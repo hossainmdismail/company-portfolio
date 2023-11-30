@@ -264,7 +264,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2  gap-6  lg:px-0">
                         @forelse ($blogs as $blog)
                             <a href="{{ route('frontBlog', $blog->slugs) }}"
-                                class="border rounded-lg p-4 hover:border-gray-700 hover:shadow-xl hover:cursor-pointer">
+                                class="h-fit border rounded-lg p-4 hover:border-gray-700 hover:shadow-xl hover:cursor-pointer">
                                 <figure>
                                     <img class="w-full rounded-lg" src="{{ asset('uploads/blog/' . $blog->thumbnail) }}"
                                         alt="{{ $blog->title }}">

@@ -10,7 +10,7 @@
 @section('content')
     <main class="mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0 text-gray-700">
         <div class="flex flex-col-reverse md:flex-col-reverse lg:flex-row gap-10 mt-20">
-            <div class="w-full">
+            <div class="w-full ">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('frontBlog', $blog->slugs) }}"
@@ -35,7 +35,7 @@
                 </div>
             </div>
             {{-- left Side grid --}}
-            <div class="w-full lg:w-2/6 h-fit rounded-lg">
+            <div class="w-full lg:w-2/6 h-fit rounded-lg order-last">
                 <div class="w-full border rounded-lg p-4 mb-4">
                     <div class="text-lg font-semibold mb-1">
                         Recent Post
