@@ -46,6 +46,7 @@
                                 </div>
                             </a>
                         @empty
+                            No data Found
                         @endforelse
                     </div>
                 </div>

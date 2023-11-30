@@ -19,8 +19,16 @@
                             <img class="rounded-lg" src="{{ asset('uploads/project/' . $project->thumbnail) }}"
                                 alt="">
                         </div>
-                        <h3 class="text-xl font-bold text-left text-[#111]">{{ $project->title }}</h3>
-                        <p class="text-base font-medium">{{ $project->seo_description }}</p>
+                        <div class="flex flex-col gap-2">
+                            <p class="rounded-lg px-1 py-1 text-xs bg-opacity-10"
+                                style="background: #afe33d6b;width: fit-content; padding: 2px 8px 2px 8px;">
+                                {{ $project->created_at->format('d M Y') }}
+                            </p>
+                            <div>
+                                <h3 class="text-xl font-bold text-left text-[#111]">{{ $project->title }}</h3>
+                                <p class="text-base font-medium text-gray-500">{{ $project->seo_description }}</p>
+                            </div>
+                        </div>
                     </a>
                 @empty
                     No Data found

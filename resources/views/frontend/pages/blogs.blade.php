@@ -21,7 +21,10 @@
                             <div class="mt-6">
                                 <div class="flex gap-4">
                                     <div class="flex">
-                                        <span class="text-xs">{{ $blog->created_at->format('d M Y') }}</span>
+                                        <p class="rounded-lg px-1 py-1 text-xs bg-opacity-10"
+                                            style="background: #afe33d6b;width: fit-content; padding: 2px 8px 2px 8px;">
+                                            {{ $blog->created_at->format('d M Y') }}
+                                        </p>
                                     </div>
                                 </div>
                                 <h3 class="text-lg font-bold mt-2">{{ $blog->title }}</h3>
