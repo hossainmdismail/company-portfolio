@@ -52,7 +52,8 @@
     </div>
     <div class="w-8/12 hidden lg:flex items-center" style="justify-content: flex-end">
 
-        <img class=" h-fit" src="{{ asset('default/main.webp') }}" alt="" style="width: 28rem">
+        <img class=" h-fit" src="{{ asset('default/main.webp') }}" alt="business it solutions workspace in synex digital"
+            style="width: 28rem">
     </div>
 @endsection
 
@@ -72,7 +73,7 @@
             <!-- service card start  -->
             <div class="py-0 md:py-4 lg:py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse ($services as $key => $service)
-                    <div class="rounded-lg text-center p-8 bg-cover bg-[{{ $key == 1 ? '#124346' : '#FFFFFF' }}] border duration-200 ease-in-out hover:border-[#124346] hover:shadow-2xl hover:bg-[#124346] {{ $key == 1 ? 'text-white' : 'text-black' }} hover:text-white"
+                    <div class="card rounded-lg text-center p-8 bg-cover bg-[{{ $key == 1 ? '#124346' : '#FFFFFF' }}] border duration-200 ease-in-out hover:border-[#124346] hover:shadow-2xl hover:bg-[#124346] {{ $key == 1 ? 'text-white' : 'text-black' }} hover:text-white"
                         style="background-image: url({{ asset('asset/Frontend/Service_Card.png') }});">
                         <figure class="w-full flex justify-center mt-4">
                             <img src="{{ asset('uploads/service/' . $service->thumbnail) }}" alt="{{ $service->title }}"
@@ -80,7 +81,8 @@
                         </figure>
                         <div class="card-body items-center text-center pt-14">
                             <h2 class="card-title font-semibold text-lg lg:text-2xl">{{ $service->title }}</h2>
-                            <p class="font-medium text-sm leading-6">{{ $service->description }}</p>
+                            <p class="serviceDescription font-medium text-sm leading-6">{{ $service->description }}
+                            </p>
                         </div>
                     </div>
                 @empty
@@ -330,5 +332,55 @@
                 $('#preloader').hide();
             }
         });
+
+        // $('.card').each(function() {
+        //     const contentElement = $(this).find('.serviceDescription');
+        //     const originalContent = contentElement.text();
+        //     const words = originalContent.split(' ');
+
+        //     if (words.length > 30) {
+        //         const truncatedText = words.slice(0, 30).join(' ');
+        //         const remainingText = words.slice(30).join(' ');
+
+        //         contentElement.html(
+        //             `<span class="visible-text">${truncatedText}</span><span class="hidden-text">${remainingText}</span><button class="toggleButton">Show More</button>`
+        //         );
+        //     }
+
+        //     $(this).on('click', '.toggleButton', function() {
+        //         const toggleButton = $(this);
+        //         const visibleText = $(this).siblings('.visible-text');
+        //         const hiddenText = $(this).siblings('.hidden-text');
+
+        //         if (toggleButton.text() === 'Show More') {
+        //             hiddenText.show();
+        //             toggleButton.text('Show Less');
+        //         } else {
+        //             hiddenText.hide();
+        //             toggleButton.text('Show More');
+        //         }
+        //     });
+        // });
+
+        // $('.card').each(function() {
+        //     const contentElement = $(this).find('.serviceDescription');
+        //     const originalContent = contentElement.text();
+        //     const words = originalContent.split(' ');
+
+        //     if (words.length > 30) {
+        //         contentElement.text(words.slice(0, 30).join(' ') + '...');
+        //         contentElement.append('<button class="toggleButton">Show More</button>');
+        //     }
+
+        //     $(this).on('click', '.toggleButton', function() {
+        //         if ($(this).text() === 'Show More') {
+        //             contentElement.text(originalContent);
+        //             $(this).text('Show Less');
+        //         } else {
+        //             contentElement.text(words.slice(0, 30).join(' ') + '...');
+        //             $(this).text('Show More');
+        //         }
+        //     });
+        // });
     </script>
 @endsection
