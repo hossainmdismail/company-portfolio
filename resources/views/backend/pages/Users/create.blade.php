@@ -146,11 +146,6 @@
                                     <input class="form-control @error('name') is-invalid @enderror " name="name"
                                         type="text" value="{{ old('name') }}" placeholder="Name" required>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control @error('email') is-invalid @enderror " name="email"
-                                        type="text" value="{{ old('email') }}" placeholder="example@email.com"
-                                        required>
-                                </div>
 
                                 <div class="form-group">
                                     <select name="role" class="form-control @error('role') is-invalid @enderror">
