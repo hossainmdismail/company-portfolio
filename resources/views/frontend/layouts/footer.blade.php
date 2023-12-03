@@ -20,7 +20,9 @@ $blogs = Blog::where('status', 1)->get();
             </div>
             <div class="flex flex-col lg:flex-row text-center gap-8 lg:text-left justify-between w-full">
                 <div class="flex flex-col gap-3">
-                    <h4 class="text-lg lg:text-xl font-semibold text-[#04364A]">Quick Link</h4>
+                    <h4 class="text-lg lg:text-xl font-semibold text-[#04364A]"
+                        style=" width: max-content;
+                    ">Quick Link</h4>
                     <div class="flex flex-col gap-2 md:gap-3 lg:gap-4">
                         <a href="{{ route('home') }}"
                             class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">Home</a>

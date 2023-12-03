@@ -15,11 +15,11 @@
 
 @section('headerTab')
     <div class="w-full lg:w-4/5 space-y-5 ">
-        <h1 class="text-white text-2xl md:text-3xl lg:text-6xl font-bold leading-10">
-            We Mold <br>
-            <span class="text-[#C2E812]">Concepts That Enhance</span>
+        <h1 class="text-white text-2xl md:text-3xl lg:text-5xl font-bold leading-10">
+            Business IT Solutions: <br>
+            <span class="text-[#C2E812]">Pioneering Excellence for</span>
             <br>
-            A multitude of Lives
+            Your Technological Needs
 
         </h1>
         <p class="text-sm font-normal text-gray-200 lg:text-base  leading-6">
