@@ -39,7 +39,9 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            '*' => 'required',
+            'thumbnail'      =>  'required',
+            'title'          =>  'required',
+            'description'    =>  'required',
         ]);
 
         Photo::upload($request->thumbnail, 'uploads/service', 'TEAM', ['200', '200']);

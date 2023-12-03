@@ -37,7 +37,9 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            '*' => 'required',
+            'profile'        =>  'required',
+            'name'           =>  'required',
+            'career_title'   =>  'required',
         ]);
 
         Photo::upload($request->profile, 'uploads/team', 'TEAM', ['100', '100']);

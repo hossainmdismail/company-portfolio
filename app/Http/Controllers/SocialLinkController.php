@@ -15,7 +15,7 @@ class SocialLinkController extends Controller
     {
         $social_links = Social_links::all();
         return view('backend.pages.Sociallink.create', [
-            'social_links'=>$social_links,
+            'social_links' => $social_links,
         ]);
     }
 
@@ -33,7 +33,8 @@ class SocialLinkController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            '*'=>'required',
+            'name'           =>  'required',
+            'title'          =>  'required',
         ]);
 
         Social_links::insert([
@@ -59,7 +60,7 @@ class SocialLinkController extends Controller
     {
         $social_links = Social_links::where('id', $id)->first();
         return view('backend.pages.Sociallink.edit', [
-            'social_links'  =>$social_links,
+            'social_links'  => $social_links,
         ]);
     }
 
