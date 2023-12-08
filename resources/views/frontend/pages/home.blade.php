@@ -23,11 +23,12 @@
 
         </h1>
         <p class="text-sm font-normal text-gray-200 lg:text-base  leading-6">
-            Source for Web Development, Mobile App Development, and Skilled Digital Marketing is Synex Digital. With a focus
-            on PHP-Laravel frameworks and React.js, our skilled team creates dynamic websites using state-of-the-art
-            frontend and backend solutions. We create exceptional iOS and Android apps that seamlessly translate concepts
-            into reality and guarantee a user experience that's unmatched. Boost your internet visibility <a
-                href="{{ route('about') }}" class="underline text-button-primary">See more</a>
+            Welcome to Synex Digital, your dedicated partner in the realm of business IT solutions. As a Digital Solutions
+            Expert, We are thrilled to guide you through our comprehensive range of services tailored to elevate your
+            enterprise in the ever-evolving landscape of technology. At Synex Digital, our commitment to excellence shines
+            through in our business IT solutions. From tec services to solutions consulting, we pride ourselves on being
+            your one-stop technology solution provider, addressing the unique needs of your business with precision and
+            expertise.<a href="{{ route('about') }}" class="underline text-button-primary">See more</a>
         </p>
         <div class="flex gap-6 pt-5 text-center flex-col md:flex-row">
             <a href="{{ route('portfolio.grid') }}"
@@ -61,19 +62,21 @@
     <div class="mx-auto max-w-screen-xl px-5 md:px-8 lg:px-2">
         <div class=" pt-10 mb-10  mx-auto max-w-screen-xl px-0 md:px-8 lg:px-0">
             <!-- service part start  -->
-            <div class="py-5 lg:py-10 flex flex-col gap-5">
+            <div class="py-5 lg:py-10 flex flex-col gap-5 items-center">
                 <p class="font-medium lg:font-semibold text-lg lg:text-2xl text-center text-[#6F840A]">Our Service</p>
-                <h3
-                    class="text-text-primary text-sm lg:text-3xl font-semibold lg:font-bold text-center leading-6 lg:leading-9 font-figtree">
-                    Going
-                    further than just a cowering space,<br> Synex Digital offers
-                    more.
-                </h3>
+                <h2
+                    class="max-w-lg text-text-primary text-sm lg:text-3xl font-semibold lg:font-bold text-center leading-6 lg:leading-9 font-figtree">
+                    Elevating Your Business with Innovative Services
+                </h2>
             </div>
             <!-- service card start  -->
             <div class="py-0 md:py-4 lg:py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse ($services as $key => $service)
-                    <div class="card rounded-lg text-center p-8 bg-cover bg-[{{ $key == 1 ? '#124346' : '#FFFFFF' }}] border duration-200 ease-in-out hover:border-[#124346] hover:shadow-2xl hover:bg-[#124346] {{ $key == 1 ? 'text-white' : 'text-black' }} hover:text-white"
+                    <?php
+                    $words = explode(' ', $service->description);
+                    ?>
+                    <a href="{{ route('our.service', $service->slugs) }}"
+                        class="card rounded-lg text-center p-8 bg-cover bg-[{{ $key == 1 ? '#124346' : '#FFFFFF' }}] border duration-200 ease-in-out hover:border-[#124346] hover:shadow-2xl hover:bg-[#124346] {{ $key == 1 ? 'text-white' : 'text-black' }} hover:text-white"
                         style="background-image: url({{ asset('asset/Frontend/Service_Card.png') }});">
                         <figure class="w-full flex justify-center mt-4">
                             <img src="{{ asset('uploads/service/' . $service->thumbnail) }}" alt="{{ $service->title }}"
@@ -81,10 +84,11 @@
                         </figure>
                         <div class="card-body items-center text-center pt-14">
                             <h2 class="card-title font-semibold text-lg lg:text-2xl">{{ $service->title }}</h2>
-                            <p class="serviceDescription font-medium text-sm leading-6">{{ $service->description }}
+                            <p class="serviceDescription font-medium text-sm leading-6 text-justify mt-4">
+                                {{ implode(' ', array_slice($words, 0, 25)) }}
                             </p>
                         </div>
-                    </div>
+                    </a>
                 @empty
                 @endforelse
             </div>
@@ -102,12 +106,17 @@
 
                     <h2
                         class="text-text-primary text-sm lg:text-3xl font-semibold lg:font-bold text-center lg:text-left leading-6 lg:leading-9">
-                        Stellar Records by Synex Digital are an example of exemplary achievement.
+                        Navigating the IT Landscape with Precision
                     </h2>
-                    <p class="text-text-primary text-xs lg:text-lg font-semibold lg:font-medium text-left">Synex Digital's
-                        outstanding records reflect our commitment to excellence. With a proven track record in web and app
-                        development, transformative UI/UX design, and impactful digital marketing, we consistently surpass
-                        expectations. Our portfolio of successful projects stands as a testament to our dedication,
+                    <p class="text-justify text-text-primary text-xs lg:text-lg font-semibold lg:font-medium text-left">
+                        Synex Digital's
+                        outstanding records reflect our commitment to excellence. With a proven track record in Web and App
+                        Development, transformative UI/UX design, and impactful Digital Marketing, we consistently surpass
+                        expectations. In the dynamic world of IT, simplicity meets sophistication in our approach. Our
+                        services encompass the entire spectrum, from basic IT definitions to complex technology solutions.
+                        We redefine the very essence of service businesses, delivering not just solutions but an experience
+                        that goes beyond expectations. Our portfolio of successful projects stands as a testament to our
+                        dedication,
                         delivering top-notch solutions that propel businesses forward. Our history of exceeding milestones,
                         ensuring timely delivery, and surpassing quality benchmarks underscores why Synex Digital is the
                         trusted choice for unparalleled digital success.</p>
@@ -139,13 +148,12 @@
         <!-- portfolio part start  -->
         <div class="py-10 lg:py-20">
             <!-- Header Title and descripiton -->
-            <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-3 items-center">
                 <p class="font-semibold text-2xl text-center text-[#6F840A]">Our
                     Project</p>
                 <h2
-                    class="text-text-primary text-sm lg:text-3xl font-semibold lg:font-bold text-center leading-6 lg:leading-9">
-                    Our
-                    inventive productions
+                    class="max-w-lg text-text-primary text-sm lg:text-3xl font-semibold lg:font-bold text-center leading-6 lg:leading-9">
+                    Crafting Tailored Business IT Solutions
                 </h2>
             </div>
 
@@ -185,11 +193,12 @@
     <!-- Testimonial -->
     <div class="py-10  mt-10 lg:py-10" style="background-image: url('{{ asset('asset/Frontend/testimonial.png') }}')">
         <!-- Header Title and descripiton -->
-        <div class="flex flex-col gap-3">
+        <div class="flex flex-col gap-3 items-center">
             <p class="font-semibold text-2xl text-center text-[#6F840A]">Testimonial</p>
-            <h2 class="text-white text-sm lg:text-3xl font-semibold lg:font-bold text-center leading-6 lg:leading-9">
-                Our inventive productions
-            </h2>
+            <h3
+                class="max-w-lg text-white text-sm lg:text-3xl font-semibold lg:font-bold text-center leading-6 lg:leading-9">
+                Genesys Engage: Redefining Customer Contact
+            </h3>
         </div>
 
         <div class="mt-5 lg:mt-10 mx-auto max-w-screen-xl px-5 md:px-8 lg:px-0">
@@ -258,7 +267,7 @@
                                 </div>
                             </div>
                             <h3 class="text-lg font-bold mt-2">{{ $singleBlog->title }}</h3>
-                            <p class="text-base text-gray-700">{{ $singleBlog->seo_description }}</p>
+                            <p class="hidden sm:block text-base text-gray-700">{{ $singleBlog->seo_description }}</p>
                         </div>
                     </a>
                 </div>
@@ -332,55 +341,5 @@
                 $('#preloader').hide();
             }
         });
-
-        // $('.card').each(function() {
-        //     const contentElement = $(this).find('.serviceDescription');
-        //     const originalContent = contentElement.text();
-        //     const words = originalContent.split(' ');
-
-        //     if (words.length > 30) {
-        //         const truncatedText = words.slice(0, 30).join(' ');
-        //         const remainingText = words.slice(30).join(' ');
-
-        //         contentElement.html(
-        //             `<span class="visible-text">${truncatedText}</span><span class="hidden-text">${remainingText}</span><button class="toggleButton">Show More</button>`
-        //         );
-        //     }
-
-        //     $(this).on('click', '.toggleButton', function() {
-        //         const toggleButton = $(this);
-        //         const visibleText = $(this).siblings('.visible-text');
-        //         const hiddenText = $(this).siblings('.hidden-text');
-
-        //         if (toggleButton.text() === 'Show More') {
-        //             hiddenText.show();
-        //             toggleButton.text('Show Less');
-        //         } else {
-        //             hiddenText.hide();
-        //             toggleButton.text('Show More');
-        //         }
-        //     });
-        // });
-
-        // $('.card').each(function() {
-        //     const contentElement = $(this).find('.serviceDescription');
-        //     const originalContent = contentElement.text();
-        //     const words = originalContent.split(' ');
-
-        //     if (words.length > 30) {
-        //         contentElement.text(words.slice(0, 30).join(' ') + '...');
-        //         contentElement.append('<button class="toggleButton">Show More</button>');
-        //     }
-
-        //     $(this).on('click', '.toggleButton', function() {
-        //         if ($(this).text() === 'Show More') {
-        //             contentElement.text(originalContent);
-        //             $(this).text('Show Less');
-        //         } else {
-        //             contentElement.text(words.slice(0, 30).join(' ') + '...');
-        //             $(this).text('Show More');
-        //         }
-        //     });
-        // });
     </script>
 @endsection

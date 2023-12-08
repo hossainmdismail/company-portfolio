@@ -8,7 +8,8 @@
 
 @section('headerTab')
     <div class="text-white text-center w-full">
-        <h2 class="text-xl lg:text-4xl font-bold ">Abut us</h2>
+        <h2 class="text-xl lg:text-4xl font-bold text-primary-bg">Blog</h2>
+        <p class="text-sm lg:text-lg font-medium text-gray-200">Home > Blogs</p>
     </div>
 @endsection
 
@@ -67,7 +68,11 @@
         <!-- service card start  -->
         <div class="py-0 md:py-4 lg:py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @forelse ($services as $key => $service)
-                <div class="rounded-lg text-center p-8 bg-cover bg-[{{ $key == 1 ? '#124346' : '#FFFFFF' }}] border duration-200 ease-in-out hover:border-[#124346] hover:shadow-2xl hover:bg-[#124346] {{ $key == 1 ? 'text-white' : 'text-black' }} hover:text-white"
+                <?php
+                $words = explode(' ', $service->description);
+                ?>
+                <a href="{{ route('our.service', $service->slugs) }}"
+                    class="card rounded-lg text-center p-8 bg-cover bg-[{{ $key == 1 ? '#124346' : '#FFFFFF' }}] border duration-200 ease-in-out hover:border-[#124346] hover:shadow-2xl hover:bg-[#124346] {{ $key == 1 ? 'text-white' : 'text-black' }} hover:text-white"
                     style="background-image: url({{ asset('asset/Frontend/Service_Card.png') }});">
                     <figure class="w-full flex justify-center mt-4">
                         <img src="{{ asset('uploads/service/' . $service->thumbnail) }}" alt="{{ $service->title }}"
@@ -75,9 +80,11 @@
                     </figure>
                     <div class="card-body items-center text-center pt-14">
                         <h2 class="card-title font-semibold text-lg lg:text-2xl">{{ $service->title }}</h2>
-                        <p class="font-medium text-sm leading-6">{{ $service->description }}</p>
+                        <p class="serviceDescription font-medium text-sm leading-6 text-justify mt-4">
+                            {{ implode(' ', array_slice($words, 0, 25)) }}
+                        </p>
                     </div>
-                </div>
+                </a>
             @empty
             @endforelse
         </div>

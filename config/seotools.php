@@ -1,18 +1,10 @@
 <?php
-
-/**
- * @see https://github.com/artesaos/seotools
- */
-
 return [
     'meta' => [
-        /*
-         * The default configurations to be used by the meta generator.
-         */
         'defaults'       => [
-            'title'        => false, // set false to total remove
+            'title'        => 'Synex Digital', // set false to total remove
             'titleBefore'  => false,
-            'description'  => 'Welcome to Synex Digital - your trusted partner for web application development, web development, UI/UX design, and more. Let us bring your digital dreams to life.', // set false to total remove
+            'description'  => 'We are the Synex Digital Team and are Highly Motivated to Give You The Best and effective on-time Results for Your Online Presence and Traffic Growth.', // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [
                 'Synex Digital',
@@ -53,7 +45,7 @@ return [
          */
         'defaults' => [
             'title'       => 'Synex Digital | Your Web Development and UI/UX Design Partner', // set false to total remove
-            'description' => 'Welcome to Synex Digital - your trusted partner for web application development, web development, UI/UX design, and more. Let us bring your digital dreams to life.', // set false to total remove
+            'description' => 'We are the Synex Digital Team and are Highly Motivated to Give You The Best and effective on-time Results for Your Online Presence and Traffic Growth.', // set false to total remove
             'url'         => 'http://synexdigital.com', // Set null for using Url::current(), set false to total remove
             'type'        => 'Digital Web Development and UI/UX Design Agency',
             'site_name'   => 'Synex Digital',
@@ -75,7 +67,7 @@ return [
          */
         'defaults' => [
             'title'         => 'Synex Digital | Your Web Development and UI/UX Design Partner', // set false to total remove
-            'description'   => 'Welcome to Synex Digital - your trusted partner for web application development, web development, UI/UX design, and more. Let us bring your digital dreams to life.', // set false to total remove
+            'description'   => 'We are the Synex Digital Team and are Highly Motivated to Give You The Best and effective on-time Results for Your Online Presence and Traffic Growth.', // set false to total remove
             'url'           => 'http://synexdigital.com', // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type'          => 'Organization',
             'images'        => ['http://synexdigital.com/asset/Frontend/logo_dsefault.png'],
