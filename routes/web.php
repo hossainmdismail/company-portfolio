@@ -11,9 +11,11 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FronProjectController;
 use App\Http\Controllers\FrontBlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OurServiceController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ServiceitemController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TalkController;
@@ -43,6 +45,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         'blog'          => BlogController::class,
         'team'          => TeamController::class,
         'service'       => ServiceController::class,
+        'serviceitem'   => ServiceitemController::class,
         'sociallink'    => SociallinkController::class,
         'webinfo'       => WebinfoController::class,
         'product'       => ProductController::class,
@@ -62,7 +65,7 @@ Route::get('/grid/portfolio', [FronProjectController::class, 'portfolio'])->name
 Route::get('/front/blog/{slugs}', [FrontBlogController::class, 'link'])->name('frontBlog');
 Route::get('/list/blog', [FrontBlogController::class, 'list'])->name('blog.list');
 // Route::get('/blog/list/{$id}', [FrontBlogController::class, 'category'])->name('blog.category');
-// Route::get('/our-service/{slugs}', [OurServiceController::class, 'index'])->name('our.service');
+Route::get('/ourservice/{slugs}', [OurServiceController::class, 'index'])->name('our.service');
 // Route::get('/contact-us', [ContactCotroller::class, 'index'])->name('contact');
 
 Route::get('/talk', [TalkController::class, 'index'])->name('talk');

@@ -10,16 +10,17 @@ $blogs = Blog::where('status', 1)->get();
     <div class="mx-auto max-w-screen-xl px-4 md:px-0 lg:px-0 text-gray-700">
         <div class="flex flex-col lg:flex-row gap-10">
             <div
-                class="w-full flex md:flex lg:flex-col items-center md:items-center lg:items-start gap-3 lg:gap-0 lg:w-2/4 px-0 md:px-40 lg:px-0 text-center justify-center">
+                class="w-full flex flex-col items-center md:items-center lg:items-start gap-3 lg:gap-0 lg:w-2/4 px-0 md:px-40 lg:px-0 text-center justify-center">
                 <figure class="flex-1 lg:flex">
                     <img class="w-[118px;] lg:w-full" src="{{ asset('asset/Frontend/Logo.svg') }}" alt="">
                 </figure>
-                <p class="font-normal text-xs md:text-base lg:text-base flex-1 lg:flex">Synex Digital is a
-                    Professional
-                    Software Agency Platform.</p>
+                <p class="font-normal text-xs md:text-base lg:text-base flex-1 lg:flex text-justify mt-4">Embark on a
+                    transformative journey with Synex Digital. Experience the power of Business IT Solutions that
+                    redefine service businesses. Activate now and let's build a future where technology meets innovation
+                    in the most SEO-optimized way possible. Contact us today to unlock success for your business.</p>
             </div>
             <div class="flex flex-col lg:flex-row text-center gap-8 lg:text-left justify-between w-full">
-                <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-3 items-center">
                     <h4 class="text-lg lg:text-xl font-semibold text-[#04364A]"
                         style=" width: max-content;
                     ">Quick Link</h4>
@@ -37,7 +38,7 @@ $blogs = Blog::where('status', 1)->get();
                 <div class="flex flex-col gap-3">
                     <h4 class="text-lg lg:text-xl font-semibold text-[#04364A]">Blogs</h4>
                     <div class="flex flex-col gap-2 md:gap-3 lg:gap-4">
-                        @forelse ($blogs as $blog)
+                        @forelse ($blogs->take(5) as $blog)
                             <a href="{{ route('frontBlog', $blog->slugs) }}"
                                 class="text-base lg:text-lg font-medium duration-150 ease-in-out hover:text-button-primary">{{ $blog->title }}</a>
                         @empty
