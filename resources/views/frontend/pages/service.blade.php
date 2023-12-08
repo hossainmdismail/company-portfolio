@@ -55,7 +55,7 @@
                 </div>
                 <form class="flex flex-1 flex-col gap-5 p-2 md:p-10 rounded-full" action="http://127.0.0.1:8000/talk/store"
                     method="post">
-                    <input type="hidden" name="_token" value="MPmtJmf4CkhIOKDzu9H4GBlNxj5fCLGg0EN5JVuE">
+                    @csrf
                     <div class="flex flex-col lg:flex-row md:flex-row gap-3 md:gap-5 lg:gap-6 w-full">
                         <div class="flex-1 space-y-2">
                             <label for="" class="text-lg md:text-lg lg:text-xl font-bold">Your Name</label>

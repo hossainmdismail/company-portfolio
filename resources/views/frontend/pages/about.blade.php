@@ -8,7 +8,8 @@
 
 @section('headerTab')
     <div class="text-white text-center w-full">
-        <h2 class="text-xl lg:text-4xl font-bold ">Abut us</h2>
+        <h2 class="text-xl lg:text-4xl font-bold text-primary-bg">Blog</h2>
+        <p class="text-sm lg:text-lg font-medium text-gray-200">Home > Blogs</p>
     </div>
 @endsection
 

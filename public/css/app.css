@@ -1550,6 +1550,11 @@ video {
   color: #000000c7;
 }
 
+.text-primary-bg {
+  --tw-text-opacity: 1;
+  color: rgb(194 232 18 / var(--tw-text-opacity));
+}
+
 .text-text-primary {
   --tw-text-opacity: 1;
   color: rgb(17 17 17 / var(--tw-text-opacity));

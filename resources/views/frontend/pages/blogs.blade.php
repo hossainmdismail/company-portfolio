@@ -2,8 +2,8 @@
 
 @section('headerTab')
     <div class="w-full text-white text-center space-y-3 lg:space-y-5 py-9">
-        <h2 class="text-xl lg:text-4xl font-bold ">Blog</h2>
-        <p class="text-sm lg:text-lg font-medium">Home > Blogs</p>
+        <h2 class="text-xl lg:text-4xl font-bold text-primary-bg">Blog</h2>
+        <p class="text-sm lg:text-lg font-medium text-gray-200">Home > Blogs</p>
     </div>
 @endsection
 
