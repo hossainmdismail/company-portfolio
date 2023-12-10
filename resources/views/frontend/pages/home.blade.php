@@ -15,7 +15,7 @@
 
 @section('headerTab')
     <div class="w-full lg:w-4/5 space-y-5 ">
-        <h1 class="text-white text-2xl md:text-3xl lg:text-5xl font-bold leading-10">
+        <h1 class="text-white text-2xl md:text-3xl lg:text-5xl font-bold leading-7 md:leading-10">
             Business IT Solutions: <br>
             <span class="text-[#C2E812]">Pioneering Excellence for</span>
             <br>
@@ -74,6 +74,7 @@
                 @forelse ($services as $key => $service)
                     <?php
                     $words = explode(' ', $service->description);
+                    $count = count($words);
                     ?>
                     <a href="{{ route('our.service', $service->slugs) }}"
                         class="card rounded-lg text-center p-8 bg-cover bg-[{{ $key == 1 ? '#124346' : '#FFFFFF' }}] border duration-200 ease-in-out hover:border-[#124346] hover:shadow-2xl hover:bg-[#124346] {{ $key == 1 ? 'text-white' : 'text-black' }} hover:text-white"
@@ -85,7 +86,7 @@
                         <div class="card-body items-center text-center pt-14">
                             <h2 class="card-title font-semibold text-lg lg:text-2xl">{{ $service->title }}</h2>
                             <p class="serviceDescription font-medium text-sm leading-6 text-justify mt-4">
-                                {{ implode(' ', array_slice($words, 0, 25)) }}
+                                {{ implode(' ', array_slice($words, 0, 25)) }}{{ $count > 25 ? '...' : '' }}
                             </p>
                         </div>
                     </a>
@@ -97,18 +98,18 @@
         <!-- about part start  -->
         <div class="py-10 flex flex-col-reverse md:flex-row lg:flex-row lg:py-16 items-center gap-10">
             <div class="flex-1">
-                <img class="rounded-lg h-full" src="{{ asset('default/thumbBody.jpg') }}" alt>
+                <img class="rounded-lg h-full" src="{{ asset('default/thumbBody.jpg') }}" alt="Synex Digital group">
             </div>
             <div class="flex-1">
                 <div class="flex flex-col gap-3 lg:gap-5">
-                    <h3 class="font-medium lg:font-semibold text-center lg:text-left lg:text-2xl  text-[#6F840A]">
+                    <h3 class="font-semibold text-2xl text-center text-[#6F840A]">
                         Our Records</h3>
 
                     <h2
-                        class="text-text-primary text-sm lg:text-3xl font-semibold lg:font-bold text-center lg:text-left leading-6 lg:leading-9">
+                        class="text-text-primary text-base lg:text-3xl font-semibold lg:font-bold text-center lg:text-left leading-6 lg:leading-9">
                         Navigating the IT Landscape with Precision
                     </h2>
-                    <p class="text-justify text-text-primary text-xs lg:text-lg font-semibold lg:font-medium text-left">
+                    <p class="text-justify text-text-primary text-sm lg:text-lg font-semibold lg:font-medium text-left">
                         Synex Digital's
                         outstanding records reflect our commitment to excellence. With a proven track record in Web and App
                         Development, transformative UI/UX design, and impactful Digital Marketing, we consistently surpass
