@@ -3,7 +3,7 @@ return [
     'meta' => [
         'defaults'       => [
             'title'        => 'Synex Digital', // set false to total remove
-            'titleBefore'  => false,
+            'titleBefore'  => 'Synex Digital',
             'description'  => 'We are the Synex Digital Team and are Highly Motivated to Give You The Best and effective on-time Results for Your Online Presence and Traffic Growth.', // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [

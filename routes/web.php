@@ -11,6 +11,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FronProjectController;
 use App\Http\Controllers\FrontBlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LeadController;
 use App\Http\Controllers\OurServiceController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\ProductController;
@@ -60,11 +61,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'link'])->name('about');
-Route::get('/portfolio/{slugs}', [FronProjectController::class, 'link'])->name('portfolio');
-Route::get('/grid/portfolio', [FronProjectController::class, 'portfolio'])->name('portfolio.grid');
+Route::get('/project/{slugs}', [FronProjectController::class, 'link'])->name('portfolio');
+Route::get('/grid/project', [FronProjectController::class, 'portfolio'])->name('portfolio.grid');
 Route::get('/front/blog/{slugs}', [FrontBlogController::class, 'link'])->name('frontBlog');
 Route::get('/list/blog', [FrontBlogController::class, 'list'])->name('blog.list');
-// Route::get('/blog/list/{$id}', [FrontBlogController::class, 'category'])->name('blog.category');
+Route::post('/Lead/store', [LeadController::class, 'store'])->name('lead.store');
+Route::get('/services', [OurServiceController::class, 'services'])->name('our.services');
 Route::get('/ourservice/{slugs}', [OurServiceController::class, 'index'])->name('our.service');
 // Route::get('/contact-us', [ContactCotroller::class, 'index'])->name('contact');
 

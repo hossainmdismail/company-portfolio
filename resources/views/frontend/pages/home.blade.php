@@ -302,6 +302,8 @@
             </div>
         </div>
         <!-- blog part end -->
+
+        @include('frontend.layouts.newsletter')
     </div>
 @endsection
 

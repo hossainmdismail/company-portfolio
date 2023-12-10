@@ -21,7 +21,8 @@ class FrontBlogController extends Controller
         $image = asset('uploads/blog/' . $blog->thumbnail);
 
         //Seo details
-        SEOTools::setTitle($blog->seo_title);
+        SEOMeta::setTitle($blog->seo_title);
+        SEOMeta::addMeta('title', $blog->seo_title);
         SEOTools::setDescription($blog->seo_description);
         SEOMeta::addKeyword([$blog->seo_tags]);
         SEOMeta::setCanonical('https://synexdigital.com' . request()->getPathInfo());
@@ -47,12 +48,16 @@ class FrontBlogController extends Controller
                 $data->where('category_id', $request->category);
                 //Seo details
                 $category = Category::find($request->category);
-                SEOTools::setTitle($category->seo_title);
+
+                SEOMeta::setTitle('Blogs');
+                SEOMeta::addMeta('title', $category->seo_title);
                 SEOTools::setDescription($category->seo_description);
                 SEOMeta::addKeyword([$category->seo_tags]);
                 SEOMeta::setCanonical('https://synexdigital.com' . request()->getPathInfo());
             }
         } else {
+            SEOMeta::setTitle('Blogs');
+            SEOMeta::addMeta('title', "Insights & Inspiration: Explore the Latest Perspectives and Trends with Synex Digital's Blog");
             SEOMeta::setCanonical('https://synexdigital.com' . request()->getPathInfo());
         }
 
