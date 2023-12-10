@@ -6,7 +6,8 @@
     @yield('style')
 </head>
 
-<body class="font-figtree dark:bg-white">
+<body class="font-figtree dark:bg-white relative">
+    {{-- @include('frontend.layouts.model') --}}
     @yield('loader')
     <!-- header section  -->
     <div class="bg-cover bg-[#003f44]" style="background-image: url('{{ asset('asset/Frontend/cover.png') }}')">
