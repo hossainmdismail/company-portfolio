@@ -2,15 +2,15 @@
     <div class="flex justify-between items-center px-2">
         <div class="flex flex-row-reverse lg:flex justify-between w-[100%] lg:w-auto">
             {{-- Mobile nav --}}
-            <div class="relative">
-                <label class="p-0 m-0 lg:hidden cursor-pointer" id="mobileNav">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none">
-                        <path d="M3.75 6.75H20.25M3.75 12H20.25M3.75 17.25H20.25" stroke="white" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </label>
-                <ul class="hidden mt-3 z-[1] p-2 bg-white shadow bg-base-100 rounded-xl w-52 text-base font-medium absolute right-0"
+            <div class="flex justify-center items-center">
+                {{-- <label class="p-0 m-0 lg:hidden cursor-pointer" id="mobileNav"> --}}
+                <svg xmlns="http://www.w3.org/2000/svg" class="p-0 m-0 lg:hidden cursor-pointer" id="mobileNav"
+                    width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3.75 6.75H20.25M3.75 12H20.25M3.75 17.25H20.25" stroke="white" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                {{-- </label> --}}
+                <ul class="hidden mt-3 z-[1] p-2 top-16 right-3 bg-white shadow bg-base-100 rounded-xl w-52 text-base font-medium absolute right-0"
                     id="mobileMenu">
                     <li><a href="{{ route('our.services') }}"
                             class="cursor-pointer duration-150 hover:text-primary-bg">Services</a></li>

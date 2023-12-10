@@ -600,12 +600,20 @@ video {
   right: 0.5rem;
 }
 
+.right-3 {
+  right: 0.75rem;
+}
+
 .top-0 {
   top: 0px;
 }
 
 .top-10 {
   top: 2.5rem;
+}
+
+.top-16 {
+  top: 4rem;
 }
 
 .z-50 {
@@ -1463,12 +1471,12 @@ video {
   font-style: italic;
 }
 
-.leading-10 {
-  line-height: 2.5rem;
-}
-
 .leading-6 {
   line-height: 1.5rem;
+}
+
+.leading-7 {
+  line-height: 1.75rem;
 }
 
 .leading-loose {
@@ -1996,6 +2004,10 @@ video {
 
   .md\:font-semibold {
     font-weight: 600;
+  }
+
+  .md\:leading-10 {
+    line-height: 2.5rem;
   }
 }
 
