@@ -18,7 +18,6 @@ class HomeController extends Controller
     public function index()
     {
         //Meta SEO
-        SEOMeta::setTitle('Synex Digital');
         SEOMeta::addMeta('title', 'Synex Digital | IT Solutions For Your Business Online Presence');
         SEOTools::setDescription('We are the Synex Digital Team and are Highly Motivated to Give You The Best and effective on-time Results for Your Online Presence and Traffic Growth.');
         SEOMeta::addKeyword(['business it solutions', 'service business definition', 'business communication solution']);

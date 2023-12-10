@@ -14,8 +14,9 @@ class SitemapController extends Controller
 {
     function index()
     {
-        $project = Project::select('slugs')->where('status', 1)->get();
-        $blogs = Blog::select('slugs')->where('status', 1)->get();
+        $project    = Project::select('slugs')->where('status', 1)->get();
+        $blogs      = Blog::select('slugs')->where('status', 1)->get();
+        $services   = Service::select('slugs')->where('status', 1)->get();
 
         $sitemap = Sitemap::create();
         $sitemap->add(Url::create('/')
@@ -26,7 +27,11 @@ class SitemapController extends Controller
                 ->setLastModificationDate(Carbon::now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.1))
-            ->add(Url::create('/grid/portfolio')
+            ->add(Url::create('/grid/project')
+                ->setLastModificationDate(Carbon::now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                ->setPriority(0.1))
+            ->add(Url::create('/list/blog')
                 ->setLastModificationDate(Carbon::now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.1))
@@ -41,12 +46,19 @@ class SitemapController extends Controller
 
         //Dynamic Project
         foreach ($project as $projects) {
-            $sitemap->add(Url::create('/portfolio' . '/' . $projects->slugs)
+            $sitemap->add(Url::create('/project' . '/' . $projects->slugs)
                 ->setLastModificationDate(Carbon::now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
                 ->setPriority(0.1));
         }
         //Dynamic Service
+        foreach ($services as $service) {
+            $sitemap->add(Url::create('/ourservice' . '/' . $service->slugs)
+                ->setLastModificationDate(Carbon::now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                ->setPriority(0.1));
+        }
+        //Dynamic Blog
         foreach ($blogs as $blog) {
             $sitemap->add(Url::create('/front/blog' . '/' . $blog->slugs)
                 ->setLastModificationDate(Carbon::now())
