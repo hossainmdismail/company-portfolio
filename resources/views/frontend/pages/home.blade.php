@@ -5,56 +5,65 @@
     <script src="{{ asset('asset/Frontend/') }}/lib/owl/owl.carousel.min.js"></script>
 @endsection
 
-
-{{-- @section('loader')
-    <!-- Preloader -->
-    <div id="preloader" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-white z-50">
-        <div class="loader border-0 border-t-2 border-[#124346] rounded-full w-20 h-20 animate-spin"></div>
-    </div>
-@endsection --}}
-
 @section('headerTab')
-    <div class="w-full lg:w-4/5 space-y-5 ">
-        <h1 class="text-white text-2xl md:text-3xl lg:text-5xl font-bold leading-7 md:leading-10">
-            Business IT Solutions: <br>
-            <span class="text-[#C2E812]">Pioneering Excellence for</span>
-            <br>
-            Your Technological Needs
+    <div class="grid  grid-cols-1 lg:grid-cols-2 gap-2">
+        <div>
+            <h1 class="text-white text-2xl md:text-3xl lg:text-5xl font-bold mb-3" style="line-height: 1.2;">
+                Business IT Solutions: <br>
+                <span class="text-[#C2E812]">Pioneering Excellence for</span>
+                <br>
+                Your Technological Needs
 
-        </h1>
-        <p class="text-sm font-normal text-gray-200 lg:text-base  leading-6">
-            Welcome to Synex Digital, your dedicated partner in the realm of business IT solutions. As a Digital Solutions
-            Expert, We are thrilled to guide you through our comprehensive range of services tailored to elevate your
-            enterprise in the ever-evolving landscape of technology. At Synex Digital, our commitment to excellence shines
-            through in our business IT solutions. From tec services to solutions consulting, we pride ourselves on being
-            your one-stop technology solution provider, addressing the unique needs of your business with precision and
-            expertise.<a href="{{ route('about') }}" class="underline text-button-primary">See more</a>
-        </p>
-        <div class="flex gap-6 pt-5 text-center flex-col md:flex-row">
-            <a href="{{ route('portfolio.grid') }}"
-                class="py-2.5 px-5 mt-2 mb-2 text-base font-semibold text-gray-900 focus:outline-none bg-button-primary rounded-full duration-150 ease-in-out hover:bg-[#b8ec3ff0] ">Explore
-                Our Service</a>
-            {{-- <a href="{{ route('about') }}"
+            </h1>
+            <p class="text-sm font-normal text-gray-200 lg:text-base " style="line-height: 1.6;">
+                Welcome to Synex Digital, your dedicated partner in the realm of business IT solutions. As a Digital
+                Solutions
+                Expert, We are thrilled to guide you through our comprehensive range of services tailored to elevate your
+                enterprise in the ever-evolving landscape of technology. At Synex Digital, our commitment to excellence
+                shines
+                through in our business IT solutions. From tec services to solutions consulting, we pride ourselves on being
+                your one-stop technology solution provider, addressing the unique needs of your business with precision and
+                expertise.<a href="{{ route('about') }}" class="underline text-button-primary">See more</a>
+            </p>
+            <div class="flex gap-6 pt-5 text-center flex-col md:flex-row">
+                <a href="{{ route('portfolio.grid') }}"
+                    class="py-2.5 px-5 mt-2 mb-2 text-base font-semibold text-gray-900 focus:outline-none bg-button-primary rounded-full duration-150 ease-in-out hover:bg-[#b8ec3ff0] ">Explore
+                    Our Service</a>
+                {{-- <a href="{{ route('about') }}"
                 class="py-2.5 px-5 mt-2 mb-2 text-base text-button-primary font-semibold focus:outline-none border border-button-primary bg-transparent rounded-full duration-150 ease-in-out hover:bg-[#b8ec3ff0] hover:text-black ">Project</a> --}}
-        </div>
-        <div class="gap-6 py-8 flex items-center">
-            <a href="#" class="flex -space-x-2">
-                @forelse ($teams->take(5) as $key => $team)
-                    <img class="inline-block h-14 w-14 rounded-full ring-2
-       ring-[#0A4246] hover:ring-button-primary"
-                        src="{{ asset('uploads/team/' . $team->profile) }}" alt="{{ $team->name }}">
-                @empty
-                @endforelse
+            </div>
+            <div class="gap-6 py-8 flex items-center">
+                <a href="#" class="flex -space-x-2">
+                    @forelse ($teams->take(5) as $key => $team)
+                        <img class="inline-block h-14 w-14 rounded-full ring-2 ring-[#0A4246] hover:ring-button-primary"
+                            src="{{ asset('uploads/team/' . $team->profile) }}" alt="{{ $team->name }}">
+                    @empty
+                    @endforelse
 
-            </a>
-            <p class="text-white font-semibold text-xl">We Have <br>
-                Awesome Team</p>
+                </a>
+                <p class="text-white font-semibold text-xl">We Have <br>
+                    Awesome Team</p>
+            </div>
         </div>
-    </div>
-    <div class="w-8/12 hidden lg:flex items-center" style="justify-content: flex-end">
+        <div class="pt-0 pb-6 pl-0 lg:pl-28 lg:pt-14 lg:pb-20">
+            <div class="relative py-8 pl-8 flex gap-4">
+                <div class="absolute h-full rounded-xl opacity-10 bg-black top-0 left-0" style="width: 58%"></div>
+                <div class="w-full block rounded-xl bg-gray-50 overflow-hidden z-0">
+                    <img src="{{ asset('default/headers.webp') }}" alt="" class="h-full">
+                </div>
+                <div class="w-full flex flex-col gap-4 z-10">
+                    <div class="col-span-1 rounded-xl bg-gray-50 px-4 py-6 text-center">
+                        <h4 class="text-4xl font-semibold pb-4">249</h4>
+                        <p>Successful Projects</p>
+                    </div>
+                    <div class="h-full overflow-hidden col-span-1 rounded-xl bg-gray-50">
+                        <img src="{{ asset('default/header2.webp') }}" alt="">
+                    </div>
+                </div>
 
-        <img class=" h-fit" src="{{ asset('default/main.webp') }}" alt="business it solutions workspace in synex digital"
-            style="width: 28rem">
+            </div>
+        </div>
+
     </div>
 @endsection
 
@@ -73,21 +82,30 @@
             <div class="py-0 md:py-4 lg:py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse ($services as $key => $service)
                     <?php
+                    // Array of predefined colors
+                    $colors = ['#0F393C', '#FFC857', '#32CD32', '#7BC950', '#F07167', '#F95738'];
+                    
+                    // Get the index within the range of colors
+                    $colorIndex = $key % count($colors);
+                    
+                    $selectedColor = $colors[$colorIndex];
+                    
                     $words = explode(' ', $service->description);
                     $count = count($words);
                     ?>
+
                     <a href="{{ route('our.service', $service->slugs) }}"
-                        class="card rounded-lg text-center p-8 bg-cover bg-[{{ $key == 1 ? '#124346' : '#FFFFFF' }}] border duration-200 ease-in-out hover:border-[#124346] hover:shadow-2xl hover:bg-[#124346] {{ $key == 1 ? 'text-white' : 'text-black' }} hover:text-white"
-                        style="background-image: url({{ asset('asset/Frontend/Service_Card.png') }});">
-                        <figure class="w-full flex justify-center mt-4">
-                            <img src="{{ asset('uploads/service/' . $service->thumbnail) }}" alt="{{ $service->title }}"
-                                class="w-24 h-24 rounded-full p-2 bg-[#C2E812]" />
-                        </figure>
-                        <div class="card-body items-center text-center pt-14">
-                            <h2 class="card-title font-semibold text-lg lg:text-2xl">{{ $service->title }}</h2>
-                            <p class="serviceDescription font-medium text-sm leading-6 text-justify mt-4">
+                        class="flex flex-col justify-between rounded-xl p-6 bg-cover border duration-200 ease-in-out shadow-lg text-white overflow-hidden"
+                        style="background-color: {{ $selectedColor }};">
+                        <div class="items-center">
+                            <h3 class=" font-semibold text-lg lg:text-2xl">{{ $service->title }}</h3>
+                            <p class="serviceDescription font-medium text-sm leading-6 text-justify mt-4 z-30">
                                 {{ implode(' ', array_slice($words, 0, 25)) }}{{ $count > 25 ? '...' : '' }}
                             </p>
+                            <figure class="w-full z-0 flex justify-end items-end mt-4 relative h-60 md:h-72">
+                                <img src="{{ asset('uploads/service/' . $service->thumbnail) }}"
+                                    alt="{{ $service->title }}" class="w-80 absolute -right-10 -bottom-9" />
+                            </figure>
                         </div>
                     </a>
                 @empty
@@ -209,7 +227,8 @@
                         <div class="w-full mx-auto rounded-lg border border-gray-200 p-5 text-white font-light mb-6">
                             <div class="w-full flex mb-4 items-center">
                                 <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                                    <img src="{{ asset('uploads/testimonial/' . $testimonial->profile) }}" alt="">
+                                    <img src="{{ asset('uploads/testimonial/' . $testimonial->profile) }}"
+                                        alt="">
                                 </div>
                                 <div class="flex-grow pl-3">
                                     <h6 class="font-bold text-sm uppercase text-white">{{ $testimonial->name }}</h6>
