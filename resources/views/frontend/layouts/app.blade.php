@@ -10,14 +10,14 @@
     {{-- @include('frontend.layouts.model') --}}
     @yield('loader')
     <!-- header section  -->
-    <div class="bg-cover bg-[#003f44]" style="background-image: url('{{ asset('asset/Frontend/cover.png') }}')">
+    <div class="bg-cover bg-[#003f44]">
         <header class="mx-auto max-w-screen-xl py-4">
             <!-- navigation bar start-->
             @include('frontend.layouts.header')
             <!-- navigation bar end  -->
         </header>
 
-        <div class="mx-auto max-w-screen-xl  py-3 px-3 md:py-5 lg:py-16 flex flex-col lg:flex-row gap-10 ">
+        <div class="mx-auto max-w-screen-xl  py-4 px-4 md:py-5 lg:py-16 flex flex-col lg:flex-row gap-10 ">
             @yield('headerTab')
         </div>
         <!-- banner part end  -->
