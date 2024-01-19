@@ -14,8 +14,8 @@ class WebInfoController extends Controller
     public function index()
     {
         $webInfo = Web_info::all();
-        return view('backend.pages.WebInfo.create', [
-            'webInfo' => $webInfo,
+        return view('backend.pages.WebInfo.create',[
+            'webInfo'=>$webInfo,
         ]);
     }
 
@@ -33,9 +33,7 @@ class WebInfoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'              =>  'required',
-            'address'           =>  'required',
-            'number'            =>  'required',
+            '*'=>'required',
         ]);
 
         Web_info::insert([
@@ -62,7 +60,7 @@ class WebInfoController extends Controller
     {
         $web_info = Web_info::where('id', $id)->first();
         return view('backend.pages.WebInfo.edit', [
-            'web_info'  => $web_info,
+            'web_info'  =>$web_info,
         ]);
     }
 

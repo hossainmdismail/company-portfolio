@@ -16,14 +16,8 @@
 
             </h1>
             <p class="text-sm font-normal text-gray-200 lg:text-base " style="line-height: 1.6;">
-                Welcome to Synex Digital, your dedicated partner in the realm of business IT solutions. As a Digital
-                Solutions
-                Expert, We are thrilled to guide you through our comprehensive range of services tailored to elevate your
-                enterprise in the ever-evolving landscape of technology. At Synex Digital, our commitment to excellence
-                shines
-                through in our business IT solutions. From tec services to solutions consulting, we pride ourselves on being
-                your one-stop technology solution provider, addressing the unique needs of your business with precision and
-                expertise.<a href="{{ route('about') }}" class="underline text-button-primary">See more</a>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga maiores iusto, error reprehenderit suscipit perferendis omnis alias eos ipsa repudiandae optio architecto. Facere porro optio, quaerat nam deserunt quo quia voluptatum, hic amet inventore delectus. Facilis laudantium impedit alias. Vero necessitatibus distinctio animi similique nisi reiciendis blanditiis praesentium officiis possimus accusantium magni perferendis magnam esse, non, vitae maxime ut temporibus consequatur officia eveniet odit! Dicta recusandae sint magnam similique maiores temporibus eius tempora voluptas, repudiandae ratione nam, placeat dignissimos qui ipsum officiis pariatur expedita odio veniam cupiditate esse dolorem? Officiis, necessitatibus. Doloribus accusamus quibusdam explicabo qui vero ex minima et.
+                {{-- <a href="{{ route('about') }}" class="underline text-button-primary">See more</a> --}}
             </p>
             <div class="flex gap-6 pt-5 text-center flex-col md:flex-row">
                 <a href="{{ route('portfolio.grid') }}"
@@ -84,12 +78,12 @@
                     <?php
                     // Array of predefined colors
                     $colors = ['#0F393C', '#FFC857', '#32CD32', '#7BC950', '#F07167', '#F95738'];
-                    
+
                     // Get the index within the range of colors
                     $colorIndex = $key % count($colors);
-                    
+
                     $selectedColor = $colors[$colorIndex];
-                    
+
                     $words = explode(' ', $service->description);
                     $count = count($words);
                     ?>
@@ -128,17 +122,8 @@
                         Navigating the IT Landscape with Precision
                     </h2>
                     <p class="text-justify text-text-primary text-sm lg:text-lg font-semibold lg:font-medium text-left">
-                        Synex Digital's
-                        outstanding records reflect our commitment to excellence. With a proven track record in Web and App
-                        Development, transformative UI/UX design, and impactful Digital Marketing, we consistently surpass
-                        expectations. In the dynamic world of IT, simplicity meets sophistication in our approach. Our
-                        services encompass the entire spectrum, from basic IT definitions to complex technology solutions.
-                        We redefine the very essence of service businesses, delivering not just solutions but an experience
-                        that goes beyond expectations. Our portfolio of successful projects stands as a testament to our
-                        dedication,
-                        delivering top-notch solutions that propel businesses forward. Our history of exceeding milestones,
-                        ensuring timely delivery, and surpassing quality benchmarks underscores why Synex Digital is the
-                        trusted choice for unparalleled digital success.</p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque animi magni dignissimos est molestias, nihil officia nemo consequuntur neque iusto ipsa illo corrupti quam quasi. Aut, eaque voluptatum. Amet similique nihil ducimus eius nobis? Magni architecto corporis praesentium facere? In debitis libero quasi magni? Quam aut, laborum ab expedita pariatur, quos minus nulla autem enim rerum neque sit distinctio. Rerum, voluptatem asperiores maiores ea inventore temporibus fuga, quia magnam corporis nam itaque quas consequuntur, dicta nemo cum numquam ad deleniti nobis eos obcaecati maxime? Sequi aliquid, repudiandae doloribus eos molestias rerum necessitatibus cupiditate enim, rem corrupti dolor quisquam doloremque autem!
+                    </p>
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-6 py-0 lg:py-5">
                         <div class="bg-[#e7e7e7] py-2 lg:py-5 text-center space-y-2 lg:space-y-2 rounded-lg">
                             <h1 class="text-[#04364A] font-medium lg:font-bold text-2xl lg:text-4xl">5+</h1>
