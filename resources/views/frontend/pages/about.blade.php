@@ -306,7 +306,7 @@
             <div class="w-full">
                 <div class="mb-12 max-w-[570px] lg:mb-0">
                     <h2
-                        class="text-dark dark:text-white mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
+                        class="text-dark mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                         GET IN TOUCH WITH US
                     </h2>
                     <p class="text-base leading-relaxed text-body-color dark:text-dark-6 mb-9">
