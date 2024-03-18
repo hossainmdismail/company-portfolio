@@ -309,7 +309,7 @@
                         class="text-dark mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                         GET IN TOUCH WITH US
                     </h2>
-                    <p class="text-base leading-relaxed text-body-color dark:text-dark-6 mb-9">
+                    <p class="text-base leading-relaxed text-body-color">
                         Reach out to us for assistance and inquiries.
                     </p>
                     <div class="mb-8 flex w-full max-w-[370px]">
@@ -323,10 +323,10 @@
                             </svg>
                         </div>
                         <div class="w-full">
-                            <h4 class="mb-1 text-xl font-bold text-dark dark:text-white">
+                            <h4 class="mb-1 text-xl font-bold text-dark ">
                                 Our Location
                             </h4>
-                            <p class="text-base text-body-color dark:text-dark-6">
+                            <p class="text-base text-body-color">
                                 87/3 West dhanmondi, Shankar
                             </p>
                         </div>
@@ -355,10 +355,10 @@
                             </svg>
                         </div>
                         <div class="w-full">
-                            <h4 class="mb-1 text-xl font-bold text-dark dark:text-white">
+                            <h4 class="mb-1 text-xl font-bold text-dark ">
                                 Phone Number
                             </h4>
-                            <p class="text-base text-body-color dark:text-dark-6">
+                            <p class="text-base text-body-color">
                                 +8801613408101
                             </p>
                         </div>
@@ -374,10 +374,10 @@
                             </svg>
                         </div>
                         <div class="w-full">
-                            <h4 class="mb-1 text-xl font-bold text-dark dark:text-white">
+                            <h4 class="mb-1 text-xl font-bold text-dark ">
                                 Email Address
                             </h4>
-                            <p class="text-base text-body-color dark:text-dark-6">
+                            <p class="text-base text-body-color">
                                 office@synexdigital.com
                             </p>
                         </div>
