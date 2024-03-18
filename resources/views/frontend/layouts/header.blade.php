@@ -12,12 +12,15 @@
                 {{-- </label> --}}
                 <ul class="hidden mt-3 z-[1] p-2 top-16 right-3 bg-white shadow bg-base-100 rounded-xl w-52 text-base font-medium absolute right-0"
                     id="mobileMenu">
+                    <li><a href="{{ route('about') }}"
+                            class="cursor-pointer duration-150 hover:text-primary-bg">Blog</a></li>
                     <li><a href="{{ route('our.services') }}"
                             class="cursor-pointer duration-150 hover:text-primary-bg">Services</a></li>
                     <li><a href="{{ route('portfolio.grid') }}"
                             class="cursor-pointer duration-150 hover:text-primary-bg">Project</a></li>
                     <li><a href="{{ route('blog.list') }}"
                             class="cursor-pointer duration-150 hover:text-primary-bg">Blog</a></li>
+
                 </ul>
             </div>
             {{-- Main logo --}}
