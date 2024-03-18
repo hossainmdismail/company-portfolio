@@ -16,7 +16,11 @@
 
             </h1>
             <p class="text-sm font-normal text-gray-200 lg:text-base " style="line-height: 1.6;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga maiores iusto, error reprehenderit suscipit perferendis omnis alias eos ipsa repudiandae optio architecto. Facere porro optio, quaerat nam deserunt quo quia voluptatum, hic amet inventore delectus. Facilis laudantium impedit alias. Vero necessitatibus distinctio animi similique nisi reiciendis blanditiis praesentium officiis possimus accusantium magni perferendis magnam esse, non, vitae maxime ut temporibus consequatur officia eveniet odit! Dicta recusandae sint magnam similique maiores temporibus eius tempora voluptas, repudiandae ratione nam, placeat dignissimos qui ipsum officiis pariatur expedita odio veniam cupiditate esse dolorem? Officiis, necessitatibus. Doloribus accusamus quibusdam explicabo qui vero ex minima et.
+                Welcome to Synex Digital, your corporate IT partner. As a Digital Solutions Expert, we are excited to help
+                you through our extensive variety of services to elevate your business in the ever-changing digital
+                landscape. Synex Digital's commercial IT solutions reflect our dedication to excellence. We are your
+                one-stop technological solution supplier, meeting your business's particular demands with precision and
+                competence.
                 {{-- <a href="{{ route('about') }}" class="underline text-button-primary">See more</a> --}}
             </p>
             <div class="flex gap-6 pt-5 text-center flex-col md:flex-row">
@@ -78,12 +82,12 @@
                     <?php
                     // Array of predefined colors
                     $colors = ['#0F393C', '#FFC857', '#32CD32', '#7BC950', '#F07167', '#F95738'];
-
+                    
                     // Get the index within the range of colors
                     $colorIndex = $key % count($colors);
-
+                    
                     $selectedColor = $colors[$colorIndex];
-
+                    
                     $words = explode(' ', $service->description);
                     $count = count($words);
                     ?>
@@ -122,21 +126,29 @@
                         Navigating the IT Landscape with Precision
                     </h2>
                     <p class="text-justify text-text-primary text-sm lg:text-lg font-semibold lg:font-medium text-left">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque animi magni dignissimos est molestias, nihil officia nemo consequuntur neque iusto ipsa illo corrupti quam quasi. Aut, eaque voluptatum. Amet similique nihil ducimus eius nobis? Magni architecto corporis praesentium facere? In debitis libero quasi magni? Quam aut, laborum ab expedita pariatur, quos minus nulla autem enim rerum neque sit distinctio. Rerum, voluptatem asperiores maiores ea inventore temporibus fuga, quia magnam corporis nam itaque quas consequuntur, dicta nemo cum numquam ad deleniti nobis eos obcaecati maxime? Sequi aliquid, repudiandae doloribus eos molestias rerum necessitatibus cupiditate enim, rem corrupti dolor quisquam doloremque autem!
+                        Outstanding records show Synex Digital's dedication to quality. With an established track record in
+                        Web and App Development, transformative UI/UX design, and powerful Digital Marketing, we routinely
+                        surpass expectations. In the dynamic world of IT, simplicity meets sophistication in our approach.
+                        Our IT services range from simple definitions to complicated technology solutions. We change the
+                        fundamental nature of service businesses, giving not just answers but an experience that goes beyond
+                        expectations. Our portfolio of successful projects serves as a testament to our dedication,
+                        producing top-notch solutions that move organizations forward. Our experience of achieving
+                        milestones, assuring timely delivery, and meeting quality benchmarks emphasizes why Synex Digital is
+                        the trusted choice for unmatched digital success.
                     </p>
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-6 py-0 lg:py-5">
                         <div class="bg-[#e7e7e7] py-2 lg:py-5 text-center space-y-2 lg:space-y-2 rounded-lg">
-                            <h1 class="text-[#04364A] font-medium lg:font-bold text-2xl lg:text-4xl">5+</h1>
+                            <h4 class="text-[#04364A] font-medium lg:font-bold text-2xl lg:text-4xl">5+</h4>
                             <p class="text-[#353535] font-medium text-xs lg:text-lg">YEARS OF <br>
                                 EXPERIENCE</p>
                         </div>
                         <div class="bg-[#e7e7e7] py-2 lg:py-5 text-center space-y-2 lg:space-y-2 rounded-lg">
-                            <h1 class="text-[#04364A] font-medium lg:font-bold text-2xl lg:text-4xl">89+</h1>
+                            <h4 class="text-[#04364A] font-medium lg:font-bold text-2xl lg:text-4xl">89+</h4>
                             <p class="text-[#353535] font-medium text-xs lg:text-lg">Project
                                 Complete</p>
                         </div>
                         <div class="bg-[#e7e7e7] py-2 lg:py-5 text-center space-y-2 lg:space-y-2 rounded-lg">
-                            <h1 class="text-[#04364A] font-medium lg:font-bold text-2xl lg:text-4xl">22+</h1>
+                            <h4 class="text-[#04364A] font-medium lg:font-bold text-2xl lg:text-4xl">22+</h4>
                             <p class="text-[#353535] font-medium text-xs lg:text-lg">DESIGNERS
                                 AND DEVELOPERS</p>
                         </div>
