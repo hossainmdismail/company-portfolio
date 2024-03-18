@@ -36,8 +36,8 @@
             <ul class="flex text-lg font-medium gap-10">
                 {{-- <li><a href="{{ route('home') }}" class="cursor-pointer duration-150 hover:text-primary-bg">Home</a>
                 </li> --}}
-                {{-- <li><a href="{{ route('about') }}" class="cursor-pointer duration-150 hover:text-primary-bg">About</a>
-                </li> --}}
+                <li><a href="{{ route('about') }}" class="cursor-pointer duration-150 hover:text-primary-bg">About</a>
+                </li>
                 <li><a href="{{ route('our.services') }}"
                         class="cursor-pointer duration-150 hover:text-primary-bg">Services</a></li>
                 <li><a href="{{ route('portfolio.grid') }}"
