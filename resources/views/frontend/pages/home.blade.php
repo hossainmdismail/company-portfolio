@@ -82,12 +82,12 @@
                     <?php
                     // Array of predefined colors
                     $colors = ['#0F393C', '#FFC857', '#32CD32', '#7BC950', '#F07167', '#F95738'];
-                    
+
                     // Get the index within the range of colors
                     $colorIndex = $key % count($colors);
-                    
+
                     $selectedColor = $colors[$colorIndex];
-                    
+
                     $words = explode(' ', $service->description);
                     $count = count($words);
                     ?>

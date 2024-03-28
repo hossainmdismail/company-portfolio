@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ServiceContentController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SociallinkController;
 use App\Http\Controllers\TeamController;
@@ -52,6 +53,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         'product'       => ProductController::class,
         'project'       => ProjectController::class,
         'testimonial'   => TestimonialController::class,
+        'service-contents' => ServiceContentController::class,
     ]);
 });
 

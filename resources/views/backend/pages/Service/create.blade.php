@@ -5,7 +5,7 @@
         <div class="col-lg-7 col-12 h-100">
             <div class="card">
                 <div class="card-body">
-                    <table class="table table-striped">
+                    <table class="table table-striped table-responsive">
                         <tr>
                             <th>Title</td>
                             <th>Thumbnail</th>
@@ -20,12 +20,15 @@
                                     <img width="70px" src="{{ asset('uploads/service') }}/{{ $service->thumbnail }}"
                                         alt="">
                                 </td>
-                                <td>{{ $service->description }}</td>
+                                <td >{{ $service->description }}</td>
                                 <td class="d-flex align-items-center"><i
                                         class="fa fa-circle text-{{ $service->status != 2 ? 'success' : 'warning' }} mr-1"></i>{{ $service->status != 2 ? 'Active' : 'Deactive' }}
                                 </td>
                                 <td>
                                     <div class="d-flex">
+                                        <a href="{{ route('service-contents.show', $service->id) }}"
+                                            class="btn btn-info shadow btn-xs sharp mr-1"><i
+                                                class="fa fa-eye"></i></a>
                                         <a href="{{ route('service.edit', $service->id) }}"
                                             class="btn btn-primary shadow btn-xs sharp mr-1"><i
                                                 class="fa fa-pencil"></i></a>
