@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('service_contents', function (Blueprint $table) {
+        Schema::create('contents', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('service_id');
-            $table->string('sub_title',255);
-            $table->string('sub_description',255);
+            $table->string('content_title',255);
+            $table->string('content_description',255);
+            $table->string('slugs',255);
             $table->integer('status')->default(1);
             $table->timestamps();
             //
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_contents');
+        Schema::dropIfExists('contents');
     }
 };

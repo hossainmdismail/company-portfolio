@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contents;
+use App\Models\Service;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\ServiceContents;
 
 class ServiceContentController extends Controller
 {
@@ -28,7 +32,13 @@ class ServiceContentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'sub_title' => 'required',
+            'sub_description' => 'required',
+        ]);
+        ServiceContents::create($request->all());
+
+        return back();
     }
 
     /**
@@ -36,18 +46,24 @@ class ServiceContentController extends Controller
      */
     public function show(string $id)
     {
-
+        $service_contents = ServiceContents::where('service_id',$id)->get();
+        $contents = Contents::where('service_id',$id)->get();
         return view('backend.pages.serviceContents.index',[
             'id' => $id,
+            'service_contents' => $service_contents,
+            'contents' => $contents,
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+       $service_content = ServiceContents::find($id);
+       return view('backend.pages.serviceContents.edit',[
+        'service_content' => $service_content,
+       ]);
     }
 
     /**
@@ -55,7 +71,15 @@ class ServiceContentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'sub_title' => 'required',
+            'sub_description' => 'required',
+        ]);
+
+    $service_id = ServiceContents::find($id);
+    $data = $request->only(['sub_title', 'sub_description']);
+    ServiceContents::where('id', $id)->update($data);
+    return redirect(route('service-contents.show',$service_id->service_id));
     }
 
     /**
@@ -63,6 +87,7 @@ class ServiceContentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        ServiceContents::find($id)->delete();
+        return back();
     }
 }
