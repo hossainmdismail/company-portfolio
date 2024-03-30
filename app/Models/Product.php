@@ -12,4 +12,8 @@ class Product extends Model
         'service',
         'status',
     ];
+    public function projects(){
+        return $this->hasMany(Project::class, 'product_id');
+
+    }
 }

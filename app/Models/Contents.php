@@ -15,4 +15,8 @@ class Contents extends Model
         'slugs',
         'status',
     ];
+    public function contentItem()
+    {
+        return $this->hasMany(ContentItem::class, 'content_id');
+    }
 }

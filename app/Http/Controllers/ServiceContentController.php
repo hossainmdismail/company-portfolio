@@ -32,11 +32,17 @@ class ServiceContentController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'sub_title' => 'required',
             'sub_description' => 'required',
         ]);
-        ServiceContents::create($request->all());
+
+        ServiceContents::insert([
+            'service_id' => $request->service_id,
+            'sub_title' => $request->sub_title,
+            'sub_description' => $request->sub_description,
+        ]);
 
         return back();
     }
