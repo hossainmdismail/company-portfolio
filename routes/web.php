@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ServiceContentController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SociallinkController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\WebinfoController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContentController;
+use App\Http\Controllers\ContentItemController;
 use App\Http\Controllers\FronProjectController;
 use App\Http\Controllers\FrontBlogController;
 use App\Http\Controllers\HomeController;
@@ -52,6 +55,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         'product'       => ProductController::class,
         'project'       => ProjectController::class,
         'testimonial'   => TestimonialController::class,
+        'service-contents' => ServiceContentController::class,
+        'contents' => ContentController::class,
+        'content-item' => ContentItemController::class,
     ]);
 });
 

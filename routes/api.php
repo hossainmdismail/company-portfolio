@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\BlogController;
+use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\ServiceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +19,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+Route::get('/services',[ServiceController::class, 'services']);
+Route::get('/services/{slugs}',[ServiceController::class, 'services_view']);
+Route::get('/categories',[CategoryController::class, 'categories']);
+Route::get('/categories/{id}',[CategoryController::class, 'categories_view']);
+Route::get('/blogs',[BlogController::class, 'blogs']);
+Route::get('/blogs/{slugs}',[BlogController::class, 'blogs_view']);
+Route::get('/products',[ProductController::class, 'products']);
+Route::get('/projects',[ProjectController::class, 'projects']);
+Route::get('/projects/{slugs}',[ProjectController::class, 'projects_view']);
+

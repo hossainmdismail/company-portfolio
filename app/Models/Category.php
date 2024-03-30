@@ -16,4 +16,8 @@ class Category extends Model
         'seo_description',
         'seo_tags',
     ];
+    public function blogs(){
+        return $this->hasMany(Blog::class, 'category_id');
+        
+    }
 }

@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class ContentItem extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'service',
+        'content_id',
+        'item_title',
+        'item_description',
+        
         'status',
     ];
-    public function projects(){
-        return $this->hasMany(Project::class, 'product_id');
-
-    }
 }

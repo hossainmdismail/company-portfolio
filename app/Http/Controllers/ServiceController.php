@@ -38,6 +38,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'thumbnail'      =>  'required',
             'title'          =>  'required',
@@ -45,7 +46,7 @@ class ServiceController extends Controller
         ]);
 
         Photo::upload($request->thumbnail, 'uploads/service', 'TEAM', ['200', '200']);
-
+       
         Service::insert([
             'user_id'        =>  Auth::user()->id,
             'thumbnail'      =>  Photo::$name,
